@@ -1,0 +1,155 @@
+\documentclass[letter]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{braket}
+\geometry{
+  letterpaper,
+  left=1in,
+  right=1in,
+  bottom=1in,
+  top=1in}
+\setlength\parindent{0pt}
+
+\begin{document}
+\textbf{\Large{Nuclear Engineering 101: Midterm 2 Study Guide}} \\
+Joshua Rehak
+\vspace{12pt}
+%\cite[pp. 45]{krane}
+%\cite[Lec 24]{lecture}
+
+\section*{Nuclear Electromagnetic Moments}
+
+Ref: \cite[pp. 71-75]{krane},\cite[Lec 10]{lecture}
+
+A distribution of electric charge and/or current will create an
+electric potential. This can be described by the ``multipole
+moment''. \\
+
+Note the values of $L$ are the \textit{order of the moment}, not
+angular momentum.
+
+\subsection*{Electric multipoles}
+
+\begin{itemize}
+\item Monopole moment: $L=0$, this is just the spherical nucleus, the electric
+  potential looks like $V = \frac{Q}{R}$. 
+\item Dipole moment: $L=1$. The electric dipole is just linear
+  translation of the nucleus. $V=0$, see below.
+\item Quadrupole moment: $L=2$, the electric potential is from the
+  nucleus squishing in one direction and then the other. The amount of
+  quadrupole moment can be calculated:
+  \begin{equation*}
+    eQ=e\int\psi^*(3z^2-r^2)\psi~d^3\vec{r}
+  \end{equation*}
+  If the nucleus is spherical,
+  $\braket{z}^2=\braket{x}^2=\braket{y}^2$, so $eQ=0$. The higher the
+  value of $eQ$ the more deformed the nucleus is.
+\end{itemize}
+
+All electric moments have parity determined by $(-1)^L$. If you want
+to do some kind of electromagnetic operation on a state ($\psi$) with
+some operator $O$, then you have to evaluate $\int\psi^*O\psi~dv$. It
+doesn't matter what the parity of $\psi$ is because they will always
+multiply (even times even or odd times odd are both always even). If
+$O$ has negative parity, the whole thing is an odd function and the
+integral goes to 0. Therefore, to keep things based in reality, all
+ moments with odd angular momentum must not be a thing because they
+ have negative parity
+($L=1,3,5$ etc). This is why the dipole doesn't happen.
+
+\subsection*{Magnetic multipoles}
+
+\begin{itemize}
+\item Monopole moment: $L=0$ doesn't happen, as far as we know.
+\item Dipole moment: $L=1$, nucleons and nuclei have dipole magnetic
+  moments due to their angular momentum (they are charges moving in a
+  loop, therefore magnetic field). 
+  \begin{equation*}
+    \mu = \frac{e\hbar}{2m}l=g_ll\mu_n
+  \end{equation*}
+Here $l$ \textbf{is} the angular momentum, $g_l$ is a constant (1 for
+protons, 0 for neutrons) and $\mu_n$ is the ``nuclear magneton'' (just
+a constant).
+\item Quadrupole moment: $L=3$ doesn't happen.
+\end{itemize}
+
+Just like before, all the moments with odd parity have to not
+exist. For magnetic moments, the parity is determined by $(-1)^{L+1}$,
+so all the \textit{even} order moments can't exist.
+
+\section*{Shell Model}
+
+\subsection*{Evidence}
+\begin{itemize}
+\item Ionization energies ``jump'' at ``magic numbers'' like 2, 10,
+  18, 36, 54, 86. Something about these make the nucleus more tightly
+  bound, this wouldn't be seen in a liquid
+  drop ~\cite[Lec. 12]{lecture}.
+\item $\alpha$-decay: see a big jump in the $\alpha$-decay of Radon
+  after $N=128$. This is because the daughter has $N=126$ (magic
+  number) ~\cite[Lec. 12]{lecture}.
+\end{itemize}
+
+\subsection*{Shells}
+\begin{itemize}
+\item You can use the 3D square well to get a pretty good
+  approximation of what we see, or a parabolic ($1/r^2$) one to get
+  better. But the simple harmonic oscillator gives the best
+  approximation but it's still wrong. ~\cite[Lec. 12]{lecture}.
+\item Spin-orbit interaction: due to the interaction of the spin and
+  the angular momentum ($\vec{l}\bullet\vec{s}$), you can get two
+  different values of $j$, $l \pm \frac{1}{2}$. Now two different
+  nucleons will see a \textit{different} potential, so it splits all
+  the states in two. \cite[Lec. 13-16]{lecture},
+  \cite[pp. 123-125]{krane}.
+\item The size of the split gets bigger with increasing $l$. The
+  potential is negative so the $J=l+\frac{1}{2}$ states will occur at
+  \textit{lower} energies. High spin states that enter a different lower shell are called \textit{the
+  intruder}. \cite[Lec. 13-16]{lecture}
+\item Evidence: Magnetic dipole $\mu=\mu_N(g_ll_z + g_ss_z)/\hbar$
+  should be different for the different spins in the same $l$
+  level. Observations show this is true. \cite[Lec. 13-16]{lecture}.
+\item Works well for \textbf{spherical} nuclei and ones that are
+  \textbf{close to magic numbers}.
+\end{itemize}
+
+\subsection*{Independent Particle Model}
+\begin{itemize}
+\item All shells are completely full or empty except for a single
+  particle in the lowest energy of an otherwise empty shell. The
+  nucleus $J^\pi$ depends only on that last
+  nucleon. \cite[Lec. 13-16]{lecture}.
+\item The total angular momentum of the nuclei $J$ is equal to the
+  $J$ value of the shell with the single particle in it. The parity
+  is equal to the parity of the shell with the single particle in it,
+  $(-1)^l$. For example, if there is a single particle in the
+  $1p_{3/2}$ state, then $J^\pi=(\frac{3}{2})^{-}$ because
+  $j=\frac{3}{2}$ and $l=1$. \cite[Lec. 13-16]{lecture}.
+\item The value $J^\pi$ is referred to as the spin-parity \textbf{or}
+  the total angular momentum of the nucleus. Both of those
+  things mean the same thing \textit{when you're talking about the
+    nucleus.} For a nucleon, spin is the intrinsic angular momentum;
+  the nucleus doesn't have any \textbf{intrinsic} angular momentum,
+  only angular momentum due to it's components. We call it spin anyway
+  when referring to the nucleus just to be confusing.
+\item The independent nucleon always gives the total angular momentum
+  of the shell to the nucleus when in the \textbf{ground state.}
+\item When you are in an \textbf{excited state}, you can line up the
+  nucleons in more interesting way. If you have three nucleons in the
+  $f_{7/2}$ shell and we're in an excited state, we use the notation
+  $(f_{7/2)})^3$. You can add up their angular momentum any way you
+  want, remember each can have angular momentum from $-j$ to $+j$. So
+  these can have $m=\pm\frac{1}{2}, \pm\frac{3}{2}, \pm\frac{5}{2},
+  \pm\frac{7}{2}$. They can't have the \textbf{same} value of m, but
+  they can all add to get, for example
+  $\frac{7}{2}+\frac{5}{2}+\frac{3}{2}=\frac{15}{2}$. \cite[pp. 149-151]{krane}
+\item In excited states, the single nucleons can also jump around to
+  other states, changing the $J^\pi$ of the nucleus. \cite[Lec. 13-16]{lecture}
+\end{itemize}
+
+
+\bibliographystyle{unsrt}
+\bibliography{NE101}
+\end{document}
