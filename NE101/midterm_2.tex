@@ -144,11 +144,131 @@ so all the \textit{even} order moments can't exist.
   these can have $m=\pm\frac{1}{2}, \pm\frac{3}{2}, \pm\frac{5}{2},
   \pm\frac{7}{2}$. They can't have the \textbf{same} value of m, but
   they can all add to get, for example
-  $\frac{7}{2}+\frac{5}{2}+\frac{3}{2}=\frac{15}{2}$. \cite[pp. 149-151]{krane}
+  $\frac{7}{2}+\frac{5}{2}+\frac{3}{2}=\frac{15}{2}$.~\cite[pp. 149-151]{krane}
 \item In excited states, the single nucleons can also jump around to
-  other states, changing the $J^\pi$ of the nucleus. \cite[Lec. 13-16]{lecture}
+  other states, changing the $J^\pi$ of the nucleus.~\cite[Lec. 13-16]{lecture}
 \end{itemize}
 
+\section*{$\alpha$-decay}
+
+\begin{itemize}
+\item The $\alpha$-decay half-life can be estimated using a barrier
+  tunneling model. You can calculate the frequency of collision with
+  the potential well and use the transmission probability to calculate
+  a half-life. This isn't the real model and only represents an
+  electromagnetic baseline to give us insight into what is
+  happening. It isn't \textit{nuclear}.~\cite[Lec. 18]{lecture}
+\item Any angular momentum carried away by the $\alpha$-particle is
+  \textbf{purely orbital}. The spins all couple pairwise to
+  0. The angular momentum change from $\alpha$-decay can range from:
+  \begin{equation*}
+    |I_i-I_f| \leq l_{\alpha} \leq I_i + I_f
+  \end{equation*}
+With parity change:
+\begin{equation*}
+  \Delta\pi = {(-1)}^{l_{\alpha}}
+\end{equation*}
+The simplest decay is any $0 \to X$ state, because the only value
+for $l_{\alpha}$ is $X$. If that doesn't give the right parity change,
+the decay is \textit{forbidden}. In this case it really means
+\textit{forbidden}, unlike $\beta$-decay, which plays fast and loose
+with the term.~\cite[pp. 257-258]{krane}.
+\item $\alpha$-decay can populate many different states. Each one has
+  a different $Q$-value (given by the $Q$ value for decay to the
+  ground state, minus the excitation
+  energy).~\cite[pp. 257-258]{krane}.
+\item The intensity depends on how similar the initial and final wave
+  functions are, and the angular momentum ($l_{\alpha}$).~\cite[pp. 257-258]{krane}.
+\item The hinderence factor (H) tells us about the similarity between
+  the parent and daughter states.:
+  \begin{itemize}
+  \item $1<H<4$ Favored: $\alpha$-particle is from two low-lying pairs
+    of nucleons.
+  \item $4<H<10$: favorable overlap between initial and final state.
+  \item $10<H<100$: spin projections are parallel. Unfavorable overlap
+    between initial and final states.
+  \item $100<H<1000$: spin projections are parallel, change in parity.
+  \item $H>1000$: spin-flip, change in parity.
+  \end{itemize}
+Any spin flip $\to$ over 1000. Any parity change $\to$ over
+100. Non-favorable overlap $\to$ over 10. See
+Fig.~\ref{fig:alpha-hinderance}.~\cite[Lec. 18]{lecture}
+\begin{table}[hbt]
+\centering
+\begin{tabular}{llll}
+\textbf{H}       & \textbf{Nuclear State Overlap} & \textbf{Parity Change} & \textbf{Spins} \\
+\textgreater10   & Favorable                      & None                   & Parallel       \\
+10--100           & Unfavorable                    & None                   & Parallel       \\
+100--1000         & Unfavorable                    & Yes                    & Parallel       \\
+\textgreater1000 & Unfavorable                    & Yes                    & Spin-flip      \\
+                 &                                &                        &               
+\end{tabular}
+\caption{Summary of $\alpha$-decay hinderance factors.}
+\label{fig:alpha-hinderance}
+\end{table}
+\item $\alpha$-decay spectrum has sharp peaks, each represents a decay
+  to different excited states. Higher $E_\alpha$, lower excitation
+  energy. The excited states then usually release $\gamma$-ray
+  photons.~\cite[pp. 262-264]{krane}
+\item In an even-even nucleus, the alpha decay to the ground state is
+  usually \textit{very strong}. The $0^+ \to 0^+$ decay is not
+  inhibited by differences between the wave functions (they are very
+  similar. By the same logic, the decay of odd-$A$ nuclei may be
+  \textit{very weak} because the two states may be significantly
+  different.~\cite[pp.264]{krane}
+\end{itemize}
+
+\section*{$\beta$-decay}
+\begin{itemize}
+\item Energy release distribution is continuous because there are two
+  particles emitted so they can share any proportion of the
+  energy.~\cite[pp. 273, Lec 19]{krane,lecture}
+\item Three kinds:
+  \begin{equation*}
+    \begin{split}
+    \beta^-&: n \to p + e^- + \bar{\nu}_e \\
+    \beta^+&: p \to n + e^+ + \nu_e \\
+    EC&: p + e^- \to n + \nu_e
+  \end{split}
+  \end{equation*}
+Each has a different energy release:
+\begin{equation*}
+  \begin{split}
+    Q_{\beta^-}&=[m(^AX)-m(^AX')]c^2 \\
+    Q_{\beta^+}&=[m(^AX)-m(^AX')-2m_e]c^2\\
+    Q_{\epsilon}&=[m(^AX)-m(^AX')]c^2-B_n
+  \end{split}
+\end{equation*}
+For $\beta^-$, the electron masses all cancel when using atomic masses
+because $-Zm_e+(Z+1)m_e-m_e=0$, that is the electrons accounted for in
+the atomic masses for the original atom, final atom and leftover
+electron all cancel. They don't cancel for $\beta^+$ because
+$-Zm_e+(Z-1)m_e-m_e=-2m_e$.~\cite[pp. 274-276]{krane}
+\item Fermi theory of beta decay: There are three things that go into
+  determining the spectrum of beta decay energy values:
+  \begin{equation*}
+    \begin{split}
+    N(p) &\propto \text{Statistical factor} * \text{Coulomb Interaction
+    (electrodynamic)} * \text{Nuclear Matrix Element} \\
+  N(p) &\propto p^2(Q_\beta-T_e)^2*F(Z_d,T_e)*|M_{fi}|^2*S(p,q)
+\end{split}
+\end{equation*}
+These terms are:
+\begin{itemize}
+\item Statistical factor: related to the number of final states
+  accessible. Decays like to happen when there are a lot of final
+  states that are open.
+\item Fermi function ($F$): the influence of the nuclear coulomb
+  field. This is the \textbf{electrodynamic} part.
+\item Matrix element ($M_{fi}^2*S(p,q)$): This is the \textbf{Nuclear}
+  part. It is kind of like the hinderance factors for $\alpha$-decay
+  and represents the effect of the initial and final states. The $S$
+  function only comes into play in \textbf{forbidden} decays, when the
+  electron and neutrino have angular momentum ($l \neq 0$, $s$ and $q$
+  are terms for the electron and neutrino angular momenta.
+\end{itemize}
+\cite[pp.281-282]{krane}.
+\end{itemize}
 
 \bibliographystyle{unsrt}
 \bibliography{NE101}
