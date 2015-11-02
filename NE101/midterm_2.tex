@@ -179,7 +179,7 @@ with the term.~\cite[pp. 257-258]{krane}.
   energy).~\cite[pp. 257-258]{krane}.
 \item The intensity depends on how similar the initial and final wave
   functions are, and the angular momentum ($l_{\alpha}$).~\cite[pp. 257-258]{krane}.
-\item The hinderence factor (H) tells us about the similarity between
+\item The hinderence factor (HF) tells us about the similarity between
   the parent and daughter states.:
   \begin{itemize}
   \item $1<H<4$ Favored: $\alpha$-particle is from two low-lying pairs
@@ -192,19 +192,19 @@ with the term.~\cite[pp. 257-258]{krane}.
   \end{itemize}
 Any spin flip $\to$ over 1000. Any parity change $\to$ over
 100. Non-favorable overlap $\to$ over 10. See
-Fig.~\ref{fig:alpha-hinderance}.~\cite[Lec. 18]{lecture}
+Table.~\ref{tab:alpha-hinderance}.~\cite[Lec. 18]{lecture}
 \begin{table}[hbt]
 \centering
 \begin{tabular}{llll}
 \textbf{H}       & \textbf{Nuclear State Overlap} & \textbf{Parity Change} & \textbf{Spins} \\
-\textgreater10   & Favorable                      & None                   & Parallel       \\
+\textless10   & Favorable                      & None                   & Parallel       \\
 10--100           & Unfavorable                    & None                   & Parallel       \\
 100--1000         & Unfavorable                    & Yes                    & Parallel       \\
 \textgreater1000 & Unfavorable                    & Yes                    & Spin-flip      \\
                  &                                &                        &               
 \end{tabular}
 \caption{Summary of $\alpha$-decay hinderance factors.}
-\label{fig:alpha-hinderance}
+\label{tab:alpha-hinderance}
 \end{table}
 \item $\alpha$-decay spectrum has sharp peaks, each represents a decay
   to different excited states. Higher $E_\alpha$, lower excitation
@@ -258,7 +258,7 @@ These terms are:
 \item Statistical factor: related to the number of final states
   accessible. Decays like to happen when there are a lot of final
   states that are open.
-\item Fermi function ($F$): the influence of the nuclear coulomb
+\item Fermi function ($F$): the influence of the atomic coulomb
   field. This is the \textbf{electrodynamic} part.
 \item Matrix element ($M_{fi}^2*S(p,q)$): This is the \textbf{Nuclear}
   part. It is kind of like the hinderance factors for $\alpha$-decay
@@ -272,7 +272,7 @@ These terms are:
   \begin{equation*}
     (Q-T_e) \propto \sqrt{\frac{N(p)}{p^2F(Z',p)}}
   \end{equation*}
-Which \textit{should} give you a straight line that intersects the
+Which \textit{should} give you a straight line (Fermi-Kurie plot) that intersects the
 $x$-axis at the $Q$ value. For forbidden decays, the line is
 \textbf{not} straight, you have to put that $S(p,q)$ factor in on the
 bottom to make it straight. This is the \textit{shape factor}, which
@@ -295,6 +295,25 @@ which are \textit{only dependent on nuclear
 \textit{corrected} half-life. Corrected to remove electrodynamic stuff.~\cite[pp. 282-283, Lecs. 19-21]{krane,lecture}.
 \item $ft$ values have a huge range ($10^3$ to $10^{20}$) so we use
   log$ft$ instead.
+
+
+\item Helicity: helicity is just a property that we define based on a
+  particles spin and momentum:
+  \begin{equation*}
+    h=\frac{\vec{s}\bullet\vec{p}}{|\vec{s}\bullet\vec{p}|}
+  \end{equation*}
+Neutrinos have specific helicity based on if they are a neutrino or
+anti-neutrino:
+\begin{itemize}
+\item \textbf{ALL} neutrinos ($\nu$) have helicity $h=-1$
+\item \textbf{ALL} anti-neutrinos ($\bar{\nu}$) have helicity $h=+1$
+\item All electrons \textbf{from $\beta$-decay} have helicity
+  $h=-\frac{v}{c}$.
+\item All positrons \textbf{from $\beta$-decay} have helicity $h=+\frac{v}{c}$.
+\end{itemize}
+Note that the helicity rules for neutrinos are always always true, but
+the ones for electrons/positrons are only true \textit{if the electron
+is from $\beta$-decay}.
 \end{itemize}
 
 \bibliographystyle{unsrt}
