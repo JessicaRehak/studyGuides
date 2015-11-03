@@ -132,7 +132,17 @@ so all the \textit{even} order moments can't exist.
   \begin{equation*}
     R_{42}=\frac{E(4^+)}{E(2^+)} \approx 1
   \end{equation*}
-
+\item For vibration, we expect the quadropole moment (the measure of
+  nuclear deformation) to be $Q(2^+)=0$. This is because the nucleus
+  is just a sphere with a surface wave moving over it, so it all
+  averages out to 0.~\cite[Lec 13-16]{lecture}
+  \begin{figure}[hbt]
+    \centering
+    \includegraphics{images/te_120_rot}
+    \caption{Rotational structure in Te-120. Notice that the $2^+$,
+      $4^+$, and $6^+$ states are all evenly spaced.}
+    \label{fig:te120}
+  \end{figure}
 \end{itemize}
 
 \subsection{Independent Particle Model}
@@ -175,6 +185,12 @@ so all the \textit{even} order moments can't exist.
 \item Collective nuclear motion comes from the interplay between
   nucleons making the nuclear potential, and nucleons moving in the
   nuclear potential.~\cite[Lec. 13-16]{lecture}
+\item Collective motion lowers the energy for the first excited state
+  ($2^+$ for vibration and rotation). Instead of having to yank
+  a nucleon from a low, tightly bound state, to a high state, you just
+  put enough energy into the system to get all the nucleons vibrating
+  or rotating together. So nuclei where collective motion is seen have
+  much, much lower first excited states.
 \item Rotations and vibrations and not mutually
   exclusive. A rotational band can ``ride'' on top of a vibration, or
   vice versa.
@@ -184,18 +200,39 @@ so all the \textit{even} order moments can't exist.
     P=\frac{N_pN_n}{N_p+N_n}
   \end{equation*}
 Where $N_p$ is the number of valence protons, and $N_n$ is the number
-of valence neutrons. Around 4, you see collective motion.~\cite[Lec. 13-16]{lecture}
+of valence neutrons. Valence nucleons are the extra nucleons after the
+last large shell. Around 4, you see collective motion.~\cite[Lec. 13-16]{lecture}
 \end{itemize}
 
 \subsection{Vibration}
 \begin{itemize}
 \item A vibration can move over the surface of the nucleus. The order
-  of this vibration is given by lambda ($\lambda$).
-\item The ratio of the $4^+$ and $2^+$ states should almost always be:
+  of this vibration is given by lambda ($\lambda$), this determines
+  the order of the spherical harmonic that describes the collective vibration.
+  \begin{itemize}
+  \item The $\lambda=1$ vibration is just dipole movement, which
+    is just linear movement of the nucleus. This is not a collective
+    motion state.
+  \item The $\lambda=2$ vibration is the quadrupole vibration. The
+    energy is quantized in the \textit{phonon} which is just a
+    discrete unit of vibrational energy. For $\lambda=2$, each carries
+    exactly $2\hbar\omega$ units of vibrational energy.
+  \item The $\lambda=3$ vibration is octopole and I'm pretty sure Lee
+    said this hasn't been observed.
+  \end{itemize}
+\cite[Lec 13-16]{lecture}
+\item A vibration collective structure on top of the $0^+$ ground
+  state will be a $2^+$ level, followed by a $4^+$ level, followed by
+  $6^+$, etc.  They will be
+  \textit{evenly spaced} in energy, because each level represents the
+  addition of one phonon and each phonon has the same energy. The
+  parity doesn't change because $\lambda=2$ and parity goes like
+  $(-1)^\lambda$.~\cite[Lec 13-16]{lecture}
+\item Therefore, he ratio of the $4^+$ and $2^+$ states should almost always be:
   \begin{equation*}
     R_{42}=\frac{E(4^+)}{E(2^+)} \approx 2
   \end{equation*}
-%E(4)/E(2) is 2
+
 \end{itemize}
 
 \subsection{Rotation}
@@ -414,11 +451,45 @@ Therefore, all allowed decays have:
     \Delta{}I=0,1,2\ldots(n+1) \quad \Delta\pi = (-1)^n
   \end{equation*}
 The $\Delta{}I$ goes up to $n+1$ because Gamow-Teller can have the
-spin $S=1$ lined up with the angular momentum.
+spin $S=1$ lined up with the angular
+momentum.~\cite[pp.291,Lec.19-21]{krane,lecture}
+\item $\beta$-decay will occur via the ``lowest'' decay that it
+  can. That is, it will use an allowed decay or the lowest nth
+  forbidden decay that can accomplish the transition. You have to look
+  at \textit{both} parts of the initial and final states, $I$
+  \textbf{AND} $\Delta\pi$ to figure out which it is.~\cite[Lec 19-21]{lecture}
+\item Based on the description above, as you get higher in the
+  forbidden decays, 1st forbidden to 2nd forbidden etc, the decays
+  become less likely. See Table~\ref{tab:logft}.~\cite[Lec. 19-21]{lecture}
+\begin{table}[hbt]
+\centering
+\begin{tabular}{lr}
+\textbf{Type of $\beta$-decay} & \textbf{Log($ft$)} \\
+Superallowed                   & 3.5                \\
+Allowed                        & 4-7.5              \\
+1st forbidden                  & 6-9                \\
+2nd forbidden                  & 10-13              \\
+3rd forbidden                  & 14-20              \\
+4th forbidden                  & $\approx$ 23      
+\end{tabular}
+\caption{Log($ft$) values for types of $\beta$-decay}
+\label{tab:logft}
+\end{table}
 \end{itemize}
 
+\subsection{Electron Capture}
+
 \begin{itemize}
-\item \item Helicity: helicity is just a property that we define based
+\item Almost always, the electron is captured from the inner-most $S$
+  orbital, and the neutrino emitted is mono-energetic. Auger electrons
+  may result from the cascade of electrons as they move down to fill
+  the vacancy left by the lower shells.~\cite[Lec. 19-21]{lecture}
+\end{itemize}
+
+\subsection{Helicity}
+
+\begin{itemize}
+\item Helicity: helicity is just a property that we define based
   on a particles spin and momentum:
   \begin{equation*}
     h=\frac{\vec{s}\bullet\vec{p}}{|\vec{s}\bullet\vec{p}|}
@@ -436,8 +507,15 @@ spin $S=1$ lined up with the angular momentum.
   Note that the helicity rules for neutrinos are always always true,
   but the ones for electrons/positrons are only true \textit{if the
     electron is from $\beta$-decay}.
-
 \end{itemize}
+
+\section{$\gamma$-decay}
+
+\begin{itemize}
+\item $\gamma$-rays are photons generated from the decay between two
+  nuclear states.
+\end{itemize}
+
 \bibliographystyle{unsrt}
 \bibliography{NE101}
 \end{document}
