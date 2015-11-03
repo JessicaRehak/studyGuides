@@ -4,12 +4,21 @@
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{braket}
+\usepackage{framed}
+\usepackage{fancyhdr}
 \geometry{
   letterpaper,
   left=1in,
   right=1in,
   bottom=1in,
   top=1in}
+\pagestyle{fancy}
+\lhead{NE101 Midterm 2 Study Guide}
+\chead{}
+\rhead{\sectionmark}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
 \setlength\parindent{0pt}
 
 \begin{document}
@@ -19,7 +28,12 @@ Joshua Rehak
 %\cite[pp. 45]{krane}
 %\cite[Lec 24]{lecture}
 
-\section*{Nuclear Electromagnetic Moments}
+\textbf{Note:} Everything in this guide is from the text (Krane) or
+lecture, or office hours. I have tried my best to cite everything as
+completely as possible, but some of the info may be from office
+hours. I didn't think of any of this on my own.
+
+\section{Nuclear Electromagnetic Moments}
 
 Ref: \cite[pp. 71-75]{krane},\cite[Lec 10]{lecture}
 
@@ -30,7 +44,7 @@ moment''. \\
 Note the values of $L$ are the \textit{order of the moment}, not
 angular momentum.
 
-\subsection*{Electric multipoles}
+\subsection{Electric multipoles}
 
 \begin{itemize}
 \item Monopole moment: $L=0$, this is just the spherical nucleus, the electric
@@ -59,7 +73,7 @@ integral goes to 0. Therefore, to keep things based in reality, all
  have negative parity
 ($L=1,3,5$ etc). This is why the dipole doesn't happen.
 
-\subsection*{Magnetic multipoles}
+\subsection{Magnetic multipoles}
 
 \begin{itemize}
 \item Monopole moment: $L=0$ doesn't happen, as far as we know.
@@ -79,9 +93,9 @@ Just like before, all the moments with odd parity have to not
 exist. For magnetic moments, the parity is determined by $(-1)^{L+1}$,
 so all the \textit{even} order moments can't exist.
 
-\section*{Shell Model}
+\section{Shell Model}
 
-\subsection*{Evidence}
+\subsection{Evidence}
 \begin{itemize}
 \item Ionization energies ``jump'' at ``magic numbers'' like 2, 10,
   18, 36, 54, 86. Something about these make the nucleus more tightly
@@ -92,7 +106,7 @@ so all the \textit{even} order moments can't exist.
   number) ~\cite[Lec. 12]{lecture}.
 \end{itemize}
 
-\subsection*{Shells}
+\subsection{Shells}
 \begin{itemize}
 \item You can use the 3D square well to get a pretty good
   approximation of what we see, or a parabolic ($1/r^2$) one to get
@@ -113,9 +127,15 @@ so all the \textit{even} order moments can't exist.
   level. Observations show this is true. \cite[Lec. 13-16]{lecture}.
 \item Works well for \textbf{spherical} nuclei and ones that are
   \textbf{close to magic numbers}.
+%R42 = 1
+\item The ratio of the $4^+$ and $2^+$ states is usually close to 1:
+  \begin{equation*}
+    R_{42}=\frac{E(4^+)}{E(2^+)} \approx 1
+  \end{equation*}
+
 \end{itemize}
 
-\subsection*{Independent Particle Model}
+\subsection{Independent Particle Model}
 \begin{itemize}
 \item All shells are completely full or empty except for a single
   particle in the lowest energy of an otherwise empty shell. The
@@ -149,7 +169,49 @@ so all the \textit{even} order moments can't exist.
   other states, changing the $J^\pi$ of the nucleus.~\cite[Lec. 13-16]{lecture}
 \end{itemize}
 
-\section*{$\alpha$-decay}
+\section{Collective Motion}
+
+\begin{itemize}
+\item Collective nuclear motion comes from the interplay between
+  nucleons making the nuclear potential, and nucleons moving in the
+  nuclear potential.~\cite[Lec. 13-16]{lecture}
+\item Rotations and vibrations and not mutually
+  exclusive. A rotational band can ``ride'' on top of a vibration, or
+  vice versa.
+\item The collective model is useful and good when there are a large
+  number of valence nucleons, promiscuity:
+  \begin{equation*}
+    P=\frac{N_pN_n}{N_p+N_n}
+  \end{equation*}
+Where $N_p$ is the number of valence protons, and $N_n$ is the number
+of valence neutrons. Around 4, you see collective motion.~\cite[Lec. 13-16]{lecture}
+\end{itemize}
+
+\subsection{Vibration}
+\begin{itemize}
+\item A vibration can move over the surface of the nucleus. The order
+  of this vibration is given by lambda ($\lambda$).
+\item The ratio of the $4^+$ and $2^+$ states should almost always be:
+  \begin{equation*}
+    R_{42}=\frac{E(4^+)}{E(2^+)} \approx 2
+  \end{equation*}
+%E(4)/E(2) is 2
+\end{itemize}
+
+\subsection{Rotation}
+\begin{itemize}
+\item There is an enhanced probability of decay between rotational
+  bands because the wave functions are all the same, or very similar.
+%R42=3.3
+\item The ratio of the $4^+$ and $2^+$ states should almost always be:
+  \begin{equation*}
+    R_{42}=\frac{E(4^+)}{E(2^+)} \approx 3.3
+  \end{equation*}
+
+\end{itemize}
+
+
+\section{$\alpha$-decay}
 
 \begin{itemize}
 \item The $\alpha$-decay half-life can be estimated using a barrier
@@ -218,7 +280,7 @@ Table.~\ref{tab:alpha-hinderance}.~\cite[Lec. 18]{lecture}
   different.~\cite[pp.264]{krane}
 \end{itemize}
 
-\section*{$\beta$-decay}
+\section{$\beta$-decay}
 \begin{itemize}
 \item Energy release distribution is continuous because there are two
   particles emitted so they can share any proportion of the
@@ -244,7 +306,10 @@ because $-Zm_e+(Z+1)m_e-m_e=0$, that is the electrons accounted for in
 the atomic masses for the original atom, final atom and leftover
 electron all cancel. They don't cancel for $\beta^+$ because
 $-Zm_e+(Z-1)m_e-m_e=-2m_e$.~\cite[pp. 274-276]{krane}
-\item Fermi theory of beta decay: There are three things that go into
+
+\subsection{Fermi Theory}
+
+\item There are three things that go into
   determining the spectrum of beta decay energy values:
   \begin{equation*}
     \begin{split}
@@ -295,27 +360,84 @@ which are \textit{only dependent on nuclear
 \textit{corrected} half-life. Corrected to remove electrodynamic stuff.~\cite[pp. 282-283, Lecs. 19-21]{krane,lecture}.
 \item $ft$ values have a huge range ($10^3$ to $10^{20}$) so we use
   log$ft$ instead.
+\end{itemize}
+\subsection{Allowed Decays}
 
+\begin{itemize}
+\item Electron and neutrino are created at the origin ($r=0$), so
+  their angular momentum is $l=0$. There are two modes based on spin:
+  \begin{itemize}
+  \item \textbf{Fermi Decay}: the spins of the neutrino and electron
+    are anti-parallel, so total $S=0$.
+  \item \textbf{Gamow-Teller Decay:} the spins are parallel, so the
+    total $S=1$.
+  \end{itemize}
+The difference in the nuclear spin parity ($I^\pi$) before and after
+the decay will come from the
+$l$ and $S$ that the electron and neutrino carry away. So, if you have
+Fermi decay ($l=0$ and $S=0$), there can't be any change in the
+nuclear spin $\Delta{}I = |I_i-I_t|=0$. If you have Gamow-Teller decay
+($l=0$ and $S=1$), you have $\Delta{}I =$ 0 or 1. 
+\begin{framed}
+  \textbf{TRICKY PART:} You can have $\Delta{}I = 0$ in Gamow-Teller decay because you can
+  couple a vector of length 1 onto a vector and end up with the same
+  vector magnitude. This \textbf{does not work} if you started with
+  $I_i=0$ because you can't add 1 to 0 and get 0. This means that a
+  beta decay from $I_i=0$ to $I_f=0$ \textit{must} be Fermi decay.
+\end{framed}
+Therefore, all allowed decays have:
+\begin{equation*}
+  \Delta{}I = 0,1 \quad \Delta{}\pi = \text{no}
+\end{equation*}
+\cite[pp. 289, Lec. 19-21]{krane,lecture}
+\item \textbf{Superallowed Decays:} all super-allowed decays are
+  allowed decays, but not all allowed decays are super-allowed. All
+  that super-allowed means is that the $ft$ value is 3-4. So they are
+  just super-likely.
+\end{itemize}
 
-\item Helicity: helicity is just a property that we define based on a
-  particles spin and momentum:
+\subsection{Forbidden Decays}
+
+\begin{itemize}
+\item Any beta-decay that has $l \neq 0$ is \textbf{forbidden}. This
+  doesn't mean that it doesn't happen, it just means it's not very
+  likely. This is because angular momentum $\vec{l} =
+  \vec{r}\bullet\vec{p}$. The radius where the $\beta$-decay is on the
+  order of the nuclear radius ($\approx$ 6 fm) which is \textit{super}
+  small. The small radius means a small angular momentum, so it's very
+  unlikely that $\beta$-decay will occur with $l \neq 0$. But it does,
+  rarely.~\cite[Lec. 19-21]{lecture}.
+\item The n\textsuperscript{th} forbidden decay will have $l=n$, and both of the
+  spin-arrangements (Fermi for $S=0$ and Gamow-Teller for $S=1$)
+  described above. Therefore, you can have:
+  \begin{equation*}
+    \Delta{}I=0,1,2\ldots(n+1) \quad \Delta\pi = (-1)^n
+  \end{equation*}
+The $\Delta{}I$ goes up to $n+1$ because Gamow-Teller can have the
+spin $S=1$ lined up with the angular momentum.
+\end{itemize}
+
+\begin{itemize}
+\item \item Helicity: helicity is just a property that we define based
+  on a particles spin and momentum:
   \begin{equation*}
     h=\frac{\vec{s}\bullet\vec{p}}{|\vec{s}\bullet\vec{p}|}
   \end{equation*}
-Neutrinos have specific helicity based on if they are a neutrino or
-anti-neutrino:
-\begin{itemize}
-\item \textbf{ALL} neutrinos ($\nu$) have helicity $h=-1$
-\item \textbf{ALL} anti-neutrinos ($\bar{\nu}$) have helicity $h=+1$
-\item All electrons \textbf{from $\beta$-decay} have helicity
-  $h=-\frac{v}{c}$.
-\item All positrons \textbf{from $\beta$-decay} have helicity $h=+\frac{v}{c}$.
-\end{itemize}
-Note that the helicity rules for neutrinos are always always true, but
-the ones for electrons/positrons are only true \textit{if the electron
-is from $\beta$-decay}.
-\end{itemize}
+  Neutrinos have specific helicity based on if they are a neutrino or
+  anti-neutrino:
+  \begin{itemize}
+  \item \textbf{ALL} neutrinos ($\nu$) have helicity $h=-1$
+  \item \textbf{ALL} anti-neutrinos ($\bar{\nu}$) have helicity $h=+1$
+  \item All electrons \textbf{from $\beta$-decay} have helicity
+    $h=-\frac{v}{c}$.
+  \item All positrons \textbf{from $\beta$-decay} have helicity
+    $h=+\frac{v}{c}$.
+  \end{itemize}
+  Note that the helicity rules for neutrinos are always always true,
+  but the ones for electrons/positrons are only true \textit{if the
+    electron is from $\beta$-decay}.
 
+\end{itemize}
 \bibliographystyle{unsrt}
 \bibliography{NE101}
 \end{document}
