@@ -3,11 +3,12 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{geometry}
-\usepackage{braket}
-\usepackage{framed}
+\usepackage{braket} %Can do bra-ket notation with \braket{}
+\usepackage{framed} %Adds the framed environment
 \usepackage{fancyhdr}
-\usepackage{datetime}
-\usdate
+\usepackage{datetime} %For formatting of header date
+\usepackage{ulem} %Makes strike-through lines with \sout{}
+\usdate %Month, Dth, YYYY
 \geometry{
   letterpaper,
   left=1in,
@@ -25,15 +26,17 @@
 
 \begin{document}
 \textbf{\Large{Nuclear Engineering 101: Midterm 2 Study Guide}} \\
-Joshua Rehak
 \vspace{12pt}
 %\cite[pp. 45]{krane}
 %\cite[Lec 24]{lecture}
 
+\textbf{Disclaimer:} This is not an official study guide. Stuff \sout{might}
+\textbf{is} wrong. Use the lecture notes and book!
+\vspace{10pt}
+
 \textbf{Note:} Everything in this guide is from the text (Krane) or
-lecture, or office hours. I have tried my best to cite everything as
-completely as possible, but some of the info may be from office
-hours. I didn't think of any of this on my own.
+lecture, or office hours and should be cited as completely as
+possible.
 
 \section{Radioactive Decay Review}
 
@@ -751,11 +754,17 @@ IT.}
   \item The cross section is not always constant over angle (it rarely
     is). So the \textit{differential cross section} is used:
     \begin{equation*}
-      \frac{d\sigma}{\delta\Omega}
+      \frac{d\sigma}{d\Omega}
     \end{equation*}
-    What is confusing, is this isn't actually a differentiation. It's
+    What is confusing, is this isn't actually a differentiation, it is
+    a number, in units of barns/steradian. It's
     representing the fact that some small number of particles
-    ($d\sigma$) will strike our small detector ($d\Omega$). We can
+    ($d\sigma$) will strike our small detector ($d\Omega$). It is
+    dependent on the angle of scatter ($\theta$) and the polraization
+    of the radiation ($\phi$). Generally we assume there is no affect
+    due to polarization (things are randomly polarized).
+
+We can
     find the size of our detector $d\Omega$ in steradians, which is
     related to the area of our detector ($dA$) and the distance from
     the target ($r$) by:
