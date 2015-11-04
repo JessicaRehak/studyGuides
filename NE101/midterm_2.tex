@@ -48,7 +48,7 @@ angular momentum.
 
 \begin{itemize}
 \item Monopole moment: $L=0$, this is just the spherical nucleus, the electric
-  potential looks like $V = \frac{Q}{R}$. 
+  potential looks like $V = \frac{Q}{R}$.
 \item Dipole moment: $L=1$. The electric dipole is just linear
   translation of the nucleus. $V=0$, see below.
 \item Quadrupole moment: $L=2$, the electric potential is from the
@@ -97,8 +97,7 @@ so all the \textit{even} order moments can't exist.
 
 \subsection{Evidence}
 \begin{itemize}
-\item Ionization energies ``jump'' at ``magic numbers'' like 2, 10,
-  18, 36, 54, 86. Something about these make the nucleus more tightly
+\item Ionization energies ``jump'' at ``magic numbers''. Something about these make the nucleus more tightly
   bound, this wouldn't be seen in a liquid
   drop ~\cite[Lec. 12]{lecture}.
 \item $\alpha$-decay: see a big jump in the $\alpha$-decay of Radon
@@ -125,9 +124,10 @@ so all the \textit{even} order moments can't exist.
 \item Evidence: Magnetic dipole $\mu=\mu_N(g_ll_z + g_ss_z)/\hbar$
   should be different for the different spins in the same $l$
   level. Observations show this is true. \cite[Lec. 13-16]{lecture}.
+\item Energy levels with a given $J$ have degeneracy $(2J+1)$, which
+  is how many nucleons there can be in that level.
 \item Works well for \textbf{spherical} nuclei and ones that are
-  \textbf{close to magic numbers}.
-%R42 = 1
+  \textbf{close to magic numbers}: 2, 8, 20, 28, 50, 82, 126, 184.
 \item The ratio of the $4^+$ and $2^+$ states is usually close to 1:
   \begin{equation*}
     R_{42}=\frac{E(4^+)}{E(2^+)} \approx 1
@@ -183,14 +183,6 @@ so all the \textit{even} order moments can't exist.
 \item Rotations and vibrations and not mutually
   exclusive. A rotational band can ``ride'' on top of a vibration, or
   vice versa.
-\item The collective model is useful and good when there are a large
-  number of valence nucleons, promiscuity:
-  \begin{equation*}
-    P=\frac{N_pN_n}{N_p+N_n}
-  \end{equation*}
-Where $N_p$ is the number of valence protons, and $N_n$ is the number
-of valence neutrons. Valence nucleons are the extra nucleons after the
-last large shell. Around 4, you see collective motion.~\cite[Lec. 13-16]{lecture}
 \end{itemize}
 
 \subsection{Vibration}
@@ -210,6 +202,7 @@ last large shell. Around 4, you see collective motion.~\cite[Lec. 13-16]{lecture
     said this hasn't been observed.
   \end{itemize}
 \cite[Lec 13-16]{lecture}
+\item Generally occurs in the range A = 150 to A = 190.
 \item A vibration collective structure on top of the $0^+$ ground
   state will be a $2^+$ level, followed by a $4^+$ level, followed by
   $6^+$, etc.  They will be
@@ -235,7 +228,7 @@ last large shell. Around 4, you see collective motion.~\cite[Lec. 13-16]{lecture
     \caption{(a) Shows vibrational structure in Te-120. Notice that the $2^+$,
       $4^+$, and $6^+$ states are all evenly spaced. (b) Shows a
       rotational structure in Dy-156. The levels are not evenly
-      spaced, but get larger with $I$}
+      spaced, but get larger with $I$ (Both images are from www.nndc.bnl.gov).}
     \label{fig:te120}
   \end{figure}
 
@@ -243,14 +236,80 @@ last large shell. Around 4, you see collective motion.~\cite[Lec. 13-16]{lecture
 
 \subsection{Rotation}
 \begin{itemize}
-\item There is an enhanced probability of decay between rotational
-  bands because the wave functions are all the same, or very similar.
-%R42=3.3
-\item The ratio of the $4^+$ and $2^+$ states should almost always be:
+\item Nuclei with a lot of valence protons and neutrons may statically
+  deform. This is seen with promiscuity:
+  \begin{equation*}
+    P=\frac{N_pN_n}{N_p+N_n}
+  \end{equation*}
+Where $N_p$ is the number of valence protons, and $N_n$ is the number
+of valence neutrons. Valence nucleons are the extra nucleons after the
+last large shell. Around P>4, you see
+deformation.~\cite[Lec. 13-16]{lecture}
+\item Generally occurs in the ranges $150 < A < 190$ and $A > 230$.
+\item The deformation parameter $\beta$ tells you how much it is
+  deformed.~\cite[Lec. 13-16]{lecture}
+  \begin{itemize}
+  \item $\beta > 0$: Prolate, rotating around the major axis (egg).
+  \item $\beta < 0$: Oblate, rotating around the minor axis (pumpkin)
+  \end{itemize}
+\item The energy of the states is proportional to the $J$ of the
+  state, and the moment of inertia ($\Im$).
+  \begin{equation*}
+    E = \frac{\hbar^2}{2\Im}J(J+1)
+  \end{equation*}
+Instead of the angular momentum squared, like in classic mechanics, it
+is $J(J+1)$ because this is quantum mechanics and that's how it
+works. Get over it. The energy for rotation levels is therefore tied
+to the angular momentum $J$ of the level.
+\begin{table}[hbt]
+\centering
+\begin{tabular}{llll}
+\textbf{Level} & \textbf{E}         & \textbf{$E_\gamma$}     & \textbf{$\Delta{}E_\gamma$} \\
+$0^+$          & 0                  &                   &     \\
+$2^+$          & $6(\hbar^2/2\Im)$  & $6(\hbar^2/2\Im)$ & $8(\hbar^2/2\Im)$    \\
+$4^+$          & $20(\hbar^2/2\Im)$ & $14(\hbar^2/2\Im)$ & $8(\hbar^2/2\Im)$    \\
+$6^+$          & $42(\hbar^2/2\Im)$ & $22(\hbar^2/2\Im)$ & $8(\hbar^2/2\Im)$                     \\
+$8^+$          & $72(\hbar^2/2\Im)$ & $30(\hbar^2/2\Im)$  &                      \\
+               &                    &                    &                     
+\end{tabular}
+\caption{Rotational energy levels.}
+\label{tab:rotation}
+\end{table}
+The values in Table~\ref{tab:rotation} look confusing but bear with
+me. The table shows energy levels (E) based on the
+equation above for a bunch of levels in the nucleus. The E values go up faster
+than linearly, (6, 20, 42, etc). The next column shows the 
+$\gamma$-ray energy that is emitted to go from a given state to the
+\textit{next lower state}. Those also go up, but with a constant
+slope. This is shown in the final column, where the $\Delta{}E_\gamma$
+is shown. This means that you'll see an equally spaced series of
+$\gamma$-rays emitted by a rotating nucleus. You can see this in
+practice if you calculate out the energy differences in the Dy-156
+rotational levels in Figure~\ref{fig:te120}. You'll find that every
+level difference is getting larger by about 100 keV every time.
+~\cite[Lec 13-16]{lecture}
+\item All the energy for the rotational band levels are tied up in the
+  rotation. The nucleus does not actually possess any of the energy,
+  and it doesn't affect its state. Much like the Earth's rotation
+  doesn't affect you. This means that the wave functions between
+  rotation states are almost identical, and so there is an enhanced
+  probability of $\gamma$-decay between them. Also, the energy from
+  rotation will never cause particle emission, because the rotation
+  hasn't ``heated up'' the nucleus. It can just ``slow down'' via
+  $\gamma$ emission.\cite[Lec. 13-16]{lecture}
+\item The ratio of the $4^+$ and $2^+$ states should almost always be
+  close to:
   \begin{equation*}
     R_{42}=\frac{E(4^+)}{E(2^+)} \approx 3.3
   \end{equation*}
-
+\item Deformation also leads to breaking of degenrate $J$
+  substates. Just stick with me:
+  \begin{itemize}
+  \item Every state has an associated $J$ value (for example, a $p_{3/2}$
+    state has $J=3/2$).
+  \item $(2J+1)$ nucleons can live there because they can have their
+    own $m_j$ values that range from.
+  \end{itemize}
 \end{itemize}
 
 
@@ -281,9 +340,31 @@ with the term.~\cite[pp. 257-258]{krane}.
 \item $\alpha$-decay can populate many different states. Each one has
   a different $Q$-value (given by the $Q$ value for decay to the
   ground state, minus the excitation
-  energy).~\cite[pp. 257-258]{krane}.
+  energy).
+  \begin{equation*}
+    Q = Q_0 - E_{ex}
+  \end{equation*}
+Where $Q_0$ is the $Q$ value to the ground state and $E_{ex}$ is the
+excitation energy of the excited daughter nucleus.
+~\cite[pp. 257-258]{krane}.
+\item The $Q$-value also gives you the total energy of the two decay
+  fragments:
+  \begin{equation*}
+    Q=T_{X'}+T_{\alpha}
+  \end{equation*}
+If the original nucleus $X$ was at rest, you can use conservation of
+momentum ($p_{\alpha}=P_{X'}$) to get:
+\begin{equation*}
+  \begin{split}
+    T_{\alpha}&=\frac{Q}{(1+m_{\alpha}/m_{X'})} \\[10pt]
+    &=Q(1-4/A) \quad \text{with } A \gg 4
+  \end{split}
+\end{equation*}
+The $\alpha$ particle usually has 98\% of the $Q$ value. The typical
+$Q$ value is about 5 MeV.~\cite[pp. 248]{krane}
 \item The intensity depends on how similar the initial and final wave
-  functions are, and the angular momentum ($l_{\alpha}$).~\cite[pp. 257-258]{krane}.
+  functions are, and the angular momentum ($l_{\alpha}$). The higher
+  the $l_{\alpha}$, the less likely the decay.~\cite[pp. 257-258]{krane}.
 \item The hinderence factor (HF) tells us about the similarity between
   the parent and daughter states.:
   \begin{itemize}
@@ -348,10 +429,18 @@ For $\beta^-$, the electron masses all cancel when using atomic masses
 because $-Zm_e+(Z+1)m_e-m_e=0$, that is the electrons accounted for in
 the atomic masses for the original atom, final atom and leftover
 electron all cancel. They don't cancel for $\beta^+$ because
-$-Zm_e+(Z-1)m_e-m_e=-2m_e$.~\cite[pp. 274-276]{krane}
+$-Zm_e+(Z-1)m_e-m_e=-2m_e$. This means that $\beta^+$ decay has a
+threshold energy, because the difference in masses must be larger than
+$2m_e$ for the $Q$ to be greater than 0.~\cite[pp. 274-276]{krane}
+\item The binding energy can be estimated using:
+  \begin{equation*}
+    B_n=13.6 eV\frac{Z^2}{n^2}
+  \end{equation*}
+where n is the principle number for the electron.
+\end{itemize}
 
 \subsection{Fermi Theory}
-
+\begin{itemize}
 \item There are three things that go into
   determining the spectrum of beta decay energy values:
   \begin{equation*}
@@ -454,16 +543,18 @@ Therefore, all allowed decays have:
   spin-arrangements (Fermi for $S=0$ and Gamow-Teller for $S=1$)
   described above. Therefore, you can have:
   \begin{equation*}
-    \Delta{}I=0,1,2\ldots(n+1) \quad \Delta\pi = (-1)^n
+    \Delta{}I=0,1,2\ldots(l+1) \quad \Delta\pi = (-1)^l
   \end{equation*}
-The $\Delta{}I$ goes up to $n+1$ because Gamow-Teller can have the
+The $\Delta{}I$ goes up to $l+1$ because Gamow-Teller can have the
 spin $S=1$ lined up with the angular
 momentum.~\cite[pp.291,Lec.19-21]{krane,lecture}
 \item $\beta$-decay will occur via the ``lowest'' decay that it
   can. That is, it will use an allowed decay or the lowest nth
   forbidden decay that can accomplish the transition. You have to look
   at \textit{both} parts of the initial and final states, $I$
-  \textbf{AND} $\Delta\pi$ to figure out which it is.~\cite[Lec 19-21]{lecture}
+  \textbf{AND} $\Delta\pi$ to figure out which it is. Also,
+  $\beta$-decay tries to populate states the result in the largest
+  energy release (it wants to get to the ground state).~\cite[Lec 19-21]{lecture}
 \item Based on the description above, as you get higher in the
   forbidden decays, 1st forbidden to 2nd forbidden etc, the decays
   become less likely. See Table~\ref{tab:logft}.~\cite[Lec. 19-21]{lecture}
@@ -476,7 +567,7 @@ Allowed                        & 4-7.5              \\
 1st forbidden                  & 6-9                \\
 2nd forbidden                  & 10-13              \\
 3rd forbidden                  & 14-20              \\
-4th forbidden                  & $\approx$ 23      
+4th forbidden                  & $\approx$ 23
 \end{tabular}
 \caption{Log($ft$) values for types of $\beta$-decay}
 \label{tab:logft}
@@ -519,7 +610,89 @@ Allowed                        & 4-7.5              \\
 
 \begin{itemize}
 \item $\gamma$-rays are photons generated from the decay between two
-  nuclear states.
+  nuclear states. The radiation comes from the electric and magnetic
+  fields generated by charge and current in the nucleus. Therefore,
+  there can be radiation caused by electric or magnetic
+  fields.~\cite[pp.330]{krane}
+\item The radiation fields have multipole orders, as before ($L=1$ is
+  dipole, $L=2$ is quadrupole, etc). The parity of the radiation
+  fields are:
+  \begin{equation*}
+    \begin{split}
+      \pi(ML)&=(-1)^{L+1} \\
+      \pi(EL)&=(-1)^{L}
+    \end{split}
+  \end{equation*}
+~\cite[pp.330]{krane}
+\item Therefore, for a given ML or EL transition, we can calculate the
+  allowable range of angular momentum change between the initial and
+  final states:
+  \begin{equation*}
+    |I_i-I_f| \leq L \leq I_i+I_f \quad \text{(no }L=0\text{)}
+  \end{equation*}
+  \begin{equation*}
+    \begin{split}
+      \Delta\pi &= \text{no: even electric, odd magnetic} \\
+      \Delta\pi &= \text{yes: odd electric, even magnetic} \\
+    \end{split}
+  \end{equation*}
+There is no ($L=0$) transitions because the monopole moment is just
+the electric field, which does not vary with time. Therefore, the \textit{E}0
+and \textit{M}0 transitions are not possible \textit{by the emission
+  of a single photon} (it is possible with internal conversion).~\cite[pp. 334]{krane}
+\item The lowest $L$-value transition is usually the most probable,
+  raising the value of $L$ by one makes the next transition on the order of
+  $10^5$ times less probable. Electric transitions are about 100 times
+  more likely than magnetic transitions.~\cite[pp. 335]{krane}
+\item Weiskoff estimates: using the model in which a single particle
+  releases a single photon, we can calculate decay rates. These may be
+  \textit{way} off because the state that is decaying may be some
+  collective motion of all the nucleons. Therefore, the standing wave
+  that is holding the energy of the state may constructively interfere
+  and release a $\gamma$ much faster than the estimate would say. Or,
+  it could slow down the decay if it adds destructively.~\cite[Lec. 22]{lecture}
+\end{itemize}
+
+\subsection{Internal Conversion}
+
+\begin{itemize}
+\item An electromagnetic process that occurs with $\gamma$-decay, and
+  ``competes'' to be mechanism for decay. The nucleus does not emit a
+  photon, but the fields eject an electron from the
+  nucleus. This creates peaks on the $\beta^-$ energy spectrum
+  (because it's releasing electrons at finite energies).~\cite[pp. 341]{lecture}
+\item If the $\Delta{}J$ is large, internal conversion
+  becomes much more probable compared to $\gamma$-decay, because a
+  $\gamma$-decay with such high $L$ is very rare. It is also more
+  probable if the $\Delta{}E$ between the states is close to x-ray
+  energy (10-100 keV). It gets much less probable when the energy gets
+  higher (5 MeV).
+\item The total decay probability is due in some part to the regular
+  $\gamma$-decay, as well as the internal conversion (multiple holes
+  in the same bucket). We define a ratio of decay probabilities $\alpha$:
+  \begin{equation*}
+    \alpha = \frac{\lambda_e}{\lambda_\gamma}
+  \end{equation*}
+It is more useful in this form:
+\begin{equation*}
+  \lambda_t = \lambda_\gamma(1+\alpha)
+\end{equation*}
+The $\alpha$ can be split up into specific values for each shell,
+$\alpha_K$, $\alpha_L$, $\alpha_M$, etc. In that case you just add
+them all up to get the total $\alpha$.
+\end{itemize}
+
+\section{Misc}
+
+\begin{itemize}
+\item The mean lifetime is defined as:
+  \begin{equation*}
+    \tau = \frac{1}{\lambda}
+  \end{equation*}
+This is different than the $t_{1/2}$:
+\begin{equation*}
+  t_{1/2}=\frac{\text{Log}(2)}{\lambda}
+\end{equation*}
 \end{itemize}
 
 \bibliographystyle{unsrt}
