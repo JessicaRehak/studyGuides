@@ -6,6 +6,8 @@
 \usepackage{braket}
 \usepackage{framed}
 \usepackage{fancyhdr}
+\usepackage{datetime}
+\usdate
 \geometry{
   letterpaper,
   left=1in,
@@ -15,10 +17,10 @@
 \pagestyle{fancy}
 \lhead{NE101 Midterm 2 Study Guide}
 \chead{}
-\rhead{\sectionmark}
+\rhead{}
 \lfoot{}
 \cfoot{\thepage}
-\rfoot{}
+\rfoot{\today \quad \currenttime}
 \setlength\parindent{0pt}
 
 \begin{document}
@@ -680,6 +682,74 @@ It is more useful in this form:
 The $\alpha$ can be split up into specific values for each shell,
 $\alpha_K$, $\alpha_L$, $\alpha_M$, etc. In that case you just add
 them all up to get the total $\alpha$.
+\end{itemize}
+
+\section{Reactions}
+
+\begin{itemize}
+\item The reaction:
+  \begin{equation*}
+    a + X \to Y + b
+  \end{equation*}
+Can be written in reaction notation as:
+\begin{equation*}
+  X(a,b)Y
+\end{equation*}
+\cite[pp. 378-379]{krane}
+\item A microscopic cross section ($\sigma$) represents the ``relative
+  probability for the reaction to occur.'' It can be used in the
+  following equation:
+  \begin{equation*}
+    R = (\rho{}d)_{target}\times{}I_{beam}\times\sigma_{reaction}
+  \end{equation*}
+Where $R$ is the reaction rate (in reactions/sec); $(\rho{}d)$ is the
+density (in g/cm$^3$) times the width of the target (in cm), also
+known as the areal density; $I_{beam}$ is the incident particle flux
+(in atoms/sec); and $\sigma_{reaction}$ is the microscopic cross
+section of the reaction occurring. This is only valid when very little
+of the beam reacts (small $\sigma$) and everything moves in straight
+lines.~\cite[Lec. 25]{lecture}
+\item Microscopic cross sections are generally given in units of
+  barns. 1 barn = $10^{-24}$ cm$^2$.
+  \begin{framed}
+\textbf{WARNING: I DON'T KNOW IF THE CRAP IN THIS BOX IS RIGHT. OK. I NEED TO ASK ABOUT
+IT.}
+  \item The cross section is not always constant over angle (it rarely
+    is). So the \textit{differential cross section} is used:
+    \begin{equation*}
+      \frac{d\sigma}{\delta\Omega}
+    \end{equation*}
+    What is confusing, is this isn't actually a differentiation. It's
+    representing the fact that some small number of particles
+    ($d\sigma$) will strike our small detector ($d\Omega$). We can
+    find the size of our detector $d\Omega$ in steradians, which is
+    related to the area of our detector ($dA$) and the distance from
+    the target ($r$) by:
+    \begin{equation*}
+      d\Omega = \frac{dA}{r^2}
+    \end{equation*}
+    Then, if we know the differential cross section at the angle of
+    our detector, we can multiply to get the reaction cross section
+    for our detector:
+    \begin{equation*}
+      \sigma_{det} = d\Omega\frac{d\sigma}{d\Omega}
+    \end{equation*}
+    This represents something \textbf{very specific}. This is the
+    probability that incoming particles striking the target will then
+    be detected by our detector. Based on the size of our detector
+    ($d\Omega$) and our a priori knowledge of the number of particles
+    that will be seen in a small area ($\frac{d\sigma}{d\Omega}$). The
+    value of that differential cross section will probably vary with
+    angle, so you have to know the differential cross section for the
+    angle where your detector is to even use this. More rigorously,
+    you'd integrate over the area of the detector and
+    $\frac{d\sigma}{d\Omega}$ may vary over the integral:
+    \begin{equation*}
+      \sigma_{det} = \int_{detector}\frac{d\sigma}{d\Omega}d\Omega
+    \end{equation*}
+    Or, you can get the total $\sigma$ by integrating over the whole
+    angle space.
+  \end{framed}
 \end{itemize}
 
 \section{Misc}
