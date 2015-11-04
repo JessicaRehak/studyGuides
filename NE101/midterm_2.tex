@@ -35,6 +35,23 @@ lecture, or office hours. I have tried my best to cite everything as
 completely as possible, but some of the info may be from office
 hours. I didn't think of any of this on my own.
 
+\section{Radioactive Decay Review}
+
+\begin{itemize}
+\item The mean lifetime is defined as:
+  \begin{equation*}
+    \tau = \frac{1}{\lambda}
+  \end{equation*}
+This is different than the $t_{1/2}$:
+\begin{equation*}
+  t_{1/2}=\frac{\text{Log}(2)}{\lambda}
+\end{equation*}
+\item Activity with a production rate R:
+  \begin{equation*}
+    A(t)=\lambda{}N(t)=R(1-e^{\lambda{}t})
+  \end{equation*}
+\end{itemize}
+
 \section{Nuclear Electromagnetic Moments}
 
 Ref: \cite[pp. 71-75]{krane},\cite[Lec 10]{lecture}
@@ -245,7 +262,7 @@ so all the \textit{even} order moments can't exist.
   \end{equation*}
 Where $N_p$ is the number of valence protons, and $N_n$ is the number
 of valence neutrons. Valence nucleons are the extra nucleons after the
-last large shell. Around P>4, you see
+last large shell. Around P$>$4, you see
 deformation.~\cite[Lec. 13-16]{lecture}
 \item Generally occurs in the ranges $150 < A < 190$ and $A > 230$.
 \item The deformation parameter $\beta$ tells you how much it is
@@ -310,10 +327,27 @@ level difference is getting larger by about 100 keV every time.
   \item Every state has an associated $J$ value (for example, a $p_{3/2}$
     state has $J=3/2$).
   \item $(2J+1)$ nucleons can live there because they can have their
-    own $m_j$ values that range from.
+    own $m_j$ values that range from $-j \ldots j$, by integer
+    values. The energy level has a \textit{degeneracy} of $(2J+1)$. 
+  \item When the nucleus becomes deformed, this isn't true
+    anymore. Now that there is a preferred direction (the axis of
+    rotation), nucleons with different values of $m_j$ will split out.
+  \item The level splits into all of it's different components. The
+    $+j$ and $-j$ components have the same energy because the nucleus
+    is symmetric.
+  \item The energy levels now depend on how long the nucleon spends
+    close or far from the nucleus, depending on it's angular
+    momentum. See Figure~\ref{fig:levelsplit}.
+    \begin{figure}[hbt]
+      \centering
+      \includegraphics[scale=0.5]{images/levelsplit}
+      \caption{Krane Figure 5.27, splitting of the levels of the
+        $f_{7/2}$ orbit in a deformed nucleus.\cite[pp. 153]{krane}}
+      \label{fig:levelsplit}
+    \end{figure}
   \end{itemize}
+\cite[pp.151-153]{krane}
 \end{itemize}
-
 
 \section{$\alpha$-decay}
 
@@ -753,17 +787,6 @@ IT.}
 \end{itemize}
 
 \section{Misc}
-
-\begin{itemize}
-\item The mean lifetime is defined as:
-  \begin{equation*}
-    \tau = \frac{1}{\lambda}
-  \end{equation*}
-This is different than the $t_{1/2}$:
-\begin{equation*}
-  t_{1/2}=\frac{\text{Log}(2)}{\lambda}
-\end{equation*}
-\end{itemize}
 
 \bibliographystyle{unsrt}
 \bibliography{NE101}
