@@ -92,8 +92,7 @@ multiply (even times even or odd times odd are both always even). If
 $O$ has negative parity, the whole thing is an odd function and the
 integral goes to 0. Therefore, to keep things based in reality, all
  moments with odd angular momentum must not be a thing because they
- have negative parity
-($L=1,3,5$ etc). This is why the dipole doesn't happen.
+ have negative parity ($L=1,3,5$ etc). This is why the dipole doesn't happen.
 
 \subsection{Magnetic multipoles}
 
@@ -178,7 +177,7 @@ so all the \textit{even} order moments can't exist.
   when referring to the nucleus just to be confusing.
 \item The independent nucleon always gives the total angular momentum
   of the shell to the nucleus when in the \textbf{ground state.}
-\item When you are in an \textbf{excited state}, you can line up the
+\item When you are in a \textbf{low-lying excited state}, you can line up the
   nucleons in more interesting way. If you have three nucleons in the
   $f_{7/2}$ shell and we're in an excited state, we use the notation
   $(f_{7/2)})^3$. You can add up their angular momentum any way you
@@ -186,7 +185,9 @@ so all the \textit{even} order moments can't exist.
   these can have $m=\pm\frac{1}{2}, \pm\frac{3}{2}, \pm\frac{5}{2},
   \pm\frac{7}{2}$. They can't have the \textbf{same} value of m, but
   they can all add to get, for example
-  $\frac{7}{2}+\frac{5}{2}+\frac{3}{2}=\frac{15}{2}$.~\cite[pp. 149-151]{krane}
+  $\frac{7}{2}+\frac{5}{2}+\frac{3}{2}=\frac{15}{2}$. So you can get
+  different spin configurations without actually having enough energy
+  to jump the nucleon up to another energy level.~\cite[pp. 149-151]{krane}
 \item In excited states, the single nucleons can also jump around to
   other states, changing the $J^\pi$ of the nucleus.~\cite[Lec. 13-16]{lecture}
 \end{itemize}
@@ -311,6 +312,11 @@ practice if you calculate out the energy differences in the Dy-156
 rotational levels in Figure~\ref{fig:te120}. You'll find that every
 level difference is getting larger by about 100 keV every time.
 ~\cite[Lec 13-16]{lecture}
+\item The difference between two energy levels is given by (from the
+  homework):
+  \begin{equation*}
+    \Delta{}E=E_{J^\pi}-E_{(J-1)^\pi}=\frac{\hbar^2J}{\Im}
+  \end{equation*}
 \item All the energy for the rotational band levels are tied up in the
   rotation. The nucleus does not actually possess any of the energy,
   and it doesn't affect its state. Much like the Earth's rotation
@@ -325,7 +331,7 @@ level difference is getting larger by about 100 keV every time.
   \begin{equation*}
     R_{42}=\frac{E(4^+)}{E(2^+)} \approx 3.3
   \end{equation*}
-\item Deformation also leads to breaking of degenrate $J$
+\item \textbf{[THIS WILL NOT BE ON THE MIDTERM, PER ANDREW]} Deformation also leads to breaking of degenrate $J$
   substates. Just stick with me:
   \begin{itemize}
   \item Every state has an associated $J$ value (for example, a $p_{3/2}$
@@ -749,15 +755,12 @@ of the beam reacts (small $\sigma$) and everything moves in straight
 lines.~\cite[Lec. 25]{lecture}
 \item Microscopic cross sections are generally given in units of
   barns. 1 barn = $10^{-24}$ cm$^2$.
-  \begin{framed}
-\textbf{WARNING: I DON'T KNOW IF THE CRAP IN THIS BOX IS RIGHT. OK. I NEED TO ASK ABOUT
-IT.}
   \item The cross section is not always constant over angle (it rarely
     is). So the \textit{differential cross section} is used:
     \begin{equation*}
       \frac{d\sigma}{d\Omega}
     \end{equation*}
-    What is confusing, is this isn't actually a differentiation, it is
+    What is confusing, is this is just
     a number, in units of barns/steradian. It's
     representing the fact that some small number of particles
     ($d\sigma$) will strike our small detector ($d\Omega$). It is
@@ -793,7 +796,6 @@ We can
     \end{equation*}
     Or, you can get the total $\sigma$ by integrating over the whole
     angle space.
-  \end{framed}
 \item \textbf{Rutherford Differential Scattering:} elastic Coulomb
   scattering. An incoming particle scatters off the potential of the
   target.~\cite[Lec 24]{lecture}
