@@ -8,6 +8,9 @@
 \usepackage{fancyhdr}
 \usepackage{datetime} %For formatting of header date
 \usepackage{ulem} %Makes strike-through lines with \sout{}
+\usepackage{booktabs} %better tables
+\usepackage{multirow} %Support multi-row in tables
+\usepackage[table,xcdraw]{xcolor} %Support colored rows in tables
 \usdate %Month, Dth, YYYY
 \geometry{
   letterpaper,
@@ -145,7 +148,7 @@ so all the \textit{even} order moments can't exist.
   intruder}. \cite[Lec. 13-16]{lecture}
 \item Evidence: Magnetic dipole $\mu=\mu_N(g_ll_z + g_ss_z)/\hbar$
   should be different for the different spins in the same $l$
-  level. Observations show this is true. \cite[Lec. 13-16]{lecture}.
+  level: observations show this is true. \cite[Lec. 13-16]{lecture}.
 \item Energy levels with a given $J$ have degeneracy $(2J+1)$, which
   is how many nucleons there can be in that level.
 \item Works well for \textbf{spherical} nuclei and ones that are
@@ -162,6 +165,10 @@ so all the \textit{even} order moments can't exist.
   particle in the lowest energy of an otherwise empty shell. The
   nucleus $J^\pi$ depends only on that last
   nucleon. \cite[Lec. 13-16]{lecture}.
+\item Expect spherical nucleus, so $eQ \approx 0$, slightly negative
+  for a free proton, very close to 0 for a free neutron.
+\item Nuclear magnetic moment ($\mu$) is positive and increasing with
+  $l$ for an odd proton, close to 0 and constant with $l$ for neutron.
 \item The total angular momentum of the nuclei $J$ is equal to the
   $J$ value of the shell with the single particle in it. The parity
   is equal to the parity of the shell with the single particle in it,
@@ -226,7 +233,8 @@ so all the \textit{even} order moments can't exist.
     said this hasn't been observed.
   \end{itemize}
 \cite[Lec 13-16]{lecture}
-\item Generally occurs in the range A = 150 to A = 190.
+\item Generally occurs for large nuclei with A $<$ 150.
+\item Magnetic moment $\mu = 2Z/A$
 \item A vibration collective structure on top of the $0^+$ ground
   state will be a $2^+$ level, followed by a $4^+$ level, followed by
   $6^+$, etc.  They will be
@@ -239,7 +247,7 @@ so all the \textit{even} order moments can't exist.
     R_{42}=\frac{E(4^+)}{E(2^+)} \approx 2
   \end{equation*}
 \item For vibration, we expect the quadropole moment (the measure of
-  nuclear deformation) to be $Q(2^+)=0$. This is because the nucleus
+  nuclear deformation) to be $eQ(2^+)=0$. This is because the nucleus
   is just a sphere with a surface wave moving over it, so it all
   averages out to 0.~\cite[Lec 13-16]{lecture}
   \begin{figure}[hbt]
@@ -270,6 +278,8 @@ of valence neutrons. Valence nucleons are the extra nucleons after the
 last large shell. Around P$>$4, you see
 deformation.~\cite[Lec. 13-16]{lecture}
 \item Generally occurs in the ranges $150 < A < 190$ and $A > 230$.
+\item Expect $eQ \neq 0$ due to deformation of nucleus.
+\item Magnetic moment $\mu = 2Z/A$
 \item The deformation parameter $\beta$ tells you how much it is
   deformed.~\cite[Lec. 13-16]{lecture}
   \begin{itemize}
@@ -368,6 +378,9 @@ level difference is getting larger by about 100 keV every time.
 \section{$\alpha$-decay}
 
 \begin{itemize}
+\item Preferred by heavy nuclei to remove 5-8 MeV through decrease of
+  mass. This is a coulomb repulsion effect and is preferred over other
+  particles because it is very efficient (B/A). 
 \item The $\alpha$-decay half-life can be estimated using a barrier
   tunneling model. You can calculate the frequency of collision with
   the potential well and use the transmission probability to calculate
@@ -416,7 +429,9 @@ The $\alpha$ particle usually has 98\% of the $Q$ value. The typical
 $Q$ value is about 5 MeV.~\cite[pp. 248]{krane}
 \item The intensity depends on how similar the initial and final wave
   functions are, and the angular momentum ($l_{\alpha}$). The higher
-  the $l_{\alpha}$, the less likely the decay.~\cite[pp. 257-258]{krane}.
+  the $l_{\alpha}$, the less likely the decay. This is because the
+  coulomb barrier is higher with larger angular momentum due to the
+  centrifugal term.~\cite[pp. 257-258]{krane}.
 \item The hinderence factor (HF) tells us about the similarity between
   the parent and daughter states.:
   \begin{itemize}
@@ -458,6 +473,12 @@ Table.~\ref{tab:alpha-hinderance}.~\cite[Lec. 18]{lecture}
 
 \section{$\beta$-decay}
 \begin{itemize}
+\item Preferred by nuclei that want to move down the mass parabola to
+  find the optimal charge ratio. This relates directly to the
+  Semi-Empirical-Mass-Formula. $\beta$-decay can do a number of things
+  to increase the Binding Energy of the nucleus: increase symmetry to
+  reduce ($a_{sym}(A-2Z)^2/A$), decrease the repulsion due to
+  protons, and increase the amount of pairing.
 \item Energy release distribution is continuous because there are two
   particles emitted so they can share any proportion of the
   energy.~\cite[pp. 273, Lec 19]{krane,lecture}
@@ -483,7 +504,8 @@ the atomic masses for the original atom, final atom and leftover
 electron all cancel. They don't cancel for $\beta^+$ because
 $-Zm_e+(Z-1)m_e-m_e=-2m_e$. This means that $\beta^+$ decay has a
 threshold energy, because the difference in masses must be larger than
-$2m_e$ for the $Q$ to be greater than 0.~\cite[pp. 274-276]{krane}
+$2m_e$ for the $Q$ to be greater than 0. Electron capture has a
+threshold energy equal to the binding energy of the electron $B_n$.~\cite[pp. 274-276]{krane}
 \item The binding energy can be estimated using:
   \begin{equation*}
     B_n=13.6 eV\frac{Z^2}{n^2}
@@ -750,15 +772,22 @@ Can be written in reaction notation as:
   probability for the reaction to occur.'' It can be used in the
   following equation:
   \begin{equation*}
-    R = (\rho{}d)_{target}\times{}I_{beam}\times\sigma_{reaction}
+    \begin{split}
+      R= (\rho{}d)_{target}\times{}I_{beam}\times\sigma_{reaction}
+    \end{split}
   \end{equation*}
 Where $R$ is the reaction rate (in reactions/sec); $(\rho{}d)$ is the
 density (in g/cm$^3$) times the width of the target (in cm), also
-known as the areal density; $I_{beam}$ is the incident particle flux
+known as the areal density (put it in atoms/$cm^2$); $I_{beam}$ is the incident particle flux
 (in atoms/sec); and $\sigma_{reaction}$ is the microscopic cross
 section of the reaction occurring. This is only valid when very little
 of the beam reacts (small $\sigma$) and everything moves in straight
-lines.~\cite[Lec. 25]{lecture}
+lines. It can also be expressed as:
+\begin{equation*}
+        R= N\phi\sigma
+\end{equation*}
+Where $N$ is the number of target atoms, $\phi$ is the flux in
+(atoms/sec/$cm^2$) and $\sigma$ is the same.~\cite[Lec. 25]{lecture}
 \item Microscopic cross sections are generally given in units of
   barns. 1 barn = $10^{-24}$ cm$^2$.
   \item The cross section is not always constant over angle (it rarely
@@ -809,6 +838,53 @@ We can
   incoming particle scatters off the potential of a target and leaves
   some energy behind. This ``Coulex'' reaction can excite nuclei up
   rotational bands.~\cite[Lec. 24]{lecture}
+\item Reaction $Q$-value is to create the final products at rest.
+  \begin{itemize}
+  \item Center of Mass Frame: products are at rest, $Q = Q$.
+  \item Lab Frame: products are \textit{not} at rest. Threshold energy
+    for reaction is:
+    \begin{equation*}
+      E_{\text{threshold}}=Q\left(\frac{m_a+m_x}{m_x}\right)
+    \end{equation*}
+    for a(X,Y)b.
+  \end{itemize}
+\item Conserved quantities in reactions:
+  \begin{itemize}
+  \item Total energy
+  \item Linear momentum
+  \item Angular momentum
+  \item Parity $(-1)^l$ (except in weak interactions)
+\end{itemize}
+\item \textbf{Kinematics} For a reaction, $X(a,b)Y$:
+  \begin{equation*}
+    \begin{split}
+      Q&= (m_{X}+m_{a}-m_{Y}-m_{b})c^{2}\\
+      Q& =T_{Y}+T_{b}-T_{X}-T_{a}
+\end{split}
+\end{equation*}
+\item Exothermic Q$>$0 :
+  \begin{equation*}
+  \begin{split}
+   m_{X}+m_{a}&>m_{Y}+m_{b}\\
+   T_{Y}+T_{b}&>T_{X}+T_{a}
+  \end{split}
+\end{equation*}
+\item Endothermic Q$<$0 :
+  \begin{equation*}
+  \begin{split}
+    m_{X}+m_{a}<&m_{Y}+m_{b}\\
+T_{Y}+T_{b}<&T_{X}+T_{a}
+  \end{split}
+\end{equation*}
+\item Reaction reaches excited states of Y:
+  \begin{equation*}
+Q_{ex} = (m_{X}+m_{a}-m_{Y*}-m_{b})c^{2}  = Q_{0}-E_{ex}
+\end{equation*}
+\item Compound nucleus:
+  \begin{equation*}
+Q = -T_{a} = (m_{X}+m_{a}-m_{C*})c^{2}-E_{ex}
+\end{equation*}
+
 \end{itemize}
 
 \bibliographystyle{unsrt}
