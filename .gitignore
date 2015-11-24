@@ -126,3 +126,8 @@ sympy-plots-for-*.tex/
 # WinEdt
 *.bak
 *.sav
+
+auto/
+\#*
+.\#*
+_region_.tex
