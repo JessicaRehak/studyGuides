@@ -120,23 +120,6 @@ We can
     \end{equation*}
     Or, you can get the total $\sigma$ by integrating over the whole
     angle space.
-\item \textbf{Rutherford Differential Scattering:} elastic Coulomb
-  scattering. An incoming particle scatters off the potential of the
-  target.~\cite[Lec 24]{lecture}
-\item \textbf{Coulomb Excitation:} inelastic Coulomb scattering. An
-  incoming particle scatters off the potential of a target and leaves
-  some energy behind. This ``Coulex'' reaction can excite nuclei up
-  rotational bands.~\cite[Lec. 24]{lecture}
-\item Reaction $Q$-value is to create the final products at rest.
-  \begin{itemize}
-  \item Center of Mass Frame: products are at rest, $Q = Q$.
-  \item Lab Frame: products are \textit{not} at rest. Threshold energy
-    for reaction is:
-    \begin{equation*}
-      E_{\text{threshold}}=Q\left(\frac{m_a+m_x}{m_x}\right)
-    \end{equation*}
-    for a(X,Y)b.
-  \end{itemize}
 \item Conserved quantities in reactions:
   \begin{itemize}
   \item Total energy
@@ -256,6 +239,67 @@ High energy photons can ``ionize'' the entire nucleus by
 
 \subsection{Coulomb Scattering}
 
+\subsubsection{Elastic (Rutherford)}
+\begin{itemize}
+\item A particle approaches the nucleus at a distance $b$ (the impact
+  parameter) and scatters off the coulomb potential. The particle
+  follows a hyperbolic path.~\cite[pp. 396]{krane}
+  \begin{figure}[hbtp]
+    \centering
+    \includegraphics{images/rutherford}
+    \caption{Geometry for elastic coulomb scatter.~\cite[Lec
+      24]{lecture}}
+    \label{fig:rutherford}
+  \end{figure}
+
+\item Based on the geometry in Figure~\ref{fig:rutherford}:
+
+Incoming particle (at long distances):
+\begin{equation*}
+  \begin{split}
+    V &= 0 \text{ (far away, the incoming particle has negligible
+      potential energy)}\\
+    T &= \frac{1}{2}mv^2 \\
+    \ell &= mvb
+  \end{split}
+\end{equation*}
+Target particle:
+\begin{equation*}
+  \begin{split}
+    V &= \frac{Z_1Z_2e^2}{4\pi\epsilon_0}\frac{1}{d} \\
+    T &= 0 \\
+    \ell &= 0 \\
+  \end{split}
+\end{equation*}
+Incoming particle (at the minimum distance $r_{min}$):
+\begin{equation*}
+  \begin{split}
+    V &= \frac{Z_1Z_2e^2}{4\pi\epsilon_0}\frac{1}{r_{min}} \\
+    T &= \frac{1}{2}mv_{min}^2 \\
+    \ell &= mv_{min}r_{min}
+  \end{split}
+\end{equation*}
+No energy or angular momentum is transferred to the target nucleus (hence elastic
+scattering).~\cite[Lec 24]{lecture}
+\end{itemize}
+
+\subsubsection{Inelastic (Coulex)}
+\begin{itemize}
+\item \textbf{Coulomb Excitation:} inelastic Coulomb
+  scattering. An incoming particle scatters off the potential of a
+  target and leaves some energy behind. This ``Coulex'' reaction can
+  excite nuclei up rotational bands.~\cite[Lec. 24]{lecture}
+\item Reaction $Q$-value is to create the final products at rest.
+  \begin{itemize}
+  \item Center of Mass Frame: products are at rest, $Q = Q$.
+  \item Lab Frame: products are \textit{not} at rest. Threshold energy
+    for reaction is:
+    \begin{equation*}
+      E_{\text{threshold}}=Q\left(\frac{m_a+m_x}{m_x}\right)
+    \end{equation*}
+    for a(X,Y)b.
+  \end{itemize}
+\end{itemize}
 
 \subsection{Direct Reactions}
 
@@ -315,10 +359,174 @@ will be left in. In summary:
   angular momentum transfer from step 2.
 \end{enumerate}
 \cite[Lec 25]{lecture}
+
 \subsection{Compound Reactions}
+\begin{itemize}
+\item Reactions with a definite intermediate state:
+  \begin{equation*}
+    a + X \to C^* \to Y + b
+  \end{equation*}
+Where $C^*$ represents the compound nucleus.~\cite[pp. 416]{krane}
+\item Works best for particles with low incident energy (10-20 MeV),
+  to reduce the chance the particle can escape with its energy and
+  identity.~\cite[pp. 416]{krane}
+\item Occur on time frames of $10^{-16}-10^{-18}$ seconds. The
+  time-scale for decay is large compared to the time-scale for
+  formation. This means that nuclei don't ``remember'' how they were
+  formed; the formation process has no affect on what eventually
+  happens to the nuclei (decay, etc). Only total energy and angular
+  momentum information is retained.~\cite[Lec 26]{lecture}
 
+\end{itemize}
 \section{Neutron Physics}
+\begin{itemize}
+\item Free neutrons are unstable, they will $\beta$-decay into protons
+  with a half-life of 10.6 minutes.~\cite[pp. 444]{krane}
+\item Neutron energies are listed in
+  Table~\ref{tab:neutron_e}.
+\begin{table}[hbtp]
+\centering
+\begin{tabular}{ll}
+           & Energy             \\
+Thermal    & $\approx$ 0.025 eV \\
+Epithermal & $\approx$ 1 keV    \\
+Fast       & 100 keV - 10 MeV  
+\end{tabular}
+\caption{Neutron Energies~\cite[pp.445]{krane}}
+\label{tab:neutron_e}
+\end{table}
 
+\subsection{Attenuation}
+
+\begin{itemize}
+\item As neutrons move through a material, they are absorbed and
+  scattered, which will reduce the overall intensity of the beam. We
+  consider scattered neutrons to be gone because they generally
+  scatter away from the beam, so we don't see them anymore. Also, we
+  usually define intensity with a given energy, so scattering lowers
+  their energy and they leave our intensity.
+\item The loss of intensity ($I$) of neutrons of a \textit{given
+    energy} in a distance $dx$ of material:
+  \begin{equation*}
+    dI = -I\sigma_t n dx
+  \end{equation*}
+Where $\sigma_t$ is the total cross section of the material
+(absorption plus scattering) and $n$ is the number of atoms per unit
+volume of the material. To make this useful, solve:
+\begin{equation*}
+  I = I_0e^{-\sigma_tnx}
+\end{equation*}
+Where $x$ is the distance the neutrons are traveling through the
+material. Remember, this isn't a decrease in the total number of
+neutrons, just the ones in our beam with the amount of energy we shot
+them into the material with. The scattering will make lower-energy
+neutrons, so they aren't actually gone for reals.~\cite[pp. 448]{krane}
+\end{itemize}
+
+\subsection{Collisions}
+
+\item The main process by which neutrons slow down (lose energy, also
+  called the process of moderation) is collisions.
+\item In an elastic collision with a nucleus of atomic mass $A$, a
+  neutron with incoming energy $E$ will have final energy:
+  \begin{equation*}
+    \frac{E'}{E} = \frac{A^2 + 1 + 2A\text{cos}\theta}{{(A+1)}^2}
+  \end{equation*}
+\cite[pp.448]{krane}
+\item The maximum energy loss is from a head-on collision ($\theta =
+  180^\circ$), where the above equation reduces to:
+  \begin{equation*}
+    \left(\frac{E'}{E}\right)_{min} = {\left(\frac{A-1}{A+1}\right)}^2
+  \end{equation*}
+This is the ``min'' value because it's the minimum final energy ($E'$)
+that the neutron can have after the collision. As $A$ gets larger, the
+energy transferred goes down, the neutron just kind of grazes off. The
+equation is maximized for $A=1$ (hydrogen) which is why water is so
+good at moderating.~\cite[pp. 448]{krane}
+\item We usually use the average energy lost after each collision
+  (actually, the log of that amount), represented by squiggle
+  ($\xi$) (This is actually the greek letter \textit{xi} but no one
+  knows how to pronounce that. If you do, shut up it's squiggle now).
+  \begin{equation*}
+    \xi = {\left[\text{log }\frac{E}{E'}\right]}_{av}
+  \end{equation*}
+This can be related to the final energy after the neutron after $n$
+collisions:
+\begin{equation*}
+  \text{log }E_n' = \text{log }E - n\xi
+\end{equation*}
+This is good for problems where you want to figure out how many
+collisions are required to thermalize a neutron. There is a complex
+equation for the value of $\xi$ assuming isotropic scattering:
+\begin{equation*}
+  \xi = 1 + \frac{{(A-1)}^2}{2A}\text{ log }\frac{A-1}{A+1}
+\end{equation*}
+For hydrogen ($A=1$), $\xi = 1$.~\cite[pp.449-450]{krane}
+\end{itemize}
+
+\subsection{Capture}
+\begin{itemize}
+\item Most of the time, neutron capture on most massive nuclei
+  form compound nuclei.~\cite[Lec 26]{lecture}
+\item Neutron capture immediately makes a nucleus with energy:
+  \begin{equation*}
+    E = S_n + E_n
+  \end{equation*}
+  Where $S_n$ is the neutron separation energy and $E_n$ is the energy
+  of the incoming neutron.~\cite[Lec 27]{lecture}
+\item Neutron capture rates are higher with higher $Q$ values. The $Q$
+  value in this case is just equal to the neutron separation energy,
+  $S_n$, so the higher $S_n$, the higher the chance of capturing a
+  neutron. This is why capture rates near the ``valley of stability''
+  are high, because $S_n$ is large.~\cite[Lec 27]{lecture}
+\item Why does this happen? Nuclei like to go to states with lots of
+  available transitions. The larger the $Q$-value, the more options
+  the nuclei has for the decay that follows. Therefore, the higher the
+  $Q$ value ($S_n$), the higher the chance of neutron
+  capture.~\cite[Lec 27]{lecture}
+\item You can figure out the energy and spin parity of the nuclei
+  immediately following neutron capture. The final spin of the nuclei is:
+  \begin{equation*}
+    I' = I + \ell + s
+  \end{equation*}
+  and the parity change:
+  \begin{equation*}
+    \Delta\pi = (-1)^{\ell}
+  \end{equation*}
+If the neutron is thermal, the captured neutron will probably have no
+angular momentum (``s-wave capture''). So $I' = I \pm \frac{1}{2}$;
+unless $I=0$, in which it is always $I' = \frac{1}{2}$. Parity doesn't
+change because $\ell = 0$.~\cite[pp.463]{krane}
+\item After capture, the excited capture state will $\gamma$-decay down into all
+  the accessible excited states of the compound nucleus. Many of them are
+  accessible because $S_n$ is usually pretty high. Accessible means
+  any states that the excited state can go to via \textit{E}1
+  radiation, described below.~\cite[pp. 463]{krane}
+\item After capturing a neutron, the primary transition that follows
+  is dominated by Electric Dipole, \textit{E}1
+  ($\Delta{}I=0 \text{ or } 1 \text{ and } \Delta\pi=-1$). The
+  transition will populate all of these possible states. Magnetic
+  dipole radiation and higher multipole radiation are usually present,
+  but are usually far less intense than \textit{E}1. ~\cite[Lec
+  27]{lecture}
+
+  \vspace{10pt}
+  Example: If neutron capture results in a compound nucleus in an
+  energy state (at $S_n$) with $J^\pi = 2^+$, the following primary
+  transition will populate states: $1^-, 2^-, 3^-$.
+\item In summary:
+  \begin{itemize}
+  \item A neutron with energy $E_n$ is captured and makes a compound
+    nucleus with energy $E=E_n + S_n$.
+  \item The compound nucleus has a spin parity related to it's old
+    spin-party ($I$) and the spin and angular momentum of the neutron.
+  \item This excited compound nucleus will $\gamma$-decay via
+    \textit{E}1 (electric dipole) radiation down to many other
+    states. (Primary $\gamma$-rays)
+  \item Unless it went down to the ground state, more decays will
+    occur. (Secondary $\gamma$-rays)
+  \end{itemize}
+\end{itemize}
 \section{Fission}
 
 \section{Fusion}
