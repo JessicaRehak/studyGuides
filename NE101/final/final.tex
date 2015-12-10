@@ -376,8 +376,27 @@ Where $C^*$ represents the compound nucleus.~\cite[pp. 416]{krane}
   formed; the formation process has no affect on what eventually
   happens to the nuclei (decay, etc). Only total energy and angular
   momentum information is retained.~\cite[Lec 26]{lecture}
-
 \end{itemize}
+
+\subsection{Resonance Reactions}
+\begin{itemize}
+\item There is a range of incident particle energy called the
+  resonance region. In this area, there are discrete levels in the
+  compound nucleus that line up with the incident particle's
+  energy.~\cite[pp. 424]{krane}
+\item The capture cross section for these energies is high and their
+  life-times are small. They usually only decay by rejecting the
+  incident particle (scattering) or
+  $\gamma$-decay.~\cite[pp. 424]{krane}
+\item This happens because at these energies, the amplitude of the
+  incoming particle wave function lines up really well with the
+  amplitude of the wave-function of the
+  nucleus. Just like in decays, processes are more likely when
+  wave-functions line up. Quantum mechanics!~\cite[pp. 424]{krane}
+  (The excitement in quantum mechanics was \textit{not} drawn from
+  Krane, although I do not doubt that he is totally into it, nerd)
+\end{itemize}
+
 \section{Neutron Physics}
 \begin{itemize}
 \item Free neutrons are unstable, they will $\beta$-decay into protons
@@ -395,7 +414,7 @@ Fast       & 100 keV - 10 MeV
 \caption{Neutron Energies~\cite[pp.445]{krane}}
 \label{tab:neutron_e}
 \end{table}
-
+\end{itemize}
 \subsection{Attenuation}
 
 \begin{itemize}
@@ -424,7 +443,7 @@ neutrons, so they aren't actually gone for reals.~\cite[pp. 448]{krane}
 \end{itemize}
 
 \subsection{Collisions}
-
+\begin{itemize}
 \item The main process by which neutrons slow down (lose energy, also
   called the process of moderation) is collisions.
 \item In an elastic collision with a nucleus of atomic mass $A$, a
@@ -528,7 +547,224 @@ change because $\ell = 0$.~\cite[pp.463]{krane}
   \end{itemize}
 \end{itemize}
 \section{Fission}
+\begin{itemize}
+\item Fission occurs because a heavy nucleus splitting into two
+  smaller fragments results in a net increase in binding energy, due
+  to the drop in the binding energy per nucleon curve after
+  Iron. Going to this more tightly bound system means energy must be
+  released.~\cite[pp. 479]{krane}
+\item Energy released by fission is primarily (approx 80\%) in the
+  kinetic energy of the fragments that fly apart due to Coulomb
+  repulsion.~\cite[pp.479]{krane}
+\item Fission is inhibited by the Coulomb barrier, the height of which
+  is roughly equal to the energy released in fission. If fission puts
+  the two products energy just below the height of the Coulomb
+  barrier, there is a decent probability that it will occur (due to
+  tunneling). This is \textit{spontaneous
+    fission}.~\cite[pp. 481]{krane}
+\item \textit{Induced fission} occurs after the absorption of some
+  energy, such as a low-energy neutron or photon. If the intermediate
+  state is now above the Coulomb barrier, fission may occur (it
+  competes with other types of decays). If it is
+  still below the barrier, other decays modes will be more
+  likely. Note that fission is never guaranteed, it just becomes a
+  competitive form of decay in certain
+  circumstances.~\cite[pp. 481]{krane}
+\item The mass distribution of particles emitted by fission of
+  \textsuperscript{235}U forms two
+  peaks at $A = $95 and $A = $140, these nuclei will be very rich in
+  neutrons. Some of these extra neutrons are emitted almost immediately, and are
+  called prompt neutrons.~\cite[pp. 485]{krane}
+\item Fission fragments may decay via $\beta$-decay and then emit more
+  neutrons. These are called delayed neutrons. This can take a few
+  seconds.~\cite[pp. 485]{krane}
+\item The excitation energy of the compound nucleus formed by
+  absorbing a thermal neutron can be found
+  (using $^{235}$U as an example):
+  \begin{equation*}
+    m(^{236}\text{U}^*)=m(^{235}\text{U})+m_n
+  \end{equation*}
+  \begin{equation*}
+    E_{ex} = [m(^{236}\text{U}^*)-m(^{236}\text{U})]
+  \end{equation*}
+This assumes that the incoming neutron has 0 energy, which is a good
+assumption for thermal neutrons. If the excitation energy is higher than the activation energy
+(required for fission), then the excited nucleus can fission. The
+original nucleus (\textsuperscript{235}U in this case) is considered
+\textit{fissile.} If the excitation energy is less than the activation
+energy, than a thermal neutron will not cause fission. In that case a neutron with
+\textbf{some} energy is required to bump up the excitation energy
+above activation.~\cite[pp. 488-489]{krane}
+\end{itemize}
+\subsection{Shell Model Effects}
 
+\begin{itemize}
+\item A nucleus that is stretched into an ellipse has a different
+  total binding energy, because the Coulomb force is now different. If
+  the energy goes up when it gets stretched, it will keep going and the
+  nucleus will readily fission. This is described with a distortion
+  parameter ($\epsilon$). ~\cite[pp. 494]{krane}
+\item Shell model comes into play here. Normally, a single energy
+  level has one angular momentum and one energy, and a bunch of nucleons
+  in it that all have those properties. In reality, the nucleons can
+  have a range of angular momenta with the same energy (degeneracy)
+  but they all look the same to us. When we deform a nucleus, this
+  goes out the window and those
+  angular momenta actually matter. Now, the energy of each nucleon
+  depends on its angular momentum and the energy level splits out into
+  a bunch of other levels. This is shown
+  in Figure~\ref{fig:levelsplit}, note that some go up and some go
+  down, and overall the effect is more pronounced as it gets more
+  deformed (this is the Nilsson model, more info is in the study
+  guide for midterm 2).~\cite[pp. 151-153]{lecture}
+
+  \begin{figure}[hbtp]
+    \centering
+    \includegraphics[scale=0.5]{images/levelsplit.png}
+    \caption{Level splitting with deformation.~\cite[pg. 153]{krane}}
+    \label{fig:levelsplit}
+  \end{figure}
+\item What does this have to do with fission? Well, as the nucleus
+  becomes more deformed ($\epsilon\uparrow$), some nucleon energies go
+  up and some go down (as discussed above). If the nucleus is not
+  stable under fission, its binding energy is going up like
+  $\epsilon^2$ as it runs towards fission. If the valence nucleons are
+  in a state where their
+  $E\uparrow$ as $\epsilon\uparrow$ (above the dotted line in
+  Figure~\ref{fig:levelsplit}), the total energy goes up even
+  faster.
+
+  \vspace{5pt}
+  Woohoo fission here we come.
+
+  \vspace{5pt}
+  This doesn't last forever. Eventually, as $E\uparrow$ and
+  $\epsilon\uparrow$, there will be a lower-energy state for those
+  valence nucleons where $E\downarrow$ as $\epsilon\uparrow$ (below
+  the dotted line). This happens because the \textit{real} diagram is
+  super complicated and messy, (it's Figure 5.29 in Krane if you want
+  to look at it). Now, as we keep getting more deformed, the nucleons
+  are acting \textit{against} fission, so we get an energy dip. This
+  makes a little valley of stability and another hump we have to
+  overcome to cause fission. This is shown in
+  Figure~\ref{fig:fissionhumps}.~\cite[pp. 493-495]{krane}
+
+  \begin{figure}[hbtp]
+    \centering
+    \includegraphics[scale=0.75]{images/shell_model}
+    \caption{Energy with distortion. The solid line shows the change
+      due to shell structure.~\cite[pp. 496]{krane}}
+    \label{fig:fissionhumps}
+  \end{figure}
+
+\item This actually helps us cause fission, now we don't have to
+  excite the nucleus all the way to the top of the barrier, we can
+  just get to the bottom of that secondary well to make fission
+  likely.~\cite[pp. 495]{krane}
+\item The nucleus can hang out in this well. Just like any other
+  potential well there are bound states with energy levels, this is
+  called a \textit{fission isomer}. They generally have rotation bands
+  (because they are deformed) and can either decay down to the
+  ground state, or (usually) spontaneously fission. These are shape isomers,
+  because the shape change required to go down to the ground state
+  makes that transition much less likely.~\cite[pp. 495-496]{krane}
+\end{itemize}
+
+\subsection{Reactors}
+\begin{itemize}
+\item The neutron reproduction factor $k_\infty$ is the net change in
+  thermal neutrons from one generation to the next. The $\infty$ is
+  because we assume we're in an infinite reactor where no neutrons
+  escape (leak). If $k_\infty$ = 1, we have the same number of neutrons
+  each generation, the reactor is \textit{critical}. If $k_\infty
+  > 1$, the reactor is \textit{supercritical} and if $k_\infty < 1$ the
+  reactor is \textit{subcritical}.~\cite[pp. 501]{krane}
+\item Fission events of \textsuperscript{235}U create approximately
+  2.5 fast neutrons per fission. $\nu \approx$
+  2.5.~\cite[pp. 501]{krane}
+\item We know how many fast neutrons are made per fission, but not
+  every thermal neutron absorbed causes fission. Sometimes it is just
+  absorbed. To correct for this we use $\eta$:
+  \begin{equation*}
+    \eta = \nu\frac{\sigma_f}{\sigma_f+\sigma_a}
+  \end{equation*}
+Where $\sigma_f$ is the cross section for fission, and $\sigma_a$ is
+the cross section for absorption that doesn't cause
+fission.~\cite[pp.502]{krane}
+\begin{framed}
+  Note that the notation used by Krane is confusing. Fission is
+  \textit{an absorption event}. Usually, \textbf{but not here}, the total absorption cross
+  section $\sigma_a$ is defined as the sum of fission and other events
+  (such as $\gamma$-decay): $\sigma_a = \sigma_f +
+  \sigma_\gamma$. I'm going to stick with Krane's notation here. So
+  remember, $\sigma_a$ is \textbf{absorption that doesn't cause
+    fission} and does \textit{not} include $\sigma_f$.
+\end{framed}
+\item The
+difference between $\eta$ and $\nu$ can be confusing:
+\begin{itemize}
+\item $\nu$: The number of fast neutrons per \textit{fission}.
+\item $\eta$: The number of fast neutrons per \textit{thermal neutron absorbed}.
+\end{itemize}
+\item If we have $N$ thermal neutrons in the last generation that all get
+  absorbed in our fuel, we will now have $N\eta$ new fast neutrons.
+\item Rarely, these fast neutrons will actually cause fission (in
+  \textsuperscript{238}U), which leads to a sliiiight increase in our
+  total fast neutrons. We call this the \textit{fast fission factor}
+  ($\epsilon$). It's usually small, like 1.03.~\cite[pp.502]{krane}
+\item So now, we have $N\eta\epsilon$ fast neutrons.
+\item The fission cross section is low for fast neutrons, so we want
+  to reduce their energy (slow or moderate) them down to thermal
+  energies where the fission cross section is high. Unfortunately, as
+  they slow down, they have to go through the resonance region where
+  there is a high probability of absorption that won't cause fission (by \textsuperscript{238}U
+  for example). The probability that a
+  given fast neutron manages to reach thermal without being absorbed
+  is called the \textit{resonance escape probability}
+  ($p$). Krane gives a value of 0.9.~\cite[pp. 503]{krane}
+\item Now, of our $N\eta\epsilon$ fast neutrons, $N\eta\epsilon{}p$ have all slowed
+  down to thermal energy.
+\item Just because a neutron is thermal doesn't mean it will be
+  absorbed in our fuel. Reactors are made up of a ton of steel and
+  moderator (water or graphite), and other stuff. The neutrons might
+  get absorbed in that instead of the fuel. So we use the
+  \textit{thermal utilization factor} ($f$):
+  \begin{equation*}
+    f = \frac{\sigma_a^{\text{fuel}}+\sigma_f^{\text{fuel}}}{\sigma_a^{\text{all}}+\sigma_f^{\text{all}}}
+  \end{equation*}
+Where all means all the materials, including fuel. This is the
+fraction of neutrons absorbed in the fuel instead of absorbed
+somewhere else.~\cite[pp. 503]{krane}
+\item Now, of our thermal neutrons, $N\eta\epsilon{}p$, we have
+  $N\eta\epsilon{}pf$ that are actually absorbed in our fuel (remember
+  we are talking about an infinite reactor, so they can't escape).
+\item Finally, we can get $k_\infty$. Last generation we had $N$
+  neutrons absorbed in our fuel, and now we have $N\eta\epsilon{}pf$
+  neutrons in this generation absorbed in our fuel. $k_\infty$ is just
+  the ratio of neutrons this generation to last generation:
+  \begin{equation*}
+    k_\infty = \frac{N\eta\epsilon{}pf}{N} = \eta\epsilon{}pf
+  \end{equation*}
+This is the \textit{four factor formula}.~\cite[pp. 503]{krane}
+\item Effects that change one of the factors may affect the
+  criticality of the reactor (by changing $k_\infty$).
+  \begin{itemize}
+  \item In a water-cooled reactor, if the temperature of the water
+    goes up:
+    \begin{itemize}
+    \item Water is the moderator, it is used to slow down neutrons
+      because hydrogen is great at removing neutron energy.
+    \item As temperature goes up, water gets \textit{less} dense.
+    \item Less dense water means collisions happen less frequently, so
+      neutrons slow down slower and travel further.
+    \item If it's harder to slow down to thermal energies, they spend
+      more time in the resonance region, so there is a higher
+      probability they will be resonantly absorbed.
+    \item The resonance \textit{escape} probability goes
+      \textit{down}, and overall $k_\infty$ goes down.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
 \section{Fusion}
 
 
