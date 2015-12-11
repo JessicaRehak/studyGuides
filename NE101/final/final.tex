@@ -205,7 +205,8 @@ energy level's value is.~\cite[Lec 25]{lecture}
   \begin{figure}[hbtp]
     \centering
     \includegraphics[scale=1.0]{images/resonance_recoil}
-    \caption{Krane figure 10.23.~\cite{krane}.\label{fig:resonance_recoil}}
+    \caption{The resonance absorption peak is normally at $\Delta{}E$, it is
+      shifted \textit{up} by the recoil energy $E_R$, Krane figure 10.23.~\cite{krane}.\label{fig:resonance_recoil}}
   \end{figure}
 \item This has an exactly opposite effect on the emission
   spectrum. The absorption spectrum was shifted \textit{up} because the
@@ -337,25 +338,25 @@ The momentum is conserved:
   \vec{p}_{product}=\vec{p}_a-\vec{p}_b
 \end{equation*}
 Based on the radius $R$ that the incoming particle comes in, there is
-some amount of angular momentum $l$ transferred to the product
+some amount of angular momentum $\ell$ transferred to the product
 (spinning up the nucleus):
 \begin{equation*}
-  l=Rp
+  \ell=Rp
 \end{equation*}
 Using conservation of energy, you can also relate the final product
 momentum ($p$) to the incoming and outgoing particles:
 \begin{equation*}
   p^2=p^2_a+p^2_b-2p_a2p_b\text{cos}\theta
 \end{equation*}
-If you solve for $l$ you can figure out what $J^{\pi}$ the product
+If you solve for $\ell$ you can figure out what $J^{\pi}$ the product
 will be left in. In summary:
 \begin{enumerate}
 \item Figure out the momentum of the product using the momenta of the
   products and the angle of collision (that $p^2$ formula).
-\item Solve for the angular momentum transfer $l$ using $R$ ($l=Rp$).
-\item Add $l\pm\frac{1}{2}$ to the original $J^\pi$ of the target to
+\item Solve for the angular momentum transfer $\ell$ using $R$ ($\ell=Rp$).
+\item Add $\ell\pm\frac{1}{2}$ to the original $J^\pi$ of the target to
   get the final spin.
-\item Parity change will go $\Delta\pi = (-1)^l$ where that $l$ is the
+\item Parity change will go $\Delta\pi = (-1)^\ell$ where that $\ell$ is the
   angular momentum transfer from step 2.
 \end{enumerate}
 \cite[Lec 25]{lecture}
@@ -624,38 +625,42 @@ above activation.~\cite[pp. 488-489]{krane}
     \caption{Level splitting with deformation.~\cite[pg. 153]{krane}}
     \label{fig:levelsplit}
   \end{figure}
-\item What does this have to do with fission? Well, as the nucleus
-  becomes more deformed ($\epsilon\uparrow$), some nucleon energies go
-  up and some go down (as discussed above). If the nucleus is not
-  stable under fission, its binding energy is going up like
-  $\epsilon^2$ as it runs towards fission. If the valence nucleons are
-  in a state where their
-  $E\uparrow$ as $\epsilon\uparrow$ (above the dotted line in
-  Figure~\ref{fig:levelsplit}), the total energy goes up even
-  faster.
+\item What does this have to do with fission? 
+  \begin{enumerate}
+  \item As the nucleus becomes more deformed ($\epsilon\uparrow$), if
+    the nucleus is not stable under fission, its binding
+    energy is going up like $\epsilon^2$ as it runs towards
+    fission. The system total energy $E_T$ is going up with
+    distortion. 
+  \item Some valence nucleon energies go up and some go down (as discussed
+    above). If the valence nucleons happen to be in a state above the
+    dotted line (where their energy goes \textit{up} with
+    deformation), they will add to $E_T$ as the nucleus gets more
+    deformed and it goes up faster. Woohoo fission here we come.
 
-  \vspace{5pt}
-  Woohoo fission here we come.
-
-  \vspace{5pt}
-  This doesn't last forever. Eventually, as $E\uparrow$ and
-  $\epsilon\uparrow$, there will be a lower-energy state for those
-  valence nucleons where $E\downarrow$ as $\epsilon\uparrow$ (below
-  the dotted line). This happens because the \textit{real} diagram is
-  super complicated and messy, (it's Figure 5.29 in Krane if you want
-  to look at it). Now, as we keep getting more deformed, the nucleons
-  are acting \textit{against} fission, so we get an energy dip. This
-  makes a little valley of stability and another hump we have to
-  overcome to cause fission. This is shown in
-  Figure~\ref{fig:fissionhumps}.~\cite[pp. 493-495]{krane}
-
+  \item  This doesn't last forever. Eventually, as $E_T\uparrow$
+    and it keeps getting more deformed, nucleons will start dropping
+    into energy states where their energy goes \textit{down} with
+    deformation. This happens because the \textit{real} diagram is super complicated and messy, (it's Figure 5.29 in Krane
+    if you want to look at it). 
+  \item Once enough of the valence electrons are in a state where
+    their energy goes \textit{down} with deformation, they start
+    driving the total energy $E_T$ down.
+  \item Then you have to keep deforming until valence nucleons go to
+    another state where their energy goes up with deformation.
+  \item This makes a little valley of stability at the top of the
+    energy vs. deformation diagram. This is shown in
+    Figure~\ref{fig:fissionhumps}.~\cite[pp. 493-495]{krane}
+  \end{enumerate}
   \begin{figure}[hbtp]
     \centering
-    \includegraphics[scale=0.75]{images/shell_model}
+    \includegraphics[scale=1.0]{images/shell_model}
     \caption{Energy with distortion. The solid line shows the change
       due to shell structure.~\cite[pp. 496]{krane}}
     \label{fig:fissionhumps}
   \end{figure}
+
+
 
 \item This actually helps us cause fission, now we don't have to
   excite the nucleus all the way to the top of the barrier, we can
