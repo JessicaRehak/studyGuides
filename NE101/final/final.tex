@@ -709,7 +709,10 @@ fission.~\cite[pp.502]{krane}
 difference between $\eta$ and $\nu$ can be confusing:
 \begin{itemize}
 \item $\nu$: The number of fast neutrons per \textit{fission}.
-\item $\eta$: The number of fast neutrons per \textit{thermal neutron absorbed}.
+\item $\eta$: The number of fast neutrons per \textit{thermal neutron
+    absorbed} by fuel. This will always be lower than $\nu$ because
+  some amount of neutrons will be absorbed and not cause fission
+  ($\sigma_a$ above).
 \end{itemize}
 \item If we have $N$ thermal neutrons in the last generation that all get
   absorbed in our fuel, we will now have $N\eta$ new fast neutrons.
