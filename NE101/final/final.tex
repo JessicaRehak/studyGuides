@@ -238,6 +238,7 @@ High energy photons can ``ionize'' the entire nucleus by
   resonance with each other. This only occurs when the incoming photon energy is very
   high, $>$12 MeV.~\cite[Lec 25]{lecture}
 
+\vspace{10pt}
 I don't really understand this so please explain it to me if you can.
 
 \subsection{Coulomb Scattering}
@@ -868,10 +869,19 @@ constant and $T$ is the plasma temperature.~\cite[pp. 541]{krane}
   particles as possible to keep them at a high enough energy to
   continue fusion.~\cite[pp. 539]{krane}
 \item These bremsstrahlung losses are proportional to $Z^2$, so it is
-  beneficial to use lighter nuclei.~\cite[pp. 540]{krane}
+  beneficial to use lighter nuclei:
+  \begin{equation*}
+    P_{\text{br}}=0.5\times 10^{-36}Z^2n_{\text{ion}}n_e{(kT)}^{1/2}
+  \end{equation*}
+where P is in W/m$^3$, $n_{\text{ions}}$ and $n_e$ are the number
+densities of the ions and electrons in the plasma, respectively, and $Z$ is the
+charge of the ions. It's probably most important just to know that it's less
+for lighter nuclei (due to $Z^2$), and that there is a temperature at which the gains
+from fusion exceed the bremsstrahlung losses: 4 keV for D-T and 40 keV
+for D-D.~\cite[pp. 540]{krane}
 \item There are other losses, such as synchrotron radiation from the
   particles orbiting in the magnetic field, but these are negligible
-  compared to the bremsstrahlung.
+  compared to the bremsstrahlung.~\cite[pp. 539]{krane}
 \end{itemize}
 \bibliographystyle{unsrt}
 \bibliography{../NE101}
