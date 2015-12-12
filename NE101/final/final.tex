@@ -238,6 +238,8 @@ High energy photons can ``ionize'' the entire nucleus by
   resonance with each other. This only occurs when the incoming photon energy is very
   high, $>$12 MeV.~\cite[Lec 25]{lecture}
 
+I don't really understand this so please explain it to me if you can.
+
 \subsection{Coulomb Scattering}
 
 \subsubsection{Elastic (Rutherford)}
@@ -440,7 +442,13 @@ Where $x$ is the distance the neutrons are traveling through the
 material. Remember, this isn't a decrease in the total number of
 neutrons, just the ones in our beam with the amount of energy we shot
 them into the material with. The scattering will make lower-energy
-neutrons, so they aren't actually gone for reals.~\cite[pp. 448]{krane}
+neutrons, so they aren't actually gone for
+reals.~\cite[pp. 448]{krane}
+\item You can also use this if you are given the flux $\phi$ in
+  atoms/sec/cm$^2$:
+  \begin{equation*}
+    \phi = \phi_0e^{-\sigma_tnx}
+  \end{equation*}
 \end{itemize}
 
 \subsection{Collisions}
@@ -773,11 +781,98 @@ This is the \textit{four factor formula}.~\cite[pp. 503]{krane}
     \end{itemize}
   \end{itemize}
 \end{itemize}
-\section{Fusion}
+\section{Fusion \& Plasmas}
 
+\subsection{Kinematics}
+\begin{itemize}
+\item The following fusion reaction:
+  \begin{equation*}
+    a + X \to Y + b
+  \end{equation*}
+will have product particles with energies that sum to the Q value of
+the reaction:
+\begin{equation*}
+  \frac{1}{2}m_bv_b^2+\frac{1}{2}m_Yv^2_Y = Q
+\end{equation*}
+Which gives:
+\begin{equation*}
+  \frac{1}{2}m_bv^2_b = \frac{Q}{1+m_b/m_Y}
+\end{equation*}
+\begin{equation*}
+  \frac{1}{2}m_Yv^2_Y = \frac{Q}{1+m_Y/m_b}
+\end{equation*}
+\cite[pp. 531]{krane}
+\end{itemize}
+\subsection{Energy}
+\begin{itemize}
+\item For the reaction to occur, the two reactants must have enough
+  energy to overcome the Coulomb barrier given by:
+  \begin{equation*}
+    V_c = \frac{e^2}{4\pi\epsilon_0}\frac{Z_aZ_X}{R_a+R_X}
+  \end{equation*}
+You can generally assume each particle has half of this energy initially.
+\item The rate of a nuclear reaction depends on the product of the
+  cross section for the reaction to occur $\sigma$ and the speed of
+  the particles $v$. Normally, for thermal neutron reactions outside the
+  resonance region $\sigma \propto 1/v$, so $\sigma{}v$ is
+  constant, this isn't true in fusion reactions.~\cite[pp. 532]{krane}
+\item In thermonuclear fusion, at the high temperatures, the cross
+  section $\sigma$ is not proportional to $1/v$, as seen in
+  Figure~\ref{fig:fusion_xsec}. So $\sigma{}v$ will not be constant. The value of
+  $\sigma{}v$ is averaged over all speeds and energies to get:
+  $\braket{\sigma{}v}$.~\cite[pp. 533]{krane}
+  \begin{figure}[hbtp]
+    \centering
+    \includegraphics[scale=0.5]{images/fusion_xsection}
+    \caption{Cross section for fusion
+      reactions. $E_d$ is the energy of the deuteron in the fusion,
+      which will be proportional to the speed of the particle.~\cite[pp. 532]{krane}}
+    \label{fig:fusion_xsec}
+  \end{figure}
+\item The energy released in fusion is given by:
+  \begin{equation*}
+    E_f = \frac{1}{4}n^2\braket{\sigma\nu}Q\tau
+  \end{equation*}
+This assumes that we have $n$ density of particles causing fusion (like D
+and T in a fuel pellet) and that there are equal amounts of both (the
+individual densities are $\frac{1}{2}n$). $Q$ is the energy released
+in the reaction, $\tau$ is the length of time the plasma is confined
+and $\braket{\sigma{}v}$ is the average cross section times particle
+velocity.~\cite[pp. 541]{krane}
+\item The energy per unit volume required to heat the plasma is:
+  \begin{equation*}
+    E_{\text{th}} = 3nkT
+  \end{equation*}
+Where $n$ is the density of the particles, $k$ is the boltzman
+constant and $T$ is the plasma temperature.~\cite[pp. 541]{krane}
+\item Overall, if we heat the plasma using $E_{\text{th}}$ to a
+  temperature $T$ and confine it at that temperature for time $\tau$,
+  we get $E_f$ out. We have an overall net gain if $E_f >
+  E_{\text{th}}$:
+  \begin{equation*}
+    \frac{1}{4}n^2\braket{\sigma{}v}Q\tau > 3nkT
+  \end{equation*}
+  \begin{equation*}
+    n\tau > \frac{12kT}{\braket{\sigma{}v}Q}
+  \end{equation*}
+\cite[pp. 541-542]{krane}
+\end{itemize}
 
+\subsubsection{Losses}
 
-
+\begin{itemize}
+\item The primary way that a plasma loses energy is
+  \textit{bremsstrahlung}. When two particles Coulomb scatter in a
+  plasma, they accelerate and release radiation. This is bad for our
+  plasma because we want to keep as much of the energy in the
+  particles as possible to keep them at a high enough energy to
+  continue fusion.~\cite[pp. 539]{krane}
+\item These bremsstrahlung losses are proportional to $Z^2$, so it is
+  beneficial to use lighter nuclei.~\cite[pp. 540]{krane}
+\item There are other losses, such as synchrotron radiation from the
+  particles orbiting in the magnetic field, but these are negligible
+  compared to the bremsstrahlung.
+\end{itemize}
 \bibliographystyle{unsrt}
 \bibliography{../NE101}
 \end{document}
