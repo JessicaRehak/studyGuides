@@ -65,18 +65,44 @@ Can be written in reaction notation as:
       R= (\rho{}d)_{target}\times{}I_{beam}\times\sigma_{reaction}
     \end{split}
   \end{equation*}
-Where $R$ is the reaction rate (in reactions/sec); $(\rho{}d)$ is the
+Where $R$ is the reaction rate (in reactions/sec/cm$^2$); $(\rho{}d)$ is the
 density (in g/cm$^3$) times the width of the target (in cm), also
-known as the areal density (put it in atoms/$cm^2$); $I_{beam}$ is the incident particle flux
-(in atoms/sec); and $\sigma_{reaction}$ is the microscopic cross
+known as the areal density (this needs to be converted to atoms/$cm^2$); $I_{beam}$ is the incident particle flux
+(in atoms/sec/cm$^2$); and $\sigma_{reaction}$ is the microscopic cross
 section of the reaction occurring. This is only valid when very little
 of the beam reacts (small $\sigma$) and everything moves in straight
-lines. It can also be expressed as:
+lines. Note that is it common practice to drop the 1/cm$^2$ from the
+reaction rate and beam current ($I$) by assuming that the target is
+exactly 1 cm$^2$ in size. This can also be formulated as:
 \begin{equation*}
-        R= N\phi\sigma
+  R = NdI_{beam}\sigma_{reaction}
 \end{equation*}
-Where $N$ is the number of target atoms, $\phi$ is the flux in
-(atoms/sec/$cm^2$) and $\sigma$ is the same.~\cite[Lec. 25]{lecture}
+In this case, $N$ is explicitly the number density of the target
+material (in atoms/cm$^3$) and $d$ is the width of the target (in
+cm). This is exactly equivalent to the last equation, but $\rho{}d$
+has been converted into number density.
+
+\vspace{10pt}
+It can also be expressed in terms of flux as:
+\begin{equation*}
+        R= n\phi\sigma
+\end{equation*}
+Where $n$ is the number density of target atoms (in atoms/cm$^3$), $\phi$ is the flux in
+(atoms/sec/$cm^2$) and $\sigma$ is the same. This will give a reaction
+rate in units of reactions/$cm^3$.~\cite[Lec. 25]{lecture}
+\begin{framed}
+  \textbf{Current vs. Flux:} In general, the incident beam current $I$
+  is used when you have a beam of particles on a target, hence it is
+  formulated with the number density of the target and the width of
+  the target. This is also why the reaction rate is reactions/sec/area
+  of the target. Flux is generally used when you have a bunch of
+  particles \textit{inside} a material causing reactions. Then you are
+  more interested in the number density of the material, and your
+  reaction rate is in reactions/sec/unit volume.
+
+  In the end, it doesn't really matter if you get the units
+  right. Dimensional analysis will save you.
+\end{framed}
 \item Microscopic cross sections are generally given in units of
   barns. 1 barn = $10^{-24}$ cm$^2$.
   \item The cross section is not always constant over angle (it rarely
