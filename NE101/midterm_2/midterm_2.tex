@@ -41,6 +41,8 @@
 lecture, or office hours and should be cited as completely as
 possible.
 
+\tableofcontents
+
 \section{Radioactive Decay Review}
 
 \begin{itemize}
@@ -790,137 +792,6 @@ them all up to get the total $\alpha$.
 \item Spin isomer: if there is max alignment in a high angular
   momentum state due to spins, the emitted photon would need to have a
   large multipole moment (large $L$), which is rare.
-\end{itemize}
-
-\section{Reactions}
-
-\begin{itemize}
-\item The reaction:
-  \begin{equation*}
-    a + X \to Y + b
-  \end{equation*}
-Can be written in reaction notation as:
-\begin{equation*}
-  X(a,b)Y
-\end{equation*}
-\cite[pp. 378-379]{krane}
-\item A microscopic cross section ($\sigma$) represents the ``relative
-  probability for the reaction to occur.'' It can be used in the
-  following equation:
-  \begin{equation*}
-    \begin{split}
-      R= (\rho{}d)_{target}\times{}I_{beam}\times\sigma_{reaction}
-    \end{split}
-  \end{equation*}
-Where $R$ is the reaction rate (in reactions/sec); $(\rho{}d)$ is the
-density (in g/cm$^3$) times the width of the target (in cm), also
-known as the areal density (put it in atoms/$cm^2$); $I_{beam}$ is the incident particle flux
-(in atoms/sec); and $\sigma_{reaction}$ is the microscopic cross
-section of the reaction occurring. This is only valid when very little
-of the beam reacts (small $\sigma$) and everything moves in straight
-lines. It can also be expressed as:
-\begin{equation*}
-        R= N\phi\sigma
-\end{equation*}
-Where $N$ is the number of target atoms, $\phi$ is the flux in
-(atoms/sec/$cm^2$) and $\sigma$ is the same.~\cite[Lec. 25]{lecture}
-\item Microscopic cross sections are generally given in units of
-  barns. 1 barn = $10^{-24}$ cm$^2$.
-  \item The cross section is not always constant over angle (it rarely
-    is). So the \textit{differential cross section} is used:
-    \begin{equation*}
-      \frac{d\sigma}{d\Omega}
-    \end{equation*}
-    What is confusing, is this is just
-    a number, in units of barns/steradian. It's
-    representing the fact that some small number of particles
-    ($d\sigma$) will strike our small detector ($d\Omega$). It is
-    dependent on the angle of scatter ($\theta$) and the polraization
-    of the radiation ($\phi$). Generally we assume there is no affect
-    due to polarization (things are randomly polarized).
-
-We can
-    find the size of our detector $d\Omega$ in steradians, which is
-    related to the area of our detector ($dA$) and the distance from
-    the target ($r$) by:
-    \begin{equation*}
-      d\Omega = \frac{dA}{r^2}
-    \end{equation*}
-    Then, if we know the differential cross section at the angle of
-    our detector, we can multiply to get the reaction cross section
-    for our detector:
-    \begin{equation*}
-      \sigma_{det} = d\Omega\frac{d\sigma}{d\Omega}
-    \end{equation*}
-    This represents something \textbf{very specific}. This is the
-    probability that incoming particles striking the target will then
-    be detected by our detector. Based on the size of our detector
-    ($d\Omega$) and our a priori knowledge of the number of particles
-    that will be seen in a small area ($\frac{d\sigma}{d\Omega}$). The
-    value of that differential cross section will probably vary with
-    angle, so you have to know the differential cross section for the
-    angle where your detector is to even use this. More rigorously,
-    you'd integrate over the area of the detector and
-    $\frac{d\sigma}{d\Omega}$ may vary over the integral:
-    \begin{equation*}
-      \sigma_{det} = \int_{detector}\frac{d\sigma}{d\Omega}d\Omega
-    \end{equation*}
-    Or, you can get the total $\sigma$ by integrating over the whole
-    angle space.
-\item \textbf{Rutherford Differential Scattering:} elastic Coulomb
-  scattering. An incoming particle scatters off the potential of the
-  target.~\cite[Lec 24]{lecture}
-\item \textbf{Coulomb Excitation:} inelastic Coulomb scattering. An
-  incoming particle scatters off the potential of a target and leaves
-  some energy behind. This ``Coulex'' reaction can excite nuclei up
-  rotational bands.~\cite[Lec. 24]{lecture}
-\item Reaction $Q$-value is to create the final products at rest.
-  \begin{itemize}
-  \item Center of Mass Frame: products are at rest, $Q = Q$.
-  \item Lab Frame: products are \textit{not} at rest. Threshold energy
-    for reaction is:
-    \begin{equation*}
-      E_{\text{threshold}}=Q\left(\frac{m_a+m_x}{m_x}\right)
-    \end{equation*}
-    for a(X,Y)b.
-  \end{itemize}
-\item Conserved quantities in reactions:
-  \begin{itemize}
-  \item Total energy
-  \item Linear momentum
-  \item Angular momentum
-  \item Parity $(-1)^l$ (except in weak interactions)
-\end{itemize}
-\item \textbf{Kinematics} For a reaction, $X(a,b)Y$:
-  \begin{equation*}
-    \begin{split}
-      Q&= (m_{X}+m_{a}-m_{Y}-m_{b})c^{2}\\
-      Q& =T_{Y}+T_{b}-T_{X}-T_{a}
-\end{split}
-\end{equation*}
-\item Exothermic Q$>$0 :
-  \begin{equation*}
-  \begin{split}
-   m_{X}+m_{a}&>m_{Y}+m_{b}\\
-   T_{Y}+T_{b}&>T_{X}+T_{a}
-  \end{split}
-\end{equation*}
-\item Endothermic Q$<$0 :
-  \begin{equation*}
-  \begin{split}
-    m_{X}+m_{a}<&m_{Y}+m_{b}\\
-T_{Y}+T_{b}<&T_{X}+T_{a}
-  \end{split}
-\end{equation*}
-\item Reaction reaches excited states of Y:
-  \begin{equation*}
-Q_{ex} = (m_{X}+m_{a}-m_{Y*}-m_{b})c^{2}  = Q_{0}-E_{ex}
-\end{equation*}
-\item Compound nucleus:
-  \begin{equation*}
-Q = -T_{a} = (m_{X}+m_{a}-m_{C*})c^{2}-E_{ex}
-\end{equation*}
-
 \end{itemize}
 
 \bibliographystyle{unsrt}

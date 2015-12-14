@@ -1,0 +1,136 @@
+\documentclass[letter]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{braket} %Can do bra-ket notation with \braket{}
+\usepackage{framed} %Adds the framed environment
+\usepackage{fancyhdr}
+\usepackage{datetime} %For formatting of header date
+\usepackage{ulem} %Makes strike-through lines with \sout{}
+\usepackage{booktabs} %better tables
+\usepackage{multirow} %Support multi-row in tables
+\usepackage[table,xcdraw]{xcolor} %Support colored rows in tables
+\usdate %Month, Dth, YYYY
+\geometry{
+  letterpaper,
+  left=1in,
+  right=1in,
+  bottom=1in,
+  top=1in}
+\pagestyle{fancy}
+\lhead{NE101 Midterm 1 Study Guide}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{\today \quad \currenttime}
+\setlength\parindent{0pt}
+
+\begin{document}
+\textbf{\Large{Nuclear Engineering 101: Midterm 1 Study Guide}} \\
+\vspace{12pt}
+%\cite[pp. 45]{krane}
+%\cite[Lec 24]{lecture}
+
+\textbf{Disclaimer:} This is not an official study guide. Stuff \sout{might}
+\textbf{is} wrong. Use the lecture notes and book!
+\vspace{10pt}
+
+\textbf{Note:} Everything in this guide is from the text (Krane) or
+lecture, or office hours and should be cited as completely as
+possible.
+
+\tableofcontents
+
+\section{Nuclear Properties}
+\begin{itemize}
+\item The mean nuclear radius is given by:
+  \begin{equation*}
+    R = R_0A^{1/3}
+  \end{equation*}
+where $A$ is the nuclear mass and $R_0$ is a constant (generally 1.2
+fm).~\cite[pp. 48]{krane}
+\item Nuclear binding energy is given by:
+  \begin{equation*}
+    B(Z,A) = [Zm(^1H) + Nm(n) - m(^A_ZX)]c^2
+  \end{equation*}
+where m$(^A_ZX)$ is the \textit{atomic} mass of the atom, and m($^1H$)
+is the atomic mass of hydrogen. Make sure you use atomic, to ensure
+the masses of the electrons cancel out.~\cite[Lec 2]{lecture}
+\end{itemize}
+\subsection{Semi-empirical Mass Formula}
+\begin{itemize}
+\item Factors that determine the amount of binding energy:
+  \begin{itemize}
+  \item The strong nuclear force is short range.
+  \item Nucleons on the surface have less neighbors.
+  \item Protons repel each other.
+  \item Symmetry is important (Z $\approx$ N).
+  \item Pairing is important (protons and neutrons like to pair up)
+  \end{itemize}
+These are all contained in the \textit{Bethe-Weizs\"acker
+  Formula}.~\cite[Lec 3]{lecture}
+\item The Semi-empirical mass formula (Bethe-Weisz\"acker Formula) is
+  called that because it is based on physics, but uses empirical
+  measurements to get the constants. Therefore, it is not derived from
+  first principles, but is just a model of what we have
+  observed. ~\cite[Lec 3]{krane} This means it's \textit{wrong} and
+  just represents our best estimate of what is happening.
+\item The semi-empirical mass formula:
+  \begin{equation*}
+    \begin{split}
+      B &= a_VA-
+      a_SA^{2/3}-a_C\frac{Z(Z-1)}{A^{1/3}}-a_{\text{sym}}\frac{{(A-2Z)}^2}{A}
+      + \delta{}(A,Z) \\
+      \text{Binding Energy} &=  \text{Volume term} -  \text{surface
+        term} -  \text{Coulomb Term} -  \text{Symmetry term} +
+      \text{Pairing term}
+    \end{split}
+  \end{equation*}
+Where $a_n$ are constants adjusted to make the calculated binding
+energy match experimental masses. The pairing term:
+\begin{equation*}
+  \delta = 
+  \begin{cases}
+    +a_PA^{-3/4} & \text{for Z and N even} \\
+    -a_PA^{-3/4} & \text{for Z and N odd} \\
+    0 & \text{for A odd}
+  \end{cases}
+\end{equation*}
+
+
+\end{itemize}
+
+\section{Radioactive Decay}
+\begin{itemize}
+\item The decay constant $\lambda$ (units sec$^{-1}$) is the probability
+  per unit time that an atom will decay. The number of atoms decaying
+  per time is given by:
+  \begin{equation*}
+    \frac{dN}{dt} = -\lambda{}N
+  \end{equation*}
+Where $N$ is the total number of radioactive nuclei
+present. This can be solved to get:
+\begin{equation*}
+  N(t) = N_0e^{-\lambda{}t}
+\end{equation*}
+Where $N_0$ is the initial amount of nuclei presents when
+$t=0$.~\cite[pp. 161]{krane}
+\item The half-life is the time for half the initial number of nuclei
+  to decay:
+  \begin{equation*}
+    t_{1/2} = \frac{0.693}{\lambda}
+  \end{equation*}
+The \textit{mean lifetime} $\tau$ is a bit different and is average
+amount of time before a radioactive nuclei will decay:
+\begin{equation*}
+  \tau = \frac{1}{\lambda}
+\end{equation*}
+I don't know when you'd actually use this.~\cite[pp. 161]{krane}
+\end{itemize}
+
+
+\bibliographystyle{unsrt}
+\bibliography{../NE101}
+\end{document}
