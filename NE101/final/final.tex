@@ -889,13 +889,13 @@ constant and $T$ is the plasma temperature.~\cite[pp. 541]{krane}
 
 \begin{itemize}
 \item The primary way that a plasma loses energy is
-  \textit{bremsstrahlung}. When two particles Coulomb scatter in a
+  \textit{bremsstrahlung} (breaking radiation). When two particles Coulomb scatter in a
   plasma, they accelerate and release radiation. This is bad for our
   plasma because we want to keep as much of the energy in the
   particles as possible to keep them at a high enough energy to
   continue fusion.~\cite[pp. 539]{krane}
 \item These bremsstrahlung losses are proportional to $Z^2$, so it is
-  beneficial to use lighter nuclei:
+  beneficial to use lighter nuclei (hydrogen and helium):
   \begin{equation*}
     P_{\text{br}}=0.5\times 10^{-36}Z^2n_{\text{ion}}n_e{(kT)}^{1/2}
   \end{equation*}
@@ -909,6 +909,84 @@ for D-D.~\cite[pp. 540]{krane}
   particles orbiting in the magnetic field, but these are negligible
   compared to the bremsstrahlung.~\cite[pp. 539]{krane}
 \end{itemize}
+
+\subsection{Plasma Reactions}
+\begin{itemize}
+\item Reaction rate is proportional to the speed of the particles, and
+  the density of the particles.~\cite[Lec 28]{lecture}
+\item In a thermal environment, the particles velocities have a
+  Maxwell-Boltzmann distribution that is a function of
+  temperature.~\cite[Lec 28]{lecture}
+\item The Coulomb barrier makes reaction rates very low, all of the
+  reaction rates drop to zero at low energy (this is true of all
+  charged particle reactions) as seen in the upper portion of
+  Figure~\ref{fig:charged_xsec}. We get through the coulomb barrier by
+  tunneling.~\cite[Lec 28]{lecture}
+  \begin{figure}[hbtp]
+    \centering
+    \includegraphics[scale=0.5]{images/charged_cross_section}
+    \caption{Coulomb barrier for charged-particle induced
+      reactions.~\cite[Lec. 28]{lecture}}
+    \label{fig:charged_xsec}
+  \end{figure}
+\item All the cross sections look the same due to this Coulomb effect,
+  so it would be beneficial to factor that out to see if anything else
+  is going on. The $S(E)$ factor has the Coulomb effect removed, so
+  you can see if there is an impact on the cross section from
+  \textit{nuclear} effects. This is seen in the lower part of
+  Figure~\ref{fig:charged_xsec}. The slight rise shows that there is
+  some broad resonance at low energies in this reaction, there must be
+  an accessible energy state at low energies that favors this
+  reaction.~\cite[Lec. 28]{lecture}
+\item The $S$-factor explains why the D+T reaction is so favored over
+  the p+p reaction. They both have the \textit{same} Coulomb repulsion
+  and the same thermal distribution
+  that affects the rate, it's the $S$-factors are what is
+  different. In this case, it's because p+p is weak force mediated,
+  D+T is a strong force reaction.~\cite[Lec. 28]{lecture}
+\item In the region between the exponential probability of tunneling
+  and the Maxwell-Boltzman thermal distribution, there is a window
+  where the reaction can actually occur. This is called the Gamow peak
+  (Coulomb barrier and thermal distribution together, assumes
+  $S$-factor has no effect).~\cite[Lec. 28]{lecture}
+\item The effective Coulomb barrier can be reduced by the electron
+  cloud, which ``screen'' the positive charge of the nucleus and allow
+  other charged particles to get closer before repulsion
+  occurs.~\cite[Lec 28]{lecture}
+\end{itemize}
+
+\subsection{NIF}
+\begin{itemize}
+\item There are 3 steps: Compress the capsule, the ``hot spot''
+  ignites and the $\alpha$-particles cause runaway burn in the
+  surrounding cold shell.~\cite[Lec. 29]{lecture}
+\item We are relying on the $\alpha$-particles to heat the plasma and
+  keep the reaction going. The released 14 MeV neutrons are what we
+  are interested in using for power, they leave a lot of their energy
+  behind in scattering before getting out of the
+  plasma.~\cite[Lec. 29]{lecture}
+\item Due to the fact that we use $\alpha$-particles to heat the
+  plasma, we define the $Q_\alpha$ parameter:
+  \begin{equation*}
+    Q_\alpha = \left(\frac{E_\alpha}{E^{\text{thermal}}_{\text{input}}}\right)
+  \end{equation*}
+Which is just the ratio of energy returned from the $\alpha$-particles
+to the plasma, divided by the energy put into the plasma. Some values
+are shown in Table~\ref{tab:q-alpha}.
+\begin{table}[hbtp]
+\centering
+\begin{tabular}{ll}
+$Q_\alpha$ &  Status\\
+2 & $\alpha$-heating \\
+10 & $\alpha$-dominated plasma ``burning plasma'' \\
+400 & theoretically possible at NIF
+\end{tabular}
+\caption{$Q_\alpha$ values for NIF.~\cite[Lec. 29]{lecture}}
+\label{tab:q-alpha}
+\end{table}
+
+\end{itemize}
+
 \bibliographystyle{unsrt}
 \bibliography{../NE101}
 \end{document}
