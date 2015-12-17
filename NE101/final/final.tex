@@ -606,6 +606,10 @@ change because $\ell = 0$.~\cite[pp.463]{krane}
   likely. Note that fission is never guaranteed, it just becomes a
   competitive form of decay in certain
   circumstances.~\cite[pp. 481]{krane}
+\item The time-scale for fission is 10$^{-20}$ sec for scission
+  (splitting of the nucleus), prompt neutrons are emitted at
+  10$^{-18}$ seconds, prompt gammas at 10$^{-15}$ seconds, delayed
+  neutrons and gammas at 10$^{-8}$ seconds.~\cite[Walid's Lecture]{lecture}
 \item The mass distribution of particles emitted by fission of
   \textsuperscript{235}U forms two
   peaks at $A = $95 and $A = $140, these nuclei will be very rich in
@@ -882,7 +886,16 @@ constant and $T$ is the plasma temperature.~\cite[pp. 541]{krane}
   \begin{equation*}
     n\tau > \frac{12kT}{\braket{\sigma{}v}Q}
   \end{equation*}
+This $n\tau$ value is also called the ``Lawson criterion.''
 \cite[pp. 541-542]{krane}
+\item The $Q$ value for various parts of the fusion process can be
+  defined:
+  \begin{equation*}
+    Q = \frac{P_{\text{out}}}{P_{\text{in}}} = \frac{E_{\text{out}}}{E_{\text{in}}}
+  \end{equation*}
+This can be used for multiple processes, including the reactor as a
+whole. Note that for a reactor if they give you E$_{\text{thermal}}$,
+it is the sum of the energy from the fusion \textit{and} the input energy.
 \end{itemize}
 
 \subsubsection{Losses}
@@ -984,7 +997,51 @@ $Q_\alpha$ &  Status\\
 \caption{$Q_\alpha$ values for NIF.~\cite[Lec. 29]{lecture}}
 \label{tab:q-alpha}
 \end{table}
+\end{itemize}
 
+\section{Detectors}
+\begin{itemize}
+\item Two modes: pulse mode: radiation are well-separated in time,
+  current mode: radiation overlap at the detector
+  location, they all pile up and you can't tell the radiation apart.~\cite[Lec. 36]{lecture}
+\item Can measure any kind of ionization producing radiation,
+  $\alpha$, $\beta$, $\gamma$, $p$, $d$, $t$, etc. They interact and
+  deposit energy in the detector via the electromagnetic
+  force. Neutrons are detected through their interactions with other
+  matter, so you need a lot of matter.~\cite[Lec. 36]{lecture}
+\item Feather's Rule: A rule of thumb for the range of an electron (in
+  g/cm$^2$) is:
+  \begin{equation*}
+    R = \frac{E_{max} \text{MeV}}{2}
+  \end{equation*}
+The range is an areal density (in g/cm$^2$), so you can divide by
+density to get a thickness.~\cite[Lec. 36]{lecture}
+\item Stopping power identifies the rate of energy loss of the ion in
+  a material. This is given by the Bethe-Bloch formula that is ugly
+  and not even worth typing out here. You can solve for the range that
+  the particle will go:
+  \begin{equation*}
+    R = \int^0_T{\left(\frac{-dE}{dx}\right)}^{-1}dE
+  \end{equation*}
+Where $dE/dx$ is that Bethe-Bloch formula. I guess this would be
+useful if he gives you that and asks how far a particle will go.~\cite[Lec. 36]{lecture}
+\item Ions interact with electrons, the majority of the stopping is
+  due to these electronic interactions. This is dominated by the fact
+  that there are so many electrons in so many large areas (atoms are
+  huge compared to nuclei) so the probability of interacting with
+  electrons is \textit{much} higher than nuclei.~\cite[Lec. 36]{lecture}
+\end{itemize}
+\subsection{Types}
+\begin{itemize}
+\item Gas-filled detectors: incoming radiation creates electron-ion
+  pairs and the current is detected.~\cite[Lec.36]{lecture}
+\item Photomultiplier tubs (PMT): An incoming photon interacts with a
+  photo-cathode, releasing an electron. This electron travels through
+  a series of dynodes that create more and more electrons in a
+  cascade (hence, multiplier). This is
+  measured.~\cite[Lec. 36]{lecture}
+\item Scintillation detector: incoming light releases loosely bound
+  photoelectrons. These are generally coupled to photomultiplier tubes.
 \end{itemize}
 
 \bibliographystyle{unsrt}
