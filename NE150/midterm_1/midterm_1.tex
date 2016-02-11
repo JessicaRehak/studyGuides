@@ -19,7 +19,7 @@
   bottom=1in,
   top=1in}
 \pagestyle{fancy}
-\lhead{NE120 Final Study Guide}
+\lhead{NE150 Midterm 1 Study Guide}
 \chead{}
 \rhead{}
 \lfoot{}
@@ -28,7 +28,7 @@
 \setlength\parindent{0pt}
 
 \begin{document}
-\textbf{\Large{Nuclear Engineering 120: Screener Study Guide}} \\
+\textbf{\Large{Nuclear Engineering 150: Midterm 1 Study Guide}} \\
 \vspace{12pt}
 %\cite[pp. 45]{krane}
 %\cite[Lec 24]{lecture}
@@ -37,26 +37,31 @@
 \textbf{is} wrong. Use the lecture notes and book!
 \vspace{10pt}
 
+\textbf{Note:} Everything in this guide is from the text () or
+lecture, or office hours and should be cited as completely as
+possible.
+
 \tableofcontents
 
-\section{Nuclear Fuels}
+\section{Fundamentals}
+\label{sec:fundamentals}
 
-\subsection{Types}
-\begin{itemize}
-\item Metallic: U and Pu-based. Advantages: high thermal conductivity,
-  high fissile atom density, easy to fabricate. Issues: low melting
-  points, unstable in irradiation, poor corrosion resistance.
-\item Ceramic: UO$_2$, UC, UN, etc. Advantages: superior strength at
-  high temperatures, low thermal expansion, good corrosion resistance,
-  good stability under irradiation.
-\end{itemize}
+\subsection{Atomic Masses}
+\begin{enumerate}
+\item Atomic mass unit (amu): defined by the mass of a neutral
+  carbon-12 atom.
+  \begin{equation*}
+    m(^{12}\mathrm{C}) = 12 \mathrm{ amu}
+  \end{equation*}
+\item A mixture of an element with various isotopes $i$ with
+  abundances $\gamma_i$ is:
+  \begin{equation*}
+    M = \sum_i\gamma_i{}M_i
+  \end{equation*}
+You can use this for the natural abundances, or if you just have a
+mixture of elements in a compound (like enriched uranium).
+\end{enumerate}
 
-\subsection{Fission Products}
-\begin{itemize}
-\item Elemental gases: Kr, Xe, Cs, Rb, and Te
-\item Metallic inclusions: Mo and noble metals
-\item Oxide precipitates: Ba, Zr, and other
-\item Dissolved oxides in the fuel matrix: Mo, Zr, rare earths
-\end{itemize}
-
+\bibliographystyle{unsrt}
+\bibliography{../NE150}
 \end{document}
