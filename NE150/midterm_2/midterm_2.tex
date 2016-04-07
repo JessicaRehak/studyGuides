@@ -1,0 +1,97 @@
+\documentclass[letter]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{braket} %Can do bra-ket notation with \braket{}
+\usepackage{framed} %Adds the framed environment
+\usepackage{fancyhdr}
+\usepackage{datetime} %For formatting of header date
+\usepackage{ulem} %Makes strike-through lines with \sout{}
+\usepackage{booktabs} %better tables
+\usepackage{multirow} %Support multi-row in tables
+\usepackage[table,xcdraw]{xcolor} %Support colored rows in tables
+\usdate %Month, Dth, YYYY
+\geometry{
+  letterpaper,
+  left=1in,
+  right=1in,
+  bottom=1in,
+  top=1in}
+\pagestyle{fancy}
+\lhead{NE150 Midterm 1 Study Guide}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{\today \quad \currenttime}
+\setlength\parindent{0pt}
+
+\begin{document}
+\textbf{\Large{Nuclear Engineering 150: Midterm 2 Study Guide}} \\
+\vspace{12pt}
+%\cite[pp. 45]{krane}
+%\cite[Lec 24]{lecture}
+
+\textbf{Disclaimer:} This is not an official study guide. Stuff \sout{might}
+\textbf{is} wrong. Use the lecture notes and book!
+\vspace{10pt}
+
+\textbf{Note:} Everything in this guide is from the text () or
+lecture, or office hours and should be cited as completely as
+possible.
+
+\tableofcontents
+
+\section{Neutron Slowing Down}
+
+\subsection{Lethargy}
+
+\begin{itemize}
+\item Lethargy ($u$) is a measure of the amount that a neutron has slowed
+  down \textit{relative} to an energy $E_0$. It is important to note
+  that this is a relative measure, it only tells us about the
+  neutron's energy when compared to our reference value.\cite[Lec. 9]{lecture}
+  \begin{equation*}
+    u = \ln\left(\frac{E_0}{E}\right)=\ln(E_0)-\ln(E)
+  \end{equation*}
+\item As the neutron slows down, relative to $E_0$, the value of
+  lethargy goes \textit{up}. This is why we call it a measure of the
+  slowing down. This is why we call it lethargy because it's like a
+  measure of the neutron's sleepiness or something; some nuclear
+  engineer obviously thought he was being super cute.\cite[Lec. 9]{lecture}
+\item Every collision causes a decrease in neutron energy (and
+  increase in neutron lethargy). If the neutron goes from $E_i$ to
+  $E_f$ after a scattering event, we can solve for the difference in
+  the initial and final energies.
+  \begin{equation*}
+    \Delta{}u=\ln\left(\frac{E_0}{E_f}\right)-\ln\left(\frac{E_0}{E_i}\right)=\ln\left(\frac{E_i}{E_f}\right)
+  \end{equation*}
+This is also called the logarithmic energy loss.\cite[Lec.9]{lecture}
+\item If we want to know the average logarithmic energy loss per
+  collision, we can take the average. We call that squiggle (written
+  $\xi$). We will use the energy loss per collision from the last
+  midterm, and denote the original energy $E$ and the final energy
+  $E'$:
+  \begin{equation*}
+    \xi = \overline{\ln\left(\frac{E}{E'}\right)} =
+    \int^E_{\alpha{}E}dE'\ln\left(\frac{E}{E'}\right)p(E\to{}E')p = \int^E_{\alpha{}E}dE'\ln\left(\frac{E}{E'}\right)\frac{1}{(1-\alpha)E}
+  \end{equation*}
+Finally, you get:
+\begin{equation*}
+  \xi = 1+\frac{\alpha}{1-\alpha}\ln(\alpha)
+\end{equation*}
+Note that this doesn't depend on the original energy $E$. This makes
+sense, because it's just an average value, we integrated over all the
+possible energies. In the end, it's just a function of what it's
+colliding with, because:
+\begin{equation*}
+  \alpha = \left(\frac{A-1}{A+1}\right)^2
+\end{equation*}
+\cite[Lec. 9]{lecture}
+\end{itemize}
+
+
+\bibliographystyle{unsrt}
+\bibliography{../NE150}
+\end{document}
