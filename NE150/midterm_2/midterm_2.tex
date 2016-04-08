@@ -219,6 +219,145 @@ We can solve this using an initial condition $n(0)=n_0$:
 \end{equation*}
 \end{itemize}
 
+\subsection{Four and Six Factor Formulas}
+The four and six factors are values that multiply the number of
+neutrons in the last generation ($n$) to get the number of neutrons in the
+next generation. For this, we only assume that there are two
+populations of neutrons, fast and thermal.
+
+\subsubsection{Those Six Factors}
+
+Start with $n$ fast neutrons created from fission.
+
+\paragraph{Fast non-leakage probability}
+There is a chance these fast neutrons will leak out of the
+  reactor. The chance that this \textit{doesn't} happen is
+  $P_{\text{FNL}}$, or the \textbf{fast non-leakage probability}. This
+  means that $nP_{\text{FNL}}$ fast neutrons are left, and
+  $n(1-P_{\text{FNL}})$ leak out of the reactor.
+\paragraph{Resonance escape probability}
+The fast neutrons that don't leak will collide with the
+  moderator and slow down. While slowing down, they must pass through
+  the resonance region where there is an enhanced chance of capture in
+  the fuel. The probably of \textit{not} being absorbed while slowing
+  down to thermal energies is $p$, the \textbf{resonance escape
+    probability}. Therefore, $npP_{\text{FNL}}$ fast neutrons reach
+  thermal energies.
+
+\paragraph{Thermal non-leakage probability}
+These thermal neutrons can also escape, just like fast
+  neutrons. Again, the chance this \textit{doesn't} happen is the
+  \textbf{thermal non-leakage probability}, $P_{\text{TNL}}$. This
+  gives us $npP_{\text{FNL}}P_{\text{TNL}}$ thermal neutrons that
+  don't leak out.
+
+\paragraph{Thermal utilization factor}
+If a thermal neutron doesn't leak out, it has to go somewhere:
+  it gets absorbed. But, just because the thermal neutron is absorbed,
+  doesn't mean that it's absorbed in the fuel, or
+  \textit{utilized}. It could be absorbed anywhere else in the
+  reactor. This gives rise to the \textbf{thermal utilization factor}:
+  \begin{equation*}
+    f=\frac{\Sigma_a^{\text{fuel}}}{\Sigma^{\text{fuel}}_a+\Sigma^{\text{non-fuel}}_a}=\frac{\propto
+      \text{Probability of absorption in fuel}}{\propto
+      \text{Probability of absorption in anything}}
+  \end{equation*}
+Remember that cross-sections are characteristic of (proportional to) probabilities, so
+dividing cross sections gives us an actual probability. All $f$ is is
+the probability that given a neutron is absorbed, it is absorbed in
+fuel. We knew that our thermal neutrons were absorbed, so we can just
+tack this onto the end of our growing expression to get the number of
+thermal neutrons absorbed in the fuel material:
+$fnpP_{\text{FNL}}P_{\text{TNL}}$.
+
+\begin{framed}
+\textbf{Important Note:} The above formulation assumes you have a
+homogeneous reactor. That is, the flux in the fuel and non-fuel
+materials are the same, and the volume of the fuel is the same as the
+volume of the non-fuel materials. If this isn't the case, you have to
+do more. For example, if we have only fuel and moderator of different
+volumes and with different flux:
+\begin{equation*}
+  f=\frac{\Sigma^{\text{fuel}}_aV^{\text{fuel}}\phi^{\text{fuel}}}{\Sigma^{\text{fuel}}_aV^{\text{fuel}}\phi^{\text{fuel}}+\Sigma^{\text{mod}}_aV^{\text{mod}}\phi^{\text{mod}}}
+\end{equation*}
+Or, we can divide through by $V^{\text{fuel}}\phi^{\text{fuel}}$ to
+get:
+\begin{equation*}
+  f=\frac{\Sigma^{\text{fuel}}}{\Sigma^{\text{fuel}}+\Sigma^{\text{mod}}_a\frac{V^{\text{mod}}}{V^{\text{fuel}}}\frac{\phi^{\text{mod}}}{\phi^{\text{fuel}}}}
+\end{equation*}
+The important thing to note here is that if
+$V^{\text{fuel}}>V^{\text{mod}}$ then the fraction is $>1$ and $f$ can
+be higher than for the homogenous case.
+\end{framed}
+
+\textbf{Reproduction Factor}
+Finally, we the number of neutrons that are actually absorbed in fuel
+and we've almost come full circle. Now we just need to figure out how
+many neutrons we get out of those absorptions to start the next
+generation. For this, we use the \textbf{reproduction factor}:
+\begin{equation*}
+  \eta =\frac{\nu\Sigma_f}{\Sigma_f+\Sigma_a}
+\end{equation*}
+This isn't exactly equal to the average number of neutrons from
+fission ($\nu$) because sometimes an absorption event doesn't result
+in fission. In this case, $\Sigma_a$ is absorption events that \textit{do not}
+include fission, sometimes shown as $\Sigma_\gamma$. $\eta$ depends on
+the fuel, and ranges from 1.34 for natural uranium to 2.08 for pure
+uranium 235. Now, we have the number of fission neutrons due to
+thermal fission: $\eta{}fnpP_{\text{FNL}}P_{\text{TNL}}$.
+\begin{framed}
+The difference between $\eta$ and $\nu$ can be confusing:
+\begin{itemize}
+\item $\nu$: The number of fast neutrons per \textit{fission}.
+\item $\eta$: The number of fast neutrons per \textit{thermal neutron
+    absorbed} by fuel. This will always be lower than $\nu$ because
+  some amount of neutrons will be absorbed and not cause fission
+  ($\Sigma_a$ above).
+\end{itemize}
+\end{framed}
+
+\paragraph{Fast Fission Factor}
+
+Some of the fast neutrons from the beginning might have caused fission
+before thermalizing. To account for this, we use a \textbf{fast
+  fission factor}. This is essentially a correction to what we ended
+up with after the last step (the number of fission neutrons due to
+thermal fission):
+\begin{equation*}
+  \epsilon = \frac{\text{Number of fission neutrons due to fast and
+      thermal fission}}{\text{Number of fission neutrons due to
+      thermal fission}}
+\end{equation*}
+So in the end, we have the total number of neutrons due to both fast
+and thermal fission from our original population of neutrons $n$:
+$\epsilon\eta{}fnpP_{\text{FNL}}P_{\text{TNL}}$. The value of
+$\epsilon$ ranges from 1.00 to 1.10.
+
+\subsubsection{The Six-Factor Formula}
+Now, we can use this with our definition of the multiplication factor:
+\begin{equation*}
+  \begin{split}
+    k&\equiv\frac{\text{Number of neutrons in this
+        generation}}{\text{Number of neutrons in the last generation}}
+    \\
+    k&=\frac{\epsilon\eta{}fnpP_{\text{FNL}}P_{\text{TNL}}}{n}\\
+    k&=\epsilon\eta{}fpP_{\text{FNL}}P_{\text{TNL}}
+  \end{split}\end{equation*}
+This is our six-factor formula. This allows us to multiply these
+factors together and determine if the reactor is critical ($k=1$),
+subcritical ($k<0$) or supercritical ($k>0$).
+
+\subsubsection{The Four-Factor Formula}
+
+If we have an infinite reactor, there is no leakage:
+$P_{\text{FNL}}=P_{\text{TNL}}=1$. Therefore, our equation reduces
+down to four factors. We call this $k_\infty$ because it's for an
+infinite reactor.\cite[Lec. 10]{lecture}
+\begin{equation*}
+  k_\infty=\epsilon{}pf\eta
+\end{equation*}
+Leakage is impossible to avoid unless your reactor is infinite, so
+$k_\infty$ represents the upper bound of $k$.\cite[Lec. 10]{lecture}
 \bibliographystyle{unsrt}
 \bibliography{../NE150}
 \end{document} 
