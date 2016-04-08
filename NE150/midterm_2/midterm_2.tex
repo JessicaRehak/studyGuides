@@ -68,6 +68,12 @@ possible.
     \Delta{}u=\ln\left(\frac{E_0}{E_f}\right)-\ln\left(\frac{E_0}{E_i}\right)=\ln\left(\frac{E_i}{E_f}\right)
   \end{equation*}
 This is also called the logarithmic energy loss.\cite[Lec.9]{lecture}
+\end{itemize}
+
+\subsubsection{Average Logarithmic Energy Loss per collision}
+
+\begin{itemize}
+
 \item If we want to know the average logarithmic energy loss per
   collision, we can take the average. We call that squiggle (written
   $\xi$). We will use the energy loss per collision from the last
@@ -89,9 +95,130 @@ colliding with, because:
   \alpha = \left(\frac{A-1}{A+1}\right)^2
 \end{equation*}
 \cite[Lec. 9]{lecture}
+\item Note that for hydrogen ($A=1$), the value of $\alpha$ is 0. This
+  makes $\xi$ undefined ($\ln(0)$ is undefined), so we just set $\xi$
+  for hydrogen at 1 (there might be a mathematical way to justify this
+  but who cares). This is the highest $\xi$ can be:
+  \begin{equation*}
+    \xi = 1 = \ln\left(\frac{E}{E'}\right) \to E'=\frac{E}{e}
+  \end{equation*}
+\item You might be saying ``But study guide, can't the neutron lose
+  \textit{all} of its energy in a collision with a proton? Like
+  billiard balls?'' and I'd say ``who says billiard balls, they're
+  pool balls, get it together.'' Remember this is the \textit{average} energy lost per
+  collision so its between the maximum lost (all of it) and the
+  minimum lost (none of it).
+\item The value
+  of $\xi$ gets smaller and smaller with increasing $A$; bouncing a
+  ping-pong ball off a basketball won't do much to slow the ping-pong
+  ball down.
+  \begin{equation*}
+    \xi \approx \frac{2}{A+2/3}, \text{for } A>10
+  \end{equation*}
+Smaller $A \to$ larger $\xi$ (more effective at slowing). \cite[Lec. 9]{lecture}
+\item We can use this to figure out the average number of elastic collisions
+  required to go from an energy $E_1$ to $E_2$ (Note that we use
+  higher numbers for lower energies, this is pretty standard notation
+  in neutronics; this is why $E_0$ was our \textit{highest} relative
+  energy when defining lethargy).
+  \begin{equation*}
+    n=\frac{\Delta{}u}{\xi}=\frac{\ln\left(\frac{E_1}{E_2}\right)}{\xi}
+  \end{equation*}
+  This is just the total logarithmic difference of our two energies,
+  divided by the logarithmic amount of energy lost in each collision
+  (distance divided by rate).\cite[Lec. 9]{lecture}
 \end{itemize}
 
+\subsubsection{$\xi$ for Molecules}
+\begin{itemize}
+\item If you have a molecule, you sum over the individual values of
+  $\xi$, weighted by their cross-sections. This is to take into account
+  that there's a different probability that the neutron will scatter
+  off of the different elements in the molecule.
+  \begin{equation*}
+    \bar{\xi}=\frac{1}{\Sigma_s}\sum_i\xi_i\Sigma_{si}
+  \end{equation*}
+Where $\Sigma$ is the total scattering cross-section for the molecule
+and $\Sigma_{Si}$ is the scattering cross-section for each element
+$i$.\cite[Lec. 9]{lecture}
+\item Remember to get the total scattering cross-section for the
+  molecule, you just sum based on how many of each you have. For
+  example, for water:
+  \begin{equation*}
+    \Sigma^{H_2O}_s=N_{H_2O}(2\sigma^H+\sigma^O)
+  \end{equation*}
+The number densities should all cancel out, letting you just use
+microscopic cross-sections.
+\end{itemize}
+
+\section{Reactor Criticality}
+
+\subsection{Neutron Population}
+\begin{itemize}
+\item We generally view the neutron population in our reactor in
+  ``generations.'' This is an artificial construct, but is a good way
+  to understand the inner mechanics of a reactor. We model our fission
+  chain reaction as generating a whole bunch of neutrons at once (a
+  generation) that then go on and live their lives. Ultimately, the
+  neutrons will either leak, be absorbed, go on to cause more
+  fission, etc. The fissions will then create the next generation of
+  neutrons.
+\item Leakage and absorption are examples of loss mechanisms, and
+  fission is a production mechanism. Overall, if we could take the
+  whole loss rate $L(t)$ and the whole production rate $P(t)$, we
+  could calculate the change in neutrons between generations:
+  \begin{equation*}
+    \frac{dn(t)}{dt}=P(t)-L(t)
+  \end{equation*}
+\end{itemize}
+
+\subsubsection{Multiplication Factor}
+
+\begin{itemize}
+\item The multiplication factor is the ratio of neutrons in the
+  current generation, to those in the last
+  generation.\cite[Lec. 10]{lecture}
+  \begin{equation*}
+    k\equiv\frac{\text{Number of neutrons in this generation}}{\text{Number
+        of neutrons in the last generation}}
+  \end{equation*}
+\item There are three possible situations\cite[Lec. 10]{lecture}:
+  \begin{itemize}
+  \item[] $k < 1$: Subcritical; there are less neutrons in this
+    generation than last, population is decreasing
+  \item[] $k=1$: Critical: there are the same number of neutrons in
+    this generation as the last, the neutron population is steady.
+  \item[] $k>1$: Supercritical: there are more neutrons in this
+    generation than the last, population is increasing.
+  \end{itemize}
+\item Alternatively, we can also define $k$ using the production rate
+  of neutrons and the loss rate:
+  \begin{equation*}
+    k\equiv\frac{P(t)}{L(t)}
+  \end{equation*}
+You can see how this has the same three situations discussed
+above.\cite[Lec. 10]{lecture}
+\end{itemize}
+\subsubsection{Neutron Population Lifetime}
+\begin{itemize}
+\item Using this loss rate $L(t)$, we can figure out how long our
+  generation would survive (with no production). At a given time $t$,
+  we have $n(t)$ neutrons, so using number over loss rate:
+  \begin{equation*}
+    \ell \equiv \frac{n(t)}{L(t)}
+  \end{equation*}
+This is our neutron generation lifetime.\cite[Lec 10.]{lecture}
+\item We can combine this with our value of $k$ above by examining the
+  change in our neutron population over time using the equation from above:
+  \begin{equation*}
+    \frac{dn(t)}{dt}=P(t)-L(t)=\left[\frac{P(t)}{L(t)}-1\right]L(t)=[k-1]\frac{L(t)}{n(t)}n(t)=\frac{k-1}{\ell}n(t)
+  \end{equation*}
+We can solve this using an initial condition $n(0)=n_0$:
+\begin{equation*}
+  n(t)=n_0\text{Exp}\left(\frac{k-1}{\ell}t\right)
+\end{equation*}
+\end{itemize}
 
 \bibliographystyle{unsrt}
 \bibliography{../NE150}
-\end{document}
+\end{document} 
