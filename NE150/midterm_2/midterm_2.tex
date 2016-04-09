@@ -243,6 +243,16 @@ The fast neutrons that don't leak will collide with the
   down to thermal energies is $p$, the \textbf{resonance escape
     probability}. Therefore, $npP_{\text{FNL}}$ fast neutrons reach
   thermal energies.
+  \begin{framed}
+    Resonance escape probability is strongly affected by moderator/fuel ratio
+    and temperature. As temperature rises and the moderator gets less
+    dense (or we have less moderator somehow), neutrons moderate
+    slower, spending more time in the resonance region. Therefore,
+    \textbf{p will decrease} because there is a higher probability
+    that they'll be absorbed. Also, as fuel temperature increases,
+    \textbf{p will decrease} because Doppler broadening increases the
+    probability of capture.\cite[Lec. 10]{lecture}
+  \end{framed}
 
 \paragraph{Thermal non-leakage probability}
 These thermal neutrons can also escape, just like fast
@@ -296,12 +306,11 @@ and we've almost come full circle. Now we just need to figure out how
 many neutrons we get out of those absorptions to start the next
 generation. For this, we use the \textbf{reproduction factor}:
 \begin{equation*}
-  \eta =\frac{\nu\Sigma_f}{\Sigma_f+\Sigma_a}
+  \eta =\frac{\nu\Sigma_f}{\Sigma_f+\Sigma_\gamma}=\frac{\nu\Sigma_f}{\Sigma_a}
 \end{equation*}
-This isn't exactly equal to the average number of neutrons from
+These are all cross-sections for the fuel. This isn't exactly equal to the average number of neutrons from
 fission ($\nu$) because sometimes an absorption event doesn't result
-in fission. In this case, $\Sigma_a$ is absorption events that \textit{do not}
-include fission, sometimes shown as $\Sigma_\gamma$. $\eta$ depends on
+in fission.  $\eta$ depends on
 the fuel, and ranges from 1.34 for natural uranium to 2.08 for pure
 uranium 235. Now, we have the number of fission neutrons due to
 thermal fission: $\eta{}fnpP_{\text{FNL}}P_{\text{TNL}}$.
@@ -347,7 +356,7 @@ This is our six-factor formula. This allows us to multiply these
 factors together and determine if the reactor is critical ($k=1$),
 subcritical ($k<0$) or supercritical ($k>0$).
 
-\subsubsection{The Four-Factor Formula}
+\subsubsection{Infinite Reactor ($k_\infty$)}
 
 If we have an infinite reactor, there is no leakage:
 $P_{\text{FNL}}=P_{\text{TNL}}=1$. Therefore, our equation reduces
@@ -358,6 +367,29 @@ infinite reactor.\cite[Lec. 10]{lecture}
 \end{equation*}
 Leakage is impossible to avoid unless your reactor is infinite, so
 $k_\infty$ represents the upper bound of $k$.\cite[Lec. 10]{lecture}
+
+\subsubsection{Infinite Homogenous Reactor}
+An infinite \textit{homogenous} reactor we still have no leakage
+because the reactor is infinite. The homogenous part means that our
+reactor is a completely uniform mixture of fuel and
+moderator.\cite[Lec. 10]{lecture}  For
+whatever reason, we assume this means that all neutrons are thermal
+neutrons. I like to think of it as the \textit{perfect} mixture for
+thermalizing. If a neutron isn't thermal, it will always then scatter
+off a moderator and slow down more. If a neutron \textit{is} thermal,
+it will always find a fuel nuclide to interact with. What this means
+is that we don't have any fast fission (all fast neutrons always
+scatter) and there is no resonance absorption (for the same
+reason). This means our fast fission factor ($\epsilon$) and resonance
+escape probability ($p$) are both 1.
+\begin{equation*}
+  k_\infty=\epsilon{}pf\eta=f\eta=\frac{\Sigma^{\text{fuel}}_a}{\Sigma^{\text{fuel}}_a+\Sigma^{\text{non-fuel}}_a}\frac{\nu\Sigma_f^{\text{fuel}}}{\Sigma_a^{\text{fuel}}}=\frac{\nu\Sigma^{\text{fuel}}_f}{\Sigma^{\text{fuel}}_a+\Sigma^{\text{non-fuel}}_a}
+\end{equation*}
+
+\subsection{Energy Dependence}
+
+
+
 \bibliographystyle{unsrt}
 \bibliography{../NE150}
 \end{document} 
