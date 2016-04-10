@@ -431,13 +431,13 @@ Armed with average cross sections, we can go back to the thermal
 utilization factor ($f$) for heterogeneous reactors without energy
 dependence (from the framed section):
 \begin{equation*}
-    f=\frac{\Sigma^{\text{fuel}}}{\Sigma^{\text{fuel}}+\Sigma^{\text{mod}}_a\frac{V^{\text{mod}}}{V^{\text{fuel}}}\frac{\phi^{\text{mod}}}{\phi^{\text{fuel}}}}
+    f=\frac{\Sigma^{\text{fuel}}_a}{\Sigma^{\text{fuel}}_a+\Sigma^{\text{mod}}_a\frac{V^{\text{mod}}}{V^{\text{fuel}}}\frac{\phi^{\text{mod}}}{\phi^{\text{fuel}}}}
 \end{equation*}
 We can now express these all as energy averaged cross-sections and
 fluxes by very carefully drawing lines over the sigmas and replacing
 $\phi$ with $\Phi$ (thank god for find and replace):
 \begin{equation*}
-    f=\frac{\overline{\Sigma}^{\text{fuel}}}{\overline{\Sigma}^{\text{fuel}}+\overline{\Sigma}^{\text{mod}}_a\frac{V^{\text{mod}}}{V^{\text{fuel}}}\frac{\overline{\Phi}^{\text{mod}}}{\overline{\Phi}^{\text{fuel}}}}
+    f=\frac{\overline{\Sigma}^{\text{fuel}}_a}{\overline{\Sigma}^{\text{fuel}}_a+\overline{\Sigma}^{\text{mod}}_a\frac{V^{\text{mod}}}{V^{\text{fuel}}}\frac{\overline{\Phi}^{\text{mod}}}{\overline{\Phi}^{\text{fuel}}}}
 \end{equation*}
 Remember that this is the \textit{thermal} utilization factor. All the
 neutrons in these absorptions have been thermalized and didn't leak
@@ -452,7 +452,23 @@ Where ``th'' has been added to remind us that these are average
 
 \subsection{Conversion and Breeding}
 
+Fissile isotopes are created in a reactor during the fission process,
+from the (n,$\gamma$) reaction on fertile isotopes. For example, the
+(n,$\gamma$) on uranium 238 (fertile, non-fissile) leads to the
+creation of plutonium 239 (fissile). The rate at which uranium 238 is
+converted to plutonium 239 is given by:
 
+\begin{equation*}
+  C=\frac{\Sigma^{238}_a}{\Sigma^{235}_a}+\eta^{235}\epsilon{}(1-p)P_{\text{FNL}}P_{\text{TNL}}
+\end{equation*}
+
+If $C<1$ then this is still called the conversion factor ($C$). If
+$C>1$, this is the breeding factor ($B$):
+
+\begin{equation*}
+  B\equiv \frac{\text{Number of new fissile nuclides
+      produced}}{\text{Number of fissile nuclides consumed}}
+\end{equation*}
 
 \bibliographystyle{unsrt}
 \bibliography{../NE150}
