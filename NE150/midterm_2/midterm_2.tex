@@ -81,7 +81,7 @@ This is also called the logarithmic energy loss.\cite[Lec.9]{lecture}
   $E'$:
   \begin{equation*}
     \xi = \overline{\ln\left(\frac{E}{E'}\right)} =
-    \int^E_{\alpha{}E}dE'\ln\left(\frac{E}{E'}\right)p(E\to{}E')p = \int^E_{\alpha{}E}dE'\ln\left(\frac{E}{E'}\right)\frac{1}{(1-\alpha)E}
+    \int^E_{\alpha{}E}dE'\ln\left(\frac{E}{E'}\right)p(E\to{}E') = \int^E_{\alpha{}E}dE'\ln\left(\frac{E}{E'}\right)\frac{1}{(1-\alpha)E}
   \end{equation*}
 Finally, you get:
 \begin{equation*}
@@ -284,7 +284,7 @@ $fnpP_{\text{FNL}}P_{\text{TNL}}$.
 \textbf{Important Note:} The above formulation assumes you have a
 homogeneous reactor. That is, the flux in the fuel and non-fuel
 materials are the same, and the volume of the fuel is the same as the
-volume of the non-fuel materials. If this isn't the case, you have to
+volume of the non-fuel materials. If this isn't the case (heterogeneous), you have to
 do more. For example, if we have only fuel and moderator of different
 volumes and with different flux:
 \begin{equation*}
@@ -297,7 +297,7 @@ get:
 \end{equation*}
 The important thing to note here is that if
 $V^{\text{fuel}}>V^{\text{mod}}$ then the fraction is $>1$ and $f$ can
-be higher than for the homogenous case.
+be higher than for the homogeneous case.
 \end{framed}
 
 \textbf{Reproduction Factor}
@@ -341,6 +341,14 @@ So in the end, we have the total number of neutrons due to both fast
 and thermal fission from our original population of neutrons $n$:
 $\epsilon\eta{}fnpP_{\text{FNL}}P_{\text{TNL}}$. The value of
 $\epsilon$ ranges from 1.00 to 1.10.
+\begin{framed}
+  The fast fission factor is affected by the moderator temperature and
+  moderator to fuel ratio. As
+  the moderator temperature rises and the moderator gets less dense,
+  neutrons moderate slower, spending more time fast. This enhances the
+  probability that they'll interact with fuel and create fast
+  fission, so \textbf{$\epsilon$ will increase.}\cite[Lec. 13]{lecture}
+\end{framed}
 
 \subsubsection{The Six-Factor Formula}
 Now, we can use this with our definition of the multiplication factor:
@@ -368,6 +376,22 @@ infinite reactor.\cite[Lec. 10]{lecture}
 Leakage is impossible to avoid unless your reactor is infinite, so
 $k_\infty$ represents the upper bound of $k$.\cite[Lec. 10]{lecture}
 
+\vspace{10pt}
+We can also represent $k_\infty$ as a straight-up ratio of the
+production rate of neutrons to the absorption rate (our only loss
+rate)\cite[Lec. 13]{lecture}
+\begin{equation*}
+  k_\infty=\frac{\text{Production rate of neutrons}}{\text{Absorption
+      rate of neutrons}}=\frac{\nu{}R_f}{R_a}=\frac{\nu\Sigma_f\Phi}{\Sigma_a\Phi}
+\end{equation*}
+I assume that the numerator includes both fast and thermal fission (as
+$k_\infty$ has $\epsilon$ in it) so this formula is somewhat
+confusing. Then I guess the flux in the denominator has to be broken
+up as a sum of thermal and fast times their own cross-sections? In
+reality, I think this equation just plays loosey-goosey with fast
+fission and kind of ignores it (as it's a small factor). Just make
+sure you understand what it's saying and why it's weird.
+
 \subsubsection{Infinite Homogenous Reactor}
 An infinite \textit{homogenous} reactor we still have no leakage
 because the reactor is infinite. The homogenous part means that our
@@ -381,12 +405,52 @@ it will always find a fuel nuclide to interact with. What this means
 is that we don't have any fast fission (all fast neutrons always
 scatter) and there is no resonance absorption (for the same
 reason). This means our fast fission factor ($\epsilon$) and resonance
-escape probability ($p$) are both 1.
+escape probability ($p$) are both 1.\cite[Lec. 10, 13]{lecture}
 \begin{equation*}
   k_\infty=\epsilon{}pf\eta=f\eta=\frac{\Sigma^{\text{fuel}}_a}{\Sigma^{\text{fuel}}_a+\Sigma^{\text{non-fuel}}_a}\frac{\nu\Sigma_f^{\text{fuel}}}{\Sigma_a^{\text{fuel}}}=\frac{\nu\Sigma^{\text{fuel}}_f}{\Sigma^{\text{fuel}}_a+\Sigma^{\text{non-fuel}}_a}
 \end{equation*}
-
 \subsection{Energy Dependence}
+
+Everything up until this point has assumed that we have only two
+neutron energies (fast and thermal). If we want to treat these with
+actual energy, we need to reintroduce the idea of flux weighted cross
+sections. This is just averaging over the neutron energy
+spectrum.\cite[Lec. 13]{lecture}
+\begin{equation*}
+  \overline{\Sigma}_x=\frac{\int^\infty_0\Sigma_x(E)\Phi(E)dE}{\int^\infty_0\Phi(E)dE}
+\end{equation*}
+We can use these in that equation for $k_\infty$ that I don't really
+like.\cite[Lec. 13]{lecture}
+\begin{equation*}
+  k_\infty=\frac{\nu{}R_f}{R_a}=\frac{\nu{}\overline{\Sigma}_f}{\overline{\Sigma}_a}
+\end{equation*}
+
+\subsubsection{Thermal Disadvantage Factor}
+
+Armed with average cross sections, we can go back to the thermal
+utilization factor ($f$) for heterogeneous reactors without energy
+dependence (from the framed section):
+\begin{equation*}
+    f=\frac{\Sigma^{\text{fuel}}}{\Sigma^{\text{fuel}}+\Sigma^{\text{mod}}_a\frac{V^{\text{mod}}}{V^{\text{fuel}}}\frac{\phi^{\text{mod}}}{\phi^{\text{fuel}}}}
+\end{equation*}
+We can now express these all as energy averaged cross-sections and
+fluxes by very carefully drawing lines over the sigmas and replacing
+$\phi$ with $\Phi$ (thank god for find and replace):
+\begin{equation*}
+    f=\frac{\overline{\Sigma}^{\text{fuel}}}{\overline{\Sigma}^{\text{fuel}}+\overline{\Sigma}^{\text{mod}}_a\frac{V^{\text{mod}}}{V^{\text{fuel}}}\frac{\overline{\Phi}^{\text{mod}}}{\overline{\Phi}^{\text{fuel}}}}
+\end{equation*}
+Remember that this is the \textit{thermal} utilization factor. All the
+neutrons in these absorptions have been thermalized and didn't leak
+out, so the fluxes shown are averaged over the thermal energies. We
+define the \textbf{thermal disadvantage factor $\zeta$} as that flux
+term in the denominator:
+\begin{equation*}
+  \zeta \equiv \frac{\overline{\Phi}^{\text{mod}}_{\text{th}}}{\overline{\Phi}^{\text{fuel}}_{\text{th}}}
+\end{equation*}
+Where ``th'' has been added to remind us that these are average
+\textit{thermal} flux.\cite[Lec. 13]{lecture}
+
+\subsection{Conversion and Breeding}
 
 
 
