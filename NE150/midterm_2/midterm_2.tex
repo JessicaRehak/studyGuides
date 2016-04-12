@@ -580,7 +580,7 @@ With solution:
 This looks a lot like an exponential build-up that at $t=\infty$ goes
 to a value of $\ell_\infty S_0$.
 
-\subsection{Infinite Multiplying Medium with no Source}
+\subsection{Infinite Multiplying Medium}
 This section is from Lecture 14 \cite{lecture}.
 
 \vspace{10pt}
@@ -610,18 +610,44 @@ $\ell$ (the neutron generation time), in section
 \ref{neutronPopLife}. There, we had leakage (see next section), here
 we don't so we have $\infty$ on the terms.
 
+\subsubsection{No Source}
 As above, you don't have a source, you end up with:
 \begin{equation*}
   n(t)=n_0\text{Exp}\left(\frac{k_\infty-1}{l_\infty}\right)
 \end{equation*}
 You can see how $k_\infty$ controls criticality here.
+\subsubsection{Sources}
+ This isn't in
+the lecture, but if you do have a time independent source, the
+solution is found the same was as in the previous section:
+\begin{equation*}
+    n(t)=\frac{\ell_\infty S_0}{(k_\infty-1)}\left[1-\text{Exp}\left(-\frac{(1-k_\infty)}{\ell}t\right)\right]
+\end{equation*}
 
 \section{Finite Multiplying Medium}
 
 This section is from Lecture 14 \cite{lecture}.
 
 As previously described, if we have a finite medium, then we have to
-re-introduce leakage.
+re-introduce leakage:
+\begin{equation*}
+  \begin{split}
+    k&=P_{\text{NL}}k_\infty \\
+    \ell &= P_{\text{NL}}\ell_\infty
+  \end{split}
+\end{equation*}
+Where I assume $P_{\text{NL}}$ is just $P_{\text{FNL}}P_{\text{PNL}}$,
+but it isn't specified. You'd probably pick the right ones for the
+energy groups that you assume your problem has. This gives us (same as
+above):
+\begin{equation*}
+      \frac{dn(t)}{dt}=S(t)+\frac{(k-1)}{\ell}n(t)
+\end{equation*}
+Solving this equation with $n(0)=0$ gives us:
+\begin{equation*}
+  n(t)=\frac{\ell S_0}{(k-1)}\left[1-\text{Exp}\left(-\frac{(1-k)}{\ell}t\right)\right]
+\end{equation*}
+
 
 
 \bibliographystyle{unsrt}
