@@ -613,7 +613,7 @@ we don't so we have $\infty$ on the terms.
 \subsubsection{No Source}
 As above, you don't have a source, you end up with:
 \begin{equation*}
-  n(t)=n_0\text{Exp}\left(\frac{k_\infty-1}{l_\infty}\right)
+  n(t)=n_0\text{Exp}\left(\frac{k_\infty-1}{l_\infty}t\right)
 \end{equation*}
 You can see how $k_\infty$ controls criticality here.
 \subsubsection{Sources}
@@ -621,7 +621,7 @@ You can see how $k_\infty$ controls criticality here.
 the lecture, but if you do have a time independent source, the
 solution is found the same was as in the previous section:
 \begin{equation*}
-    n(t)=\frac{\ell_\infty S_0}{(k_\infty-1)}\left[1-\text{Exp}\left(-\frac{(1-k_\infty)}{\ell}t\right)\right]
+    n(t)=\frac{\ell_\infty S_0}{(k_\infty-1)}\left[1-\text{Exp}\left(-\frac{(1-k_\infty)}{\ell_\infty}t\right)\right]
 \end{equation*}
 
 \subsection{Finite Multiplying Medium}
@@ -819,6 +819,8 @@ $S(t)$. I'm not writing out the equations \textit{again}.
 \subsection{One Effective Delayed Group}
 
 This section is taken from Lecture 14~\cite{lecture}.
+
+
 
 \bibliographystyle{unsrt}
 \bibliography{../NE150}
