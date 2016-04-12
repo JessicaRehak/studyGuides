@@ -708,6 +708,118 @@ multiplying medium are:
 \item $k<1$ and a source.
 \end{enumerate}
 
+\section{Delayed Neutrons}
+\label{delayedNeutrons}
+This section is from Lecture 14 \cite{lecture}.
+
+\vspace{10pt}
+In addition to the prompt neutrons created immediately with fission,
+there are delayed neutrons that are the result of the decay of fission
+products. The specifics ones that make these neutrons are called
+\textbf{Delayed Neutron Precursors (DNPs)}. We divide these up into 6
+groups (based on half-life), and each group produces a different
+number of neutrons. We express the fraction of all neutrons born
+delayed as $\beta$:
+
+\begin{equation*}
+  \beta = \frac{\text{Neutrons born delayed}}{\text{Neutrons born
+      delayed and prompt}} = \sum^6_{i=1}\beta_i
+\end{equation*}
+Where $\beta_i$ is the contribution from the $i$-th group. Using this,
+we can weight the half-lives of each of these groups using their
+values of $\beta_i$ over the total $\beta$. This weighs the DNP groups
+that make more neutrons more importantly, giving us an average half-life:
+\begin{equation*}
+  t_{1/2}=\frac{1}{\beta}\sum^6_{i=1}\beta_it_{i,1/2}
+\end{equation*}
+We can also define the average decay constant and plug it into the
+same formula:
+\begin{equation*}
+  \begin{split}
+    t_{i,1/2}&=\frac{\ln{2}}{\lambda_{d,i}}\\
+    \frac{1}{\lambda_d}&=\frac{1}{\beta}\sum^6_{i=1}\beta_i\frac{1}{\lambda_{d,i}}
+  \end{split}
+\end{equation*}
+
+We can add these into our kinetics equations before, they will provide
+another source of neutrons by decaying.
+\begin{equation*}
+  \frac{dn(t)}{dt}=P(t)-L(t)
+\end{equation*}
+\begin{equation*}
+  \begin{split}
+    \frac{dn(t)}{dt} &= \text{Source} + \text{Prompt} + \text{Delayed}
+    - \text{Absorption}\\
+    &= S(t) + \frac{(1-\beta)k-1}{\ell}n(t)+\sum^6_{i=1}\lambda_iC_i(t)
+  \end{split}
+\end{equation*}
+Important things to note are that the delayed source term is just from
+the decay of the $i$-th group, with concentration $C_i$. There is an
+extra $(1-\beta)$ in front of the fission term because we only want
+prompt neutrons, and $\beta$ is the fraction born delayed, meaning
+$(1-\beta)$ is the fraction born prompt. The loses are still just
+absorption. The values of $C_i(t)$ are given by:
+\begin{equation*}
+  \frac{dC_i(t)}{dt}=\beta_i\frac{k}{\ell}n(t)-\lambda_iC_i(t)
+\end{equation*}
+
+\section{Point Reactor Kinetics Equations}
+
+This section is from Lecture 14 \cite{lecture}.
+
+\vspace{10pt}
+First, we have to define the \textbf{mean neutron generation time}:
+\begin{equation*}
+  \Lambda \equiv \frac{\ell}{k}
+\end{equation*}
+And we plug that into the equation we found for our neutron population
+with delayed neutrons in Section~\ref{delayedNeutrons}:
+\begin{equation*}
+  \begin{split}
+    \frac{dn(t)}{dt}&= S(t) +
+    \frac{(1-\beta)k-1}{\ell}n(t)+\sum^6_{i=1}\lambda_iC_i(t) \\
+    &= S(t) +
+    \frac{k(1-\beta{}-1/k)}{\ell}n(t)+\sum^6_{i=1}\lambda_iC_i(t) \\
+    &= S(t) + \frac{\frac{k-1}{k}-\beta}{\Lambda}n(t)+\sum^6_{i=1}\lambda_iC_i(t)
+  \end{split}
+\end{equation*}
+That mess in the numerator is defined as \textbf{reactivity:}
+\begin{equation*}
+  \rho(t) \equiv \frac{k(t)-1}{k(t)}
+\end{equation*}
+Which is a measure of the criticality of the reactor:
+\begin{itemize}
+\item[] $\rho > 0$: supercritical
+\item[] $\rho = 0$: critical
+\item[] $\rho < 0$: subcritical
+\end{itemize}
+Finally, plugging that in and bringing in the equations for $C_i$ give
+us the \textbf{point reactor kinetics equations} (PKEs):
+\begin{equation*}
+      \frac{dn(t)}{dt}= S(t) + \frac{\rho(t)-\beta}{\Lambda}n(t)+\sum^6_{i=1}\lambda_iC_i(t)
+\end{equation*}
+\begin{equation*}
+    \frac{dC_i(t)}{dt}=\frac{\beta_i}{\Lambda}n(t)-\lambda_iC_i(t)\quad i=1,2,\ldots,6
+\end{equation*}
+To get these in terms of power, multiply by $\overline{v}\Sigma_f$ to
+get the reaction rate for fission, then multiply by $w_f$, the energy
+per fission:
+\begin{equation*}
+      \frac{dP(t)}{dt}= S(t) + \frac{\rho(t)-\beta}{\Lambda}P(t)+\sum^6_{i=1}\lambda_iC_i(t)
+\end{equation*}
+\begin{equation*}
+    \frac{dC_i(t)}{dt}=\frac{\beta_i}{\Lambda}P(t)-\lambda_iC_i(t)\quad i=1,2,\ldots,6
+\end{equation*}
+The values of $C_i$ must be different here, because we multiplied the
+whole thing through by a constant, but no attempt is made to explain
+this. It's even easier if you replace $\rho(t)$ by just $\rho_0$ if
+reactivity isn't a function of time, and drop the independent source
+$S(t)$. I'm not writing out the equations \textit{again}.
+
+\subsection{One Effective Delayed Group}
+
+This section is taken from Lecture 14~\cite{lecture}.
+
 \bibliographystyle{unsrt}
 \bibliography{../NE150}
 \end{document}
