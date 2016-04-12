@@ -470,6 +470,121 @@ $C>1$, this is the breeding factor ($B$):
       produced}}{\text{Number of fissile nuclides consumed}}
 \end{equation*}
 
+\section{Kinetics}
+
+\subsection{Neutron Population Kinetics}
+
+Some key assumptions for reactor kinetics are:
+\begin{itemize}
+\item Quantities of interest are averaged over neutron energy.
+\item Infinite medium (no leakage) without spatial dependence (homogeneous)
+\end{itemize}
+\cite[Lec. 14]{lecture}
+
+Using the average neutron speed (in cm/s), $\overline{v}$ and the
+energy-averaged cross section for a reaction $x$ (discussed in the
+last section), we can find the reaction rate for that reaction:
+
+\begin{equation*}
+  R_x=\Sigma_x\overline{v}n(t)
+\end{equation*}
+
+Where $n(t)$ is the neutron population at time $t$, and $\Sigma_x$ is
+the energy averaged cross section (note we dropped the line, but for
+all this kinetics stuff it's all energy
+averaged)~\cite[Lec. 14]{lecture}.
+
+\subsubsection{Infinite non-multiplying medium}
+This section is from Lecture 14 \cite{lecture}.
+
+\vspace{10pt}
+We defined the neutron population
+as a function of time in the last section:
+\begin{equation*}
+  \frac{dn(t)}{dt}=P(t)-L(t)
+\end{equation*}
+For an infinite, non-multiplying (no fission) medium, the production
+is only due to sources, and loss is only due to absorption because we
+are in an finite medium (no leakage, see assumptions above). So
+replacing the appropriate terms:
+\begin{equation*}
+  \begin{split}
+    \frac{dn(t)}{dt}&=S(t)-R_a \\
+    &=S(t)-\Sigma_a\overline{v}n(t)
+  \end{split}
+\end{equation*}
+
+\paragraph{No Sources}
+
+With no sources ($S(t)=0$), we can solve this using an initial neutron population
+$n(0)=n_0$:
+\begin{equation*}
+    \frac{dn(t)}{dt}=-\Sigma_a\overline{v}n(t)
+\end{equation*}
+With solution:
+\begin{equation*}
+      n(t) = n_0e^{-\Sigma_a\overline{v}t}
+\end{equation*}
+This makes sense, because we have no sources, and only absorption. We
+expect that the neutron population will decay away at a time
+proportional to the chance of absorption ($\propto\Sigma_a$). The
+probability that a neutron survives from time 0 to time $t$ without
+absorption is:
+\begin{equation*}
+  \frac{n(t)}{n_0}=e^{-\Sigma_a\overline{v}t}
+\end{equation*}
+Much like a decay constant, the factor $-\Sigma_a\overline{v}$ gives
+the probability per unit time that an absorption event will occur. We
+therefore define something like the mean life time from decay theory
+but here we call it the \textbf{average neutron lifetime}:
+\begin{equation*}
+  \ell_\infty = \frac{1}{\Sigma_a\overline{v}}
+\end{equation*}
+
+\paragraph{Alternate Derivation of $\ell_\infty$}
+
+We can also find the average neutron lifetime using the probability
+that a neutron will be absorbed in a small time step $dt$. From above,
+we know that the probability that a neutron survives from time 0 to
+time $t$ without absorption is:
+\begin{equation*}
+    \frac{n(t)}{n_0}=e^{-\Sigma_a\overline{v}t}
+\end{equation*}
+The probability that the neutron will then be absorbed in $dt$ (after living
+so long from 0 to $t$) is:
+\begin{equation*}
+  p(t)dt=(\Sigma_a\overline{v})e^{-\Sigma_a\overline{v}t}dt
+\end{equation*}
+The factor in front is a normalization so if you integrate from 0 to
+$\infty$ you get 1, which we need for a probability density
+function. We can use this to find the expectation value of $t$:
+\begin{equation*}
+  \overline{t}=\int^\infty_0tp(t)dt = \int^\infty_0t(\Sigma_a\overline{v})e^{-\Sigma_a\overline{v}t}=\frac{1}{\Sigma_a\overline{v}}=\ell_\infty
+\end{equation*}
+Yay we made it, now we know this is really the average time a neutron will bounce
+around before being absorbed.
+
+\paragraph{Sources}
+
+If we have a source of constant strength: $S_0$, we get (using our
+new-fangled average neutron lifetime):
+\begin{equation*}
+  \begin{split}
+    \frac{dn(t)}{dt}&=S_0-\Sigma_a\overline{v}n(t) \\
+    &= S_0-\frac{1}{\ell_\infty}n(t)
+  \end{split}
+\end{equation*}
+With solution:
+\begin{equation*}
+  n(t)=\ell_\infty S_0(1-e^{-t/\ell_\infty})
+\end{equation*}
+This looks a lot like an exponential build-up that at $t=\infty$ goes
+to a value of $\ell_\infty S_0$.
+
+\subsubsection{Infinite Multiplying Medium}
+
+
+
 \bibliographystyle{unsrt}
 \bibliography{../NE150}
 \end{document} 
