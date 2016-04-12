@@ -200,6 +200,7 @@ You can see how this has the same three situations discussed
 above.\cite[Lec. 10]{lecture}
 \end{itemize}
 \subsubsection{Neutron Population Lifetime}
+\label{neutronPopLife}
 \begin{itemize}
 \item Using this loss rate $L(t)$, we can figure out how long our
   generation would survive (with no production). At a given time $t$,
@@ -472,8 +473,6 @@ $C>1$, this is the breeding factor ($B$):
 
 \section{Kinetics}
 
-\subsection{Neutron Population Kinetics}
-
 Some key assumptions for reactor kinetics are:
 \begin{itemize}
 \item Quantities of interest are averaged over neutron energy.
@@ -494,7 +493,7 @@ the energy averaged cross section (note we dropped the line, but for
 all this kinetics stuff it's all energy
 averaged)~\cite[Lec. 14]{lecture}.
 
-\subsubsection{Infinite non-multiplying medium}
+\subsection{Infinite non-multiplying medium}
 This section is from Lecture 14 \cite{lecture}.
 
 \vspace{10pt}
@@ -514,7 +513,7 @@ replacing the appropriate terms:
   \end{split}
 \end{equation*}
 
-\paragraph{No Sources}
+\subsubsection{No Sources}
 
 With no sources ($S(t)=0$), we can solve this using an initial neutron population
 $n(0)=n_0$:
@@ -541,7 +540,7 @@ but here we call it the \textbf{average neutron lifetime}:
   \ell_\infty = \frac{1}{\Sigma_a\overline{v}}
 \end{equation*}
 
-\paragraph{Alternate Derivation of $\ell_\infty$}
+\subsubsection{Alternate Derivation of $\ell_\infty$}
 
 We can also find the average neutron lifetime using the probability
 that a neutron will be absorbed in a small time step $dt$. From above,
@@ -564,7 +563,7 @@ function. We can use this to find the expectation value of $t$:
 Yay we made it, now we know this is really the average time a neutron will bounce
 around before being absorbed.
 
-\paragraph{Sources}
+\subsubsection{Sources}
 
 If we have a source of constant strength: $S_0$, we get (using our
 new-fangled average neutron lifetime):
@@ -581,8 +580,48 @@ With solution:
 This looks a lot like an exponential build-up that at $t=\infty$ goes
 to a value of $\ell_\infty S_0$.
 
-\subsubsection{Infinite Multiplying Medium}
+\subsection{Infinite Multiplying Medium with no Source}
+This section is from Lecture 14 \cite{lecture}.
 
+\vspace{10pt}
+If we have an infinite multiplying medium, our equation becomes a
+little more complicated.
+\begin{equation*}
+  \begin{split}
+        \frac{dn(t)}{dt}&=S(t)-L(t) \\
+        &=S(t)+\nu\Sigma_f\overline{v}n(t)-\Sigma_a\overline{v}n(t)
+  \end{split}
+\end{equation*}
+Note that we still only lose due to absorption (infinite means no
+leakage) and now we have an extra source term from fission. We can
+clean this up a bit using our definitions of $k_\infty$ and
+$\ell_\infty$:
+\begin{equation*}
+  k_\infty=\frac{\nu\Sigma_f}{\Sigma_a}
+\end{equation*}
+\begin{equation*}
+  \begin{split}
+      \frac{dn(t)}{dt}&=S(t)+\Sigma_a\overline{v}n(t)\left(\frac{\nu\Sigma_f}{\Sigma_a}-1\right) \\
+      &=S(t)+\frac{(k_\infty-1)}{\ell_\infty}n(t)
+  \end{split}
+\end{equation*}
+We saw almost this exact equation earlier, but just with $k$ and
+$\ell$ (the neutron generation time), in section
+\ref{neutronPopLife}. There, we had leakage (see next section), here
+we don't so we have $\infty$ on the terms.
+
+As above, you don't have a source, you end up with:
+\begin{equation*}
+  n(t)=n_0\text{Exp}\left(\frac{k_\infty-1}{l_\infty}\right)
+\end{equation*}
+You can see how $k_\infty$ controls criticality here.
+
+\section{Finite Multiplying Medium}
+
+This section is from Lecture 14 \cite{lecture}.
+
+As previously described, if we have a finite medium, then we have to
+re-introduce leakage.
 
 
 \bibliographystyle{unsrt}
