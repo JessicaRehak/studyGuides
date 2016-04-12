@@ -624,7 +624,7 @@ solution is found the same was as in the previous section:
     n(t)=\frac{\ell_\infty S_0}{(k_\infty-1)}\left[1-\text{Exp}\left(-\frac{(1-k_\infty)}{\ell}t\right)\right]
 \end{equation*}
 
-\section{Finite Multiplying Medium}
+\subsection{Finite Multiplying Medium}
 
 This section is from Lecture 14 \cite{lecture}.
 
@@ -643,13 +643,71 @@ above):
 \begin{equation*}
       \frac{dn(t)}{dt}=S(t)+\frac{(k-1)}{\ell}n(t)
 \end{equation*}
+
+\subsubsection{No source}
+
+No source is exactly the same as above, just get rid of the $\infty$s.
+
+\subsubsection{Source}
+
 Solving this equation with $n(0)=0$ gives us:
 \begin{equation*}
   n(t)=\frac{\ell S_0}{(k-1)}\left[1-\text{Exp}\left(-\frac{(1-k)}{\ell}t\right)\right]
 \end{equation*}
 
+For a subcritical system, $k<1$, as $t\to\infty$ the exponential is
+negative and goes to 0:
 
+\begin{equation*}
+  n(\infty)=\frac{\ell{}S_0}{(k-1)}
+\end{equation*}
+
+As $k$ approaches 1, the value $(1-k)$ gets very small, and you can
+expand the exponential:
+
+\begin{equation*}
+  n(t)=\frac{\ell S_0}{(k-1)}\left[1+\frac{(k-1)}{\ell}t+\frac{1}{2}\frac{(k-1)^2}{\ell^2}t^2+\ldots-1\right]
+\end{equation*}
+
+Which gives us, via some black magic:
+\begin{equation*}
+  n(\infty)=S_ot
+\end{equation*}
+
+I think what we do here is cancel the first 1 and the final -1, then
+if you distribute in the $\frac{\ell}{(k-1)}$, you end up with $t$
+plus stuff on the order of $(k-1)$. You can make the argument that
+because that is a very small quantity, we can just ignore all of them,
+so you're just left with $t$. This is speculation.
+
+\subsection{Multiplying Medium Takeaways}
+
+This section is taken from Lecture 14\cite{lecture}.
+
+\vspace{10pt}
+You'll notice that the results for the finite case and infinite case
+are exactly the same, with the addition of some $\infty$ symbols. The
+take-aways from both are also the same. There are two conditions in
+which a time-independent neutron population can be established:
+
+\begin{itemize}
+\item If you \textbf{do not have a source}, you get the exponential
+  decays from above. The only way to make this not decay is if $k=1$
+  (or the $\infty$ variation if you're getting paid by the $\infty$,
+  which I am not).
+\item If you \textbf{have a source}, you get the buildup equation. If
+  $k<1$, then you approach a constant value at time $\infty$ (swear
+  they're not paying me for these). As $k$ approaches $\infty$, the
+  neutron population blows up. Go reread that section and it'll make sense.
+\end{itemize}
+
+To reiterate, the two cases of a stable neutron population in a
+multiplying medium are:
+\begin{enumerate}
+\item $k=1$ and no source.
+\item $k<1$ and a source.
+\end{enumerate}
 
 \bibliographystyle{unsrt}
 \bibliography{../NE150}
-\end{document} 
+\end{document}
