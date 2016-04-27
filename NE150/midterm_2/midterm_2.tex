@@ -671,7 +671,7 @@ expand the exponential:
 
 Which gives us, via some black magic:
 \begin{equation*}
-  n(\infty)=S_ot
+  n(t)=S_ot
 \end{equation*}
 
 I think what we do here is cancel the first 1 and the final -1, then
@@ -716,10 +716,15 @@ This section is from Lecture 14 \cite{lecture}.
 In addition to the prompt neutrons created immediately with fission,
 there are delayed neutrons that are the result of the decay of fission
 products. The specifics ones that make these neutrons are called
-\textbf{Delayed Neutron Precursors (DNPs)}. We divide these up into 6
-groups (based on half-life), and each group produces a different
-number of neutrons. We express the fraction of all neutrons born
-delayed as $\beta$:
+\textbf{Delayed Neutron Precursors (DNPs)}. Following fission, these
+fission products hang around for a bit waiting to $\beta$-decay. Once
+they do, they almost immediately release a neutron. We divide these up into 6
+groups (based on their half-lives), not to mention that each group produces a different
+number of neutrons. The neutrons that come from these Delayed Neutron
+Precursors are called \textbf{delayed neutrons}. If we look at all the
+neutrons in a particular generation, some of them were born in fission
+(prompt) and some of them were born from this decay (delayed). We
+express the fraction of all neutrons born delayed as $\beta$:
 
 \begin{equation*}
   \beta = \frac{\text{Neutrons born delayed}}{\text{Neutrons born
@@ -772,7 +777,13 @@ First, we have to define the \textbf{mean neutron generation time}:
 \begin{equation*}
   \Lambda \equiv \frac{\ell}{k}
 \end{equation*}
-And we plug that into the equation we found for our neutron population
+This is the mean time between the birth of a neutron and subsequent
+absorption inducing fission. You can see that when the reactor is
+critical ($k=1$), this is equal to the average neutron lifetime
+($\ell$). As $k>1$, the value of $\Lambda$ goes \textit{down}, so
+neutrons are being absorbed faster. This is a way to adjust the
+neutron lifetime for different criticality conditions in the core.
+So we plug that into the equation we found for our neutron population
 with delayed neutrons in Section~\ref{delayedNeutrons}:
 \begin{equation*}
   \begin{split}
@@ -820,7 +831,171 @@ $S(t)$. I'm not writing out the equations \textit{again}.
 
 This section is taken from Lecture 14~\cite{lecture}.
 
+\vspace{10pt}
+Remember we had six groups of DNPs? Let's assume instead that we can
+lump them all together into a single group. In this case, we can get
+rid of the summations and indexes in the previous equations (also
+dropping the $S(t)$ from the first equation):
+\begin{equation*}
+      \frac{dP(t)}{dt}= \frac{\rho(t)-\beta}{\Lambda}P(t)+\lambda{}C(t)
+\end{equation*}
+\begin{equation*}
+    \frac{dC(t)}{dt}=\frac{\beta}{\Lambda}P(t)-\lambda{}C(t)
+\end{equation*}
 
+More assumptions:
+\begin{itemize}
+\item Prior to $t=0$, the reactor was operating at some steady state
+  power level $P_0$ with steady state DNP concentration $C_0$.
+\item At $t=0$ we inserted an instantaneous amount of reactivity
+  $\rho_0$. Or mathematically, replace $\rho(t)$ with:
+  \begin{equation*}
+    \rho(t)=
+    \begin{cases}
+      0 & t < 0 \\
+      \rho_0 & t \geq 0
+    \end{cases}
+  \end{equation*}
+\end{itemize}
+
+\paragraph{First step: $t < 0$}
+First, we solve the above equations for $t < 0$. We know that we were in a
+steady-state situation; this means that power wasn't changing over
+time, nor were the amount of DNPs:
+\begin{equation*}
+  \frac{dP}{dt}=\frac{dC}{dt}=0
+\end{equation*}
+We also know that we assumed we were operating at some steady state
+power level $P_0$ and DNP concentration $C_0$.
+\begin{equation*}
+  \begin{split}
+    P(t) &= P_0 \\
+    C(t) &= C_0
+  \end{split}
+\end{equation*}
+If you set the equations equal to each other and plug $0$ in for
+$\rho(t)$:
+\begin{equation*}
+  \begin{split}
+    -\frac{\beta}{\Lambda}P_0+\lambda{}C_0 &=
+    \frac{\beta}{\Lambda}P_0-\lambda{}C_0 \\
+    C_0 &= \frac{\beta}{\Lambda\lambda}P_0
+  \end{split}
+\end{equation*}
+
+This gives us the initial condition that we need to solve for $t\geq 0$.
+
+\paragraph{Next Step: $t \geq 0$}
+
+For $t \geq 0$, we can use the following initial conditions:
+\begin{equation*}
+  \begin{split}
+    P(0) &= P_0 \\
+    C(0) &= \frac{\beta}{\Lambda\lambda}P_0
+  \end{split}
+\end{equation*}
+
+To solve the following one-group PRKE equations:
+\begin{equation*}
+      \frac{dP(t)}{dt}= \frac{\rho_0-\beta}{\Lambda}P(t)+\lambda{}C(t)
+\end{equation*}
+\begin{equation*}
+    \frac{dC(t)}{dt}=\frac{\beta}{\Lambda}P(t)-\lambda{}C(t)
+\end{equation*}
+
+We will use the time-tested differential equation solving technique of
+knowing the right answer when we start. It's not too ridiculous
+though. We know that equations that look like $N' \pm cN = 0$ can usually be solved with
+exponentials of some kind, so we guess exponentials with an arbitrary
+constant in the exponent that we call $s$ and some arbitrary constants
+out front $P$ and $C$.
+\begin{equation*}
+  P(t) = Pe^{st} \text{ and } C(t) = Ce^{st}
+\end{equation*}
+
+If we substitute these into the one-group PRKE equations above, we get:
+\begin{equation*}
+  \begin{split}
+    sP &= \left(\frac{\rho_0-\beta}{\Lambda}\right)P+\lambda{}C \\
+    sC &= \frac{\beta}{\Lambda}P-\lambda{}C
+  \end{split}
+\end{equation*}
+
+So we have two equations, and two unknowns. Lets bring everything to
+one side:
+
+\begin{equation*}
+  \begin{split}
+     \left(\frac{\rho_0-\beta}{\Lambda}-s\right)P-\lambda{}C &= 0\\
+    -\frac{\beta}{\Lambda}P+(\lambda{}+s)C &= 0 
+  \end{split}
+\end{equation*}
+
+Now, we have to equations, with two unknowns, and we can put it into a matrix:
+\begin{equation*}
+\begin{bmatrix}
+  \frac{\rho_0-\beta}{\Lambda}-s & -\lambda \\
+  -\frac{\beta}{\Lambda} & \lambda + s
+\end{bmatrix}
+\begin{bmatrix}
+  P \\ C
+\end{bmatrix}
+=
+\begin{bmatrix}
+  0 \\ 0
+\end{bmatrix}
+\end{equation*}
+The only way that this has a solution is if the matrix is singular,
+i.e. its determinant is 0. This gives us:
+\begin{equation*}
+  \begin{split}
+    \left(\frac{\rho_0-\beta}{\Lambda}-s\right)(\lambda +
+    s)-(-\lambda)\left(-\frac{\beta}{\Lambda}\right) &= 0 \\
+    \frac{\lambda\rho_0}{\Lambda} -
+    \frac{\beta\lambda}{\Lambda}-s\lambda +
+    \left(\frac{\rho_0-\beta}{\Lambda}\right)s-s^2+\frac{\beta\lambda}{\Lambda}
+    &= 0 \\
+    \lambda\rho_0-(\lambda\Lambda+\rho_0-\beta)s-\Lambda{}s^2 &= 0
+  \end{split}
+\end{equation*}
+This is a quadratic equation that we can use the quadratic formula to
+solve, giving us this messy equation:
+\begin{equation*}
+  s=\frac{1}{2\Lambda}\left[-(\Lambda\lambda+\beta-\rho_0) \pm \sqrt{(\Lambda\lambda+\beta-\rho_0)^2+4\rho_0\Lambda\lambda}\right]
+\end{equation*}
+The $\pm$ gives us two values of $s$, which makes sense because it's a
+quadratic formula. We, very originally, call these $s_1$ and
+$s_2$. Both of these solutions will contribute to our equations for
+$P$ and $C$ that we guessed earlier:
+\begin{equation*}
+  \begin{split}
+    P(t)&=P_1e^{s_1t}+P_2e^{s_2t} \\
+    C(t)&=C_1e^{s_1t}+C_2e^{s_2t}
+  \end{split}
+\end{equation*}
+Note that we still have no idea what the constants in front of the
+exponentials are.
+
+\subsubsection{Simplified Case}
+
+One simplifying assumption is that the value of reactivity is much less than the
+value of $\beta$, $|\rho_0| << \beta$. This means that of the two
+terms under the square root:
+\begin{equation*}
+  (\Lambda\lambda+\beta-\rho_0)^2 >> 4\rho_0\Lambda\lambda
+\end{equation*}
+
+because the value of the first term is going to give us a $\beta^2$,
+which -- because of our assumption above -- is going to be
+\textit{much} larger than the second term, whose value is controlled
+by $\rho_0$. This gives us the following two values of $s$:
+\begin{equation*}
+    s_1 \approx \frac{\lambda\rho_0}{\beta-\rho_0} \quad\quad
+    s_2 \approx \frac{\beta-\rho_0}{\Lambda}
+\end{equation*}
+
+
+\section{Diffusion Approximation}
 
 \bibliographystyle{unsrt}
 \bibliography{../NE150}
