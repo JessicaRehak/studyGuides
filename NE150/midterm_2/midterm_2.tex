@@ -829,6 +829,16 @@ $S(t)$. I'm not writing out the equations \textit{again}.
 
 \subsection{One Effective Delayed Group}
 
+\paragraph{Motivation}
+
+We'd like to understand how a reactor's power changes over time. To do
+this, we want to solve the point reactor kinetics equations (PRKEs)
+from the previous section. We'll be expecting some kind of exponential
+behavior (because that's what decays give us). In particular, we want
+to know how our reactor changes in \textit{time}, because these are
+time-dependent equations and we don't want our reactor to blow up.
+
+\vspace{10pt}
 This section is taken from Lecture 14~\cite{lecture}.
 
 \vspace{10pt}
@@ -955,7 +965,7 @@ i.e. its determinant is 0. This gives us:
     \frac{\beta\lambda}{\Lambda}-s\lambda +
     \left(\frac{\rho_0-\beta}{\Lambda}\right)s-s^2+\frac{\beta\lambda}{\Lambda}
     &= 0 \\
-    \lambda\rho_0-(\lambda\Lambda+\rho_0-\beta)s-\Lambda{}s^2 &= 0
+    \Lambda{}s^2+(\lambda\Lambda+\rho_0-\beta)s-\lambda\rho_0=0
   \end{split}
 \end{equation*}
 This is a quadratic equation that we can use the quadratic formula to
@@ -994,6 +1004,194 @@ by $\rho_0$. This gives us the following two values of $s$:
     s_2 \approx \frac{\beta-\rho_0}{\Lambda}
 \end{equation*}
 
+We still don't know anything about the constants in front of our
+exponentials, but we can use these values of $s$ to write:
+
+\begin{equation*}
+  P(t)=P_1e^{\frac{\lambda\rho_0}{\beta-\rho_0}t}+P_2e^{\frac{\beta-\rho_0}{\Lambda}}
+\end{equation*}
+\begin{equation*}
+  C(t)=C_1e^{\frac{\lambda\rho_0}{\beta-\rho_0}t}+C_2e^{\frac{\beta-\rho_0}{\Lambda}}
+\end{equation*}
+
+\subsection{In-Hour Equation}
+
+This section is taken from Lecture 15.~\cite{lecture}
+
+\subsubsection{One DNP Group}
+
+The values of $s$ that we found are particularly interesting, and not
+just because we could actually solve for them. The values $s$ in
+the exponential determines if $P$ and $C$ blow up (if positive) or decay
+away (if negative). That's the difference between a bomb and a
+shutdown reactor. Let's go back to that quadratic equation we had:
+
+\begin{equation*}
+    \Lambda{}s^2+(\lambda\Lambda+\rho_0-\beta)s-\lambda\rho_0=0
+\end{equation*}
+As the reactor conditions change (supercritical, subcritical), the values of $s$ will change too:
+our reactivity $\rho_0$ and mean generation time $\Lambda$ both change
+when $k$ changes. It would be interesting to see what values of $s$ we
+get for different reactor conditions. So, we can solve for $s$ in
+terms of reactivity $\rho_0$:
+\begin{equation*}
+  \rho_0=\frac{s\ell}{s\ell+1}+\frac{1}{s\ell+1}\frac{s\beta}{s+\lambda}
+\end{equation*}
+Now, if we know our reactors reactivity $\rho_0=\frac{k-1}{k}$, we can
+solve for the values of $s$ and figure out how our reactor power $P$
+(and $C$ for that matter) changes over time. It's easiest to solve
+this equation graphically, but first we can examine some of the
+properties of the equation itself:
+
+\begin{itemize}
+\item This equation just came from the manipulation of a quadratic
+  equation. So we know that there will be \textbf{two} values of $s$
+  for every $\rho_0$ that we select.
+\item The denominator of the first fraction goes to 0 as $s \to
+  -\frac{1}{\ell}$, sending it to $\infty$, so there must be a
+  vertical asymptote there.
+\item The denominator of the second term blows up also as $s \to
+  -\lambda$. So there's also a vertical asymptote there.
+\item If you set $\rho_0=0$, then $s=0$ is a solution. This is
+  actually easier to see from the quadratic form above. Therefore, no
+  matter what the values of $\lambda$ or $\beta$, the graph will
+  always cross at the origin (when plotting $\rho_0$ vs. $s$).
+\end{itemize}
+
+If you look at the graph, you can see each of those properties. For
+any chosen value of $\rho_0$, there are two possible values of $s$,
+which is what we expected from our quadratic equation. One of the
+values will always be somewhere between $-\frac{1}{\ell}$ and
+$-\lambda$, and therefore \textit{always} negative. The second value
+will always be greater than $-\lambda$ but can be negative \textit{or}
+positive. As a reminder, these two values of $s$ are what will dictate
+the evolution of power and DNP concentration with time:
+\begin{equation*}
+  \begin{split}
+    P(t)&=P_1e^{s_1t}+P_2e^{s_2t} \\
+    C(t)&=C_1e^{s_1t}+C_2e^{s_2t}
+  \end{split}
+\end{equation*}
+
+Interpreting this graph is aided by looking at three cases
+for $\rho_0$:
+
+\paragraph{Case 1: $\rho_0=0$} When $\rho_0 = 0$, we know that one of the
+values of $s$ is 0 (because it crosses the origin. The second is still
+a negative number between $-\frac{1}{\ell}$ and $-\lambda$. This means
+we get a power equation that looks like:
+
+\begin{equation*}
+  \begin{split}
+    P(t)&=P_1e^{s_1t}+P_2e^{s_2t} \\
+    &=P_1e^0+P_2e^{-|s_2|t} \\
+    &= P_1 + P_2e^{-|s_2|t}
+  \end{split}
+\end{equation*}
+
+As you can see, our power equation has become a constant plus a term
+that will decay away over time. This is what we expect, because we
+chose $\rho_0=0$ which we know is a \textbf{critical} system.
+
+\paragraph{Case 2: $\rho_0<0$}
+
+When $\rho_0$ is less than zero, we are in a \textbf{subcritical}
+system and therefore expect all of our power to go away over
+time. Plotting a line where $\rho_0 < 0$, we can see that our value of
+$s_1$ will be some negative number between $-\lambda$ and 0. We know
+$s_2$ is always negative, giving us a power equation:
+
+\begin{equation*}
+  \begin{split}
+    P(t)&=P_1e^{s_1t}+P_2e^{s_2t} \\
+    &=P_1e^{-|s_1|t}+P_2e^{-|s_2|t} \\
+  \end{split}
+\end{equation*}
+
+As we expected, both terms decay away, and power goes to 0 at
+$t=\infty$.
+
+\paragraph{Case 3: $\rho_0>0$}
+
+When $\rho_0$ is greater than zero, we have a \textbf{supercritical}
+system and expected our power to go to infinity over time. This time
+when we plot a line for $\rho_0>0$, we see that our value of $s_1$ is
+positive. This gives us:
+
+\begin{equation*}
+  \begin{split}
+    P(t)&=P_1e^{s_1t}+P_2e^{s_2t} \\
+    &=P_1e^{|s_1|t}+P_2e^{-|s_2|t} \\
+  \end{split}
+\end{equation*}
+
+Now we have a term that goes to infinity as $t\to\infty$, which is
+what we expected.
+
+\subsubsection{Reactor Period}
+
+The value of $s$ is in units of per time, so we can invert it to get a
+time period that we can the \textbf{reactor period T}:
+
+\begin{equation*}
+  T=\frac{1}{|s|}
+\end{equation*}
+
+This period defines how quickly the reactor power will change over
+time. As $\rho_0$ gets large (negative or positive) the value of this
+period gets smaller, and power changes more rapidly.
+
+\begin{itemize}
+\item \textbf{Critical:} When critical $s_1=0$ and $T=\infty$ because
+  we have a stable power, so it will never change.
+\item \textbf{Supercritical:} As $\rho_0\to 1$ (it's maximum value),
+  there is a horizontal asymptote, and therefore $s_1\to\infty$. This
+  gives us a reactor period of 0 seconds, or a bomb.
+\item \textbf{Subcritical:} As $\rho_0$ gets very largely negative, we
+  approach the value of the first vertical asymptote: as
+  $\rho_0\to -\infty$, $s_1\to -\lambda$. This means that no matter
+  how much negative reactivity we put into our reactor, we can never
+  shutdown faster than on the period $T=\frac{1}{\lambda}$;
+  that group of DNPs is spitting out neutrons, and won't decay away
+  any faster than their decay constant.
+\end{itemize}
+
+\subsection{Six DNP Groups}
+
+If we go back to our formulation in which we included all 6 DNP
+groups:
+
+\begin{equation*}
+      \frac{dP(t)}{dt}= S(t) + \frac{\rho(t)-\beta}{\Lambda}P(t)+\sum^6_{i=1}\lambda_iC_i(t)
+\end{equation*}
+\begin{equation*}
+    \frac{dC_i(t)}{dt}=\frac{\beta_i}{\Lambda}P(t)-\lambda_iC_i(t)\quad i=1,2,\ldots,6
+\end{equation*}
+
+We can again solve by using our exponential form:
+\begin{equation*}
+  P(t)=\sum^7_{j=1}P_je^{s_jt}
+\end{equation*}
+
+Where we have $j=1,2,3\ldots,7$ instead of just 1 and 2, now that we
+have all six DNP groups. When we solve this, we get:
+\begin{equation*}
+  \rho_0=\frac{s\ell}{s\ell+1}+\frac{1}{s\ell+1}\sum^6_{i=1}\frac{s\beta_i}{s+\lambda_i}
+\end{equation*}
+
+Instead of a quadratic equation, this one came from a 7th degree
+polynomial, so there will be 7 values of $s$. We expected that from
+the form our power equation took. The behavior is very similar to the
+one-group version. We still have vertical asymptotes, one of which is
+at $s=-\frac{1}{\ell}$. Due to the summation, we now also have
+asymptotes at each $\lambda_i$ of each DNP group.
+
+\vspace{10pt}
+The overall behavior is very similar to the behavior of the one
+group. Now we have seven values of $s$, six of which are always
+negative. The largest value acts identically as in the one-group
+version --- positive for supercritical, negative for subcritical, 0
+for critical.
 
 \section{Diffusion Approximation}
 
